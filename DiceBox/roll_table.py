@@ -29,6 +29,7 @@ from Data import magic_items_g
 from Data import magic_items_h
 from Data import magic_items_i
 from Data import names_df
+from Data
 from DiceBox.dice import d4
 from DiceBox.dice import d6
 from DiceBox.dice import d8
@@ -110,6 +111,10 @@ def roll_range(dataframe, die_roll, column):
         else:
             return dataframe.at[index, column]
 
+def wild_magic():
+    """"Return a roll on wild magic surge table."""
+    
+    return roll_range()
 
 def art_object(value):
     """Return a roll on an art objects table of a given value.
