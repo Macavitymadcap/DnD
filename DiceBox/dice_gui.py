@@ -73,7 +73,7 @@ class DiceRoller:
         self.expression = ""
         self.master.configure(background="#1C2350")
         self.master.title("Dice Roller")
-        self.master.geometry("308x328")
+        self.master.geometry("410x383")
 
         # GUI widgets.
         self.roll_query = StringVar()
