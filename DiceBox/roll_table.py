@@ -29,7 +29,7 @@ from Data import magic_items_g
 from Data import magic_items_h
 from Data import magic_items_i
 from Data import names_df
-from Data
+from Data import wild_magic_df
 from DiceBox.dice import d4
 from DiceBox.dice import d6
 from DiceBox.dice import d8
@@ -50,8 +50,7 @@ def check_range(num, string):
         check_num (func): Return True if num in range, False if not
 
     Returns:
-        check_num(num, get_range(string)): True if num in String, False if not
-    """
+        check_num(num, get_range(string)): True if num in String, False if not"""
 
     def get_range(string):
         """Return a range from a given string.
@@ -60,8 +59,7 @@ def check_range(num, string):
             string (str): String to be converted into a range object
 
         Returns:
-            to_range: Range object from given string
-        """
+            to_range: Range object from given string"""
         hyphen = string.index("-")
         num1 = int(string[:hyphen])
         num2 = int(string[hyphen + 1:])
@@ -77,8 +75,7 @@ def check_range(num, string):
             range(func): Range object in which to serach for num
 
         Returns:
-            bool: True if num in range, False if not
-        """
+            bool: True if num in range, False if not"""
         for i in range:
 
             if i is num:
@@ -99,8 +96,7 @@ def roll_range(dataframe, die_roll, column):
         column (str): String repsresenting the column to be returned
 
     Returns:
-        dataframe.at[index, column]: String of roll on given table
-    """
+        dataframe.at[index, column]: String of roll on given table"""
     for index in dataframe.index:
 
         if '-' in index:
@@ -112,9 +108,11 @@ def roll_range(dataframe, die_roll, column):
             return dataframe.at[index, column]
 
 def wild_magic():
-    """"Return a roll on wild magic surge table."""
+    """"Return a roll on wild magic surge table.
     
-    return roll_range()
+    Returns:
+        string: String of effect of wild magic surge"""    
+    return roll_range(wild_magic_df, d100(), 'Effect')
 
 def art_object(value):
     """Return a roll on an art objects table of a given value.
@@ -123,8 +121,7 @@ def art_object(value):
         value (int): Number representing gold value of returned object
 
     Returns:
-        string: String of roll on art object table of given value
-    """
+        string: String of roll on art object table of given value"""
 
     if value == 25:
         return art_objects_25gp.at[d10(), 'Object']
@@ -178,8 +175,7 @@ def magic_item(table):
         table (str): Letter for table from which the returned string is rolled
 
     Returns:
-        string: String of roll on given magice item table
-    """
+        string: String of roll on given magice item table"""
 
     if table == 'a':
         return roll_range(magic_items_a, d100(), 'Magic Item')
@@ -226,8 +222,7 @@ def treasure_tier1():
         coin_roll (int): Number between 1 and 100 checked against table ranges
 
     Returns:
-        string: String of total money from roll on Individual Treasure: Challenge 0-4
-    """
+        string: String of total money from roll on Individual Treasure: Challenge 0-4"""
     coin_roll = d100()
 
     if coin_roll in range(1, 31):
@@ -253,8 +248,7 @@ def treasure_tier2():
         coin_roll (int): Number between 1 and 100 checked against table ranges
 
     Returns:
-        string: String of total money from roll on Individual Treasure: Challenge 5-10
-    """
+        string: String of total money from roll on Individual Treasure: Challenge 5-10"""
     coin_roll = d100()
 
     if coin_roll in range(1, 31):
@@ -280,8 +274,7 @@ def treasure_tier3():
         coin_roll (int): Number between 1 and 100 checked against table ranges
 
     Returns:
-        string: String of total money from roll on Individual Treasure: Challenge 11-16
-    """
+        string: String of total money from roll on Individual Treasure: Challenge 11-16"""
     coin_roll = d100()
 
     if coin_roll in range(1, 21):
@@ -304,8 +297,7 @@ def treasure_tier4():
         coin_roll (int): Number between 1 and 100 checked against table ranges
 
     Returns:
-        string: String of total money from roll on Individual Treasure: Challenge 17+
-    """
+        string: String of total money from roll on Individual Treasure: Challenge 17+"""
     coin_roll = d100()
 
     if coin_roll in range(1, 16):
@@ -337,8 +329,7 @@ def hoard_tier1():
         magic_items_g (str): String from magic items table g
 
     Returns:
-        string: String of total treasure from roll on Treasure Hoard: Challenge 0-4
-    """
+        string: String of total treasure from roll on Treasure Hoard: Challenge 0-4"""
     hoard_roll = d100()
     copper = roll(6, d6) * 100
     silver = roll(3, d6) * 100
@@ -428,8 +419,7 @@ def hoard_tier2():
         magic_items_h (lst): List of strings from magic items table h
 
     Returns:
-        string: String of total treasure from roll on Treasure Hoard: Challenge 5-10
-    """
+        string: String of total treasure from roll on Treasure Hoard: Challenge 5-10"""
     hoard_roll = d100()
     copper = roll(2, d6) * 100
     silver = roll(2, d6) * 1000
@@ -559,8 +549,7 @@ def hoard_tier3():
         magic_items_i (str): String from magic items table i
 
     Returns:
-        string: String of total treasure from roll on Treasure Hoard: Challenge 11-17
-    """
+        string: String of total treasure from roll on Treasure Hoard: Challenge 11-17"""
     hoard_roll = d100()
     gold = roll(4, d6) * 1000
     platinum = roll(5, d6) * 100
@@ -699,9 +688,7 @@ def hoard_tier4():
         magic_items_i (lst): List of strings from magic items table i
 
     Returns:
-        (str): String of total treasure from roll on Treasure Hoard: Challenge 17+
-    """
-
+        (str): String of total treasure from roll on Treasure Hoard: Challenge 17+"""
     hoard_roll = d100()
     gold = roll(12, d6) * 1000
     platinum = roll(8, d6) * 1000
@@ -809,9 +796,7 @@ def name(kind, option):
         option (str): female, male or virtue for tiefling
     
     Returns:
-        (str): Full name based on parameters
-    """
-
+        (str): Full name based on parameters"""
     if kind == 'arabic':
 
         if option == 'female':
