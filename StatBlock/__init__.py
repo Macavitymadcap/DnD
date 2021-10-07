@@ -15,9 +15,7 @@ from StatBlock.actions_traits import LegendaryActions
 from StatBlock.actions_traits import PactMagic
 from StatBlock.actions_traits import SaveAction, Spell, Spellcasting
 from StatBlock.actions_traits import Trait
-
 from StatBlock.monster import Monster
-
 from StatBlock.MonsterManual import ettercap
 from StatBlock.MonsterManual import ghast
 from StatBlock.MonsterManual import giant_spider
