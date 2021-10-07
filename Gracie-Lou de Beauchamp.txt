@@ -1,0 +1,445 @@
+			GRACIE-LOU DE BEAUCHAMP
+
+Class: Warlock (Celestial)  Level: 20  Background: Noble  Player: Dan
+Race: Half-elf  Alignment: Chaotic Good  Experience Points: 355000
+
+STR	DEX	CON	INT	WIS	CHA
+10 (+0)	16 (+3)	16 (+3)	14 (+2)	14 (+2)	20 (+5)
++0 Save	+3 Save	+3 Save	+2 Save	+8 Save	+11 Save
+
+Armour Class: 18  Initiative: +3  Speed: 30 ft.  Proficiency Bonus: +6
+Hit Points: 154/154  Temporary Hit Points: 0  Hit Dice: 20/20d8 + 60
+		  Death Saves: Saves 0  Fails 0
+
+SKILLS
+Acrobatics (Dex): +3	Animal Handling (Wis): +2
+Arcana (Int): +8	Athletics (Str): +0
+Deception (Cha): +11	History (Int): +8
+Insight (Wis): +8	Intimidation (Cha): +5
+Investigation: +2	Medicine (Wis): +8
+Nature (Int): +2	Perception: +2
+Performance (Cha): +5	Persuasion (Cha): +11
+Religion (Int): +2	Sleight of Hand (Dex): +3
+Stealth (Dex): +3	Survival (Wis): +2
+	Passive Wisdom (Perception): 12
+
+OTHER PROFICIENCIES & LANGUAGES
+Celestial, Common, Draconic, Elvish, Sylvan, simple weapons, light armour,
+three-dragon ante set
+
+ATTACKS & SPELLCASTING
+Eldritch Blast. Ranged Spell Attack: +15 to hit, range 600 ft., one target. Hit:
+(1d10+7) force damage.
+Shillelagh. Melee Spell Attack: +17 to hit, None, one target. Hit: (1d6+7)
+bludgeoning damage, (1d8+7) bludgeoning damage.
+Staff of the Magi. Melee Weapon Attack: +8 to hit, None, one target. Hit:
+(1d6+2) bludgeoning damage, (1d8+2) bludgeoning damage.
+
+EQUIPMENT
+COINS:	0 cp	0 sp	0 ep	24 gp	0 pp
+INVENTORY: a backpack, a book of lore, a bottle of ink, an ink pen, 10 sheets of
+parchment, a little bag of sand, a small knife, a set of fine clothes, a signet
+ring, a scroll of pedigree, three-dragon ante set, book of shadows, staff of the
+magi, robe of the archmagi
+
+ROBE OF THE ARCHMAGI
+Wonderous item, legendary (requires attunemnt by a sorcerer, warlock, or wizard)
+4 lb, AC 15 + Dex modifier
+This elegant garment is made from exquisite cloth of white, gray, or black and
+adorned with silvery runes. The robe's colour corresponds to the alignment for
+which the item was created. A white robe was made for good, gray for neutral,
+and black for evil. You can't attune to a robe of the archmagi that doesn't
+correspond to your alignment.
+You gain these benefits while wearing the robe:
+* If you aren't wearing armour, your base Armour Class is 15 + your Dexterity
+modifier.
+* You have advantage on saving throws against spell and other magical effects.
+* Your spell save DC and spell attack bonus each increase by 2.
+
+STAFF OF THE MAGI
+Staff, weapon, legendary (requires attunement by a sorcerer, warlock, or
+wizard))
+4 lb., 1d6 bludgeoning, Versatile (1d8)
+This staff can be wielded as a magic quarterstaff that grants a +2 bonus to
+attack and damage rolls made with it. While you hold it, you gain a +2 bonus to
+spell attack rolls.
+The staff has 50 charges for the following properties. It regains 4d6 + 2
+expended charges daily at dawn. If you expend the last charge, roll a d20. On a
+20, the staff regains 1d12 + 1 charges.
+Spell Absorption. While holding the staff, you have advantage on saving throws
+against spells. In addition, you can use your reaction when another creature
+casts a spell that targets only you. If you do, the staff absorbs the magic of
+the spell, canceling its effect and gaining a number of charges equal to the
+absorbed spell's level. However, if doing so brings the staff's total number of
+charges above 50, the staff explodes as if you activated its retributive strike
+(see below).
+Spells. While holding the staff, you can use an action to expend some of its
+charges to cast one of the following spells from it, using your spell save DC
+and spellcasting ability: conjure elemental (7 charges), dispel magic (3
+charges), fireball (7th-level version, 7 charges), flaming sphere (2 charges),
+ice storm (4 charges), invisibility (2 charges), knock (2 charges), lightning
+bolt (7th-level version, 7 charges), passwall (5 charges), plane shift (7
+charges), telekinesis (5 charges), wall of fire (4 charges), or web (2 charges).
+You can also use an action to cast one of the following spells from the staff
+without using any charges: arcane lock, detect magic, enlarge/reduce, light,
+mage hand, or protection from evil and good.
+Retributive Strike. You can use an action to break the staff over your knee or
+against a solid surface, performing a retributive strike. The staff is destroyed
+and releases its remaining magic in an explosion that expands to fill a 30-foot-
+radius sphere centered on it.
+You have a 50 percent chance to instantly travel to a random plane of existence,
+avoiding the explosion. If you fail to avoid the effect, you take force damage
+equal to 16 × the number of charges in the staff. Every other creature in the
+area must make a DC 17 Dexterity saving throw. On a failed save, a creature
+takes an amount of damage based on how far away it is from the point of origin,
+as shown in the following table. On a successful save, a creature takes half as
+much damage.
+Distance from Origin    Damage
+10 ft. away or closer   8 × the number of charges in the staff
+11 to 20 ft. away       6 × the number of charges in the staff
+21 to 30 ft. away       4 × the number of charges in the staff
+Versatile. This weapon can be used with one or two hands. A damage value in
+parentheses appears with the property—the damage when the weapon is used with
+two hands to make a melee attack.
+
+PERSONALITY TRAITS
+* Flattery and charm are all the tools one needs to get what one wants.
+* If you cross me you will suffer, as will your children, and their children,
+and so on as long as I am able to inflict suffering.
+
+IDEALS
+Ettiquette. Manners before morals, excepting those who forgo civilty themselves.
+
+BONDS
+I am forever the willing servant of Snifflebumkiss.
+
+FLAWS
+Despite my breezy southern charms I can be violent like a tornado when provoked.
+
+FEATURES & TRAITS
+DARKVISION
+Thanks to your elf blood, you have superior vision in dark and dim conditions.
+You can see in dim light within 60 feet of you as if it were bright light, and
+in darkness as if it were dim light. You can't discern color in darkness, only
+shades of gray.
+
+FEY ANCESTRY
+You have advantage on saving throws against being charmed, and magic can't put
+you to sleep.
+
+SKILL VERSATILITY
+You gain proficiency in two skills of your choice.
+
+POSITION OF PRIVILEGE
+Thanks to your noble birth, people are inclined to think the best of you. You
+are welcome in high society, and people assume you have the right to be wherever
+you are. The common folk make every effort to accommodate you and avoid your
+displeasure, and other people of high birth treat you as a member of the same
+social sphere. You can secure an audience with a local noble if you need to.
+
+PACT MAGIC
+Your arcane research and the magic bestowed on you by your patron have given you
+facility with spells.
+
+CANTRIPS
+You know two cantrips of your choice from the warlock spell list. You learn
+additional warlock cantrips of your choice at higher levels, as shown in the
+Cantrips Known column of the Warlock table.
+
+SPELL SLOTS
+The Warlock table shows how many spell slots you have to cast your warlock
+spells of 1st through 5th level. The table also shows what the level of those
+slots is; all of your spell slots are the same level. To cast one of your
+warlock spells of 1st level or higher, you must expend a spell slot. You regain
+all expended spell slots when you finish a short or long rest.
+For example, when you are 5th level, you have two 3rd-level spell slots. To cast
+the 1st-level spell witch bolt, you must spend one of those slots, and you cast
+it as a 3rd-level spell.
+
+SPELLS KNOWN OF 1ST LEVEL AND HIGHER
+At 1st level, you know two 1st-level spells of your choice from the warlock
+spell list.
+The Spells Known column of the Warlock table shows when you learn more warlock
+spells of your choice of 1st level and higher. A spell you choose must be of a
+level no higher than what's shown in the table's Slot Level column for your
+level. When you reach 6th level, for example, you learn a new warlock spell,
+which can be 1st, 2nd, or 3rd level.
+Additionally, when you gain a level in this class, you can choose one of the
+warlock spells you know and replace it with another spell from the warlock spell
+list, which also must be of a level for which you have spell slots.
+
+SPELLCASTING ABILITY
+Charisma is your spellcasting ability for your warlock spells, so you use your
+Charisma whenever a spell refers to your spellcasting ability. In addition, you
+use your Charisma modifier when setting the saving throw DC for a warlock spell
+you cast and when making an attack roll with one.
+Spell save DC = 8 + your proficiency bonus + your Charisma modifier
+Spell attack modifier = your proficiency bonus + your Charisma modifier
+
+ARCANE FOCUS
+You can use an arcane focus as a spellcasting focus for your warlock spells.
+
+OTHERWORLDLY PATRON
+At 1st level, you have struck a bargain with an otherworldly being chosen from
+the list of available patrons. Your choice grants you features at 1st level and
+again at 6th, 10th, and 14th level.
+
+ELDRITCH INVOCATIONS
+In your study of occult lore, you have unearthed eldritch invocations, fragments
+of forbidden knowledge that imbue you with an abiding magical ability.
+At 2nd level, you gain two eldritch invocations of your choice. When you gain
+certain warlock levels, you gain additional invocations of your choice, as shown
+in the Invocations Known column of the Warlock table.
+Additionally, when you gain a level in this class, you can choose one of the
+invocations you know and replace it with another invocation that you could learn
+at that level.
+If an eldritch invocation has prerequisites, you must meet them to learn it. You
+can learn the invocation at the same time that you meet its prerequisites. A
+level prerequisite refers to your level in this class.
+
+AGONISING BLAST
+Prerequisite: eldrtich blast cantrip
+When you cast eldritch blast, add your Charisma modifier to the damage it deals
+on a hit.
+
+BEAST SPEECH
+You can cast speak with animals at will, without expending a spell slot.
+
+ELDRITCH SPEAR
+Prerequisite: eldritch blast cantrip
+When you cast eldritch blast, its range is 300 feet.
+
+GIFT OF THE PROTECTORS
+Prerequisite: 9th level, Pact of the Tome feature
+A new page appears in your Book of Shadows. With your permission, a creature can
+use its action to write its name on that page, which can contain a number of
+names equal to your proficiency bonus.
+When any creature whose name is on the page is reduced to 0 hit points but not
+killed outright, the creature magically drops to 1 hit point instead. Once this
+magic is triggered, no creature can benefit from it until you finish a long
+rest.
+As an action, you can magically erase a name on the page by touching it.
+
+LANCE OF LETHARGY
+Prerequisite: eldritch blast cantrip
+Once on each of your turns when you hit a creature with your eldritch blast, you
+can reduce that creature's speed by 10 feet until the end of your next turn.
+
+MASTER OF MYRIAD FORMS
+Prerequisite: 15th level
+You can cast alter self at will, without expending a spell slot.
+
+RELENTLESS HEX
+Prerequisite: 7th level, hex spell or a warlock feature that curses
+Your curse creates a temporary bond between you and your target. As a bonus
+action, you can magically teleport up to 30 feet to an unoccupied space you can
+see within 5 feet of the target cursed by your hex spell or by a warlock feature
+of yours, such as Hexblade's Curse or Sign of Ill Omen. To teleport in this way,
+you must be able to see the cursed target.
+
+PACT BOON
+At 3rd level, your otherworldly patron bestows a gift upon you for your loyal
+service. You gain one of the following features of your choice.
+
+PACT OF THE TOME
+Your patron gives you a grimoire called a Book of Shadows. When you gain this
+feature, choose three cantrips from any class's spell list. The cantrips do not
+need to be from the same spell list. While the book is on your person, you can
+cast those cantrips at will. They don't count against your number of cantrips
+known. Any cantrip you cast with this feature is considered a warlock cantrip
+for you. If you lose your Book of Shadows, you can perform a 1-hour ceremony to
+receive a replacement from your patron. This ceremony can be performed during a
+short or long rest, and it destroys the previous book. The book turns to ash
+when you die.
+
+ABILITY SCORE IMPROVEMENT
+When you reach 4th level, you can increase one ability score of your choice by
+2, or you can increase two ability scores of your choice by 1. As normal, you
+can't increase an ability score above 20 using this feature.
+If your DM allows the use of feats, you may instead take a feat.
+
+ELDRITCH VERSATILITY
+Whenever you reach a level in this class that grants the Ability Score
+Improvement feature, you can do one of the following, representing a change of
+focus in your occult studies:
+* Replace one cantrip you learned from this class's Pact Magic feature with
+another cantrip from the warlock spell list.
+* Replace the option you chose for the Pact Boon feature with one of that
+feature's other options.
+* If you're 12th level or higher, replace one spell from your Mystic Arcanum
+feature with another warlock spell of the same level.
+If this change makes you ineligible for any of your Eldritch Invocations, you
+must also replace them now, choosing invocations for which you qualify.
+
+ABILITY SCORE IMPROVEMENT
+When you reach 8th level, you can increase one ability score of your choice by
+2, or you can increase two ability scores of your choice by 1. As normal, you
+can't increase an ability score above 20 using this feature.
+If your DM allows the use of feats, you may instead take a feat.
+
+MYSTIC ARCANUM (6TH LEVEL)
+At 11th level, your patron bestows upon you a magical secret called an arcanum.
+Choose one 6th-level spell from the warlock spell list as this arcanum.
+You can cast your arcanum spell once without expending a spell slot. You must
+finish a long rest before you can do so again.
+At higher levels, you gain more warlock spells of your choice that can be cast
+in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th
+level, and one 9th-level spell at 17th level. You regain all uses of your Mystic
+Arcanum when you finish a long rest.
+
+ABILITY SCORE IMPROVEMENT
+When you reach 12th level, you can increase one ability score of your choice by
+2, or you can increase two ability scores of your choice by 1. As normal, you
+can't increase an ability score above 20 using this feature.
+If your DM allows the use of feats, you may instead take a feat.
+
+MYSTIC ARCANUM (7TH LEVEL)
+At 13th level, your patron bestows upon you a magical secret called an arcanum.
+Choose one 7th-level spell from the warlock spell list as this arcanum.
+You can cast your arcanum spell once without expending a spell slot. You must
+finish a long rest before you can do so again.
+At higher levels, you gain more warlock spells of your choice that can be cast
+in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th
+level, and one 9th-level spell at 17th level. You regain all uses of your Mystic
+Arcanum when you finish a long rest.
+
+MYSTIC ARCANUM (8TH LEVEL)
+At 15th level, your patron bestows upon you a magical secret called an arcanum.
+Choose one 8th-level spell from the warlock spell list as this arcanum.
+You can cast your arcanum spell once without expending a spell slot. You must
+finish a long rest before you can do so again.
+At higher levels, you gain more warlock spells of your choice that can be cast
+in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th
+level, and one 9th-level spell at 17th level. You regain all uses of your Mystic
+Arcanum when you finish a long rest.
+
+ABILITY SCORE IMPROVEMENT
+When you reach 16th level, you can increase one ability score of your choice by
+2, or you can increase two ability scores of your choice by 1. As normal, you
+can't increase an ability score above 20 using this feature.
+If your DM allows the use of feats, you may instead take a feat.
+
+MYSTIC ARCANUM (9TH LEVEL)
+At 17th level, your patron bestows upon you a magical secret called an arcanum.
+Choose one 9th-level spell from the warlock spell list as this arcanum.
+You can cast your arcanum spell once without expending a spell slot. You must
+finish a long rest before you can do so again.
+At higher levels, you gain more warlock spells of your choice that can be cast
+in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th
+level, and one 9th-level spell at 17th level. You regain all uses of your Mystic
+Arcanum when you finish a long rest.
+
+ABILITY SCORE IMPROVEMENT
+When you reach 19th level, you can increase one ability score of your choice by
+2, or you can increase two ability scores of your choice by 1. As normal, you
+can't increase an ability score above 20 using this feature.
+If your DM allows the use of feats, you may instead take a feat.
+
+THE CELESTIAL
+Your patron is a powerful being of the Upper Planes. You have bound yourself to
+an ancient empyrean, solar, ki-rin, unicorn, or other entity that resides in the
+planes of everlasting bliss. Your pact with that being allows you to experience
+the barest touch of the holy light that illuminates the multiverse.
+Being connected to such power can cause changes in your behavior and beliefs.
+You might find yourself driven to annihilate the undead, to defeat fiends, and
+to protect the innocent. At times, your heart might also be filled with a
+longing for the celestial realm of your patron, and a desire to wander that
+paradise for the rest of your days. But you know that your mission is among
+mortals for now, and that your pact binds you to bring light to the dark places
+of the world.
+
+EXPANDED SPELL LIST
+The Celestial lets you choose from an expanded list of spells when you learn a
+warlock spell. The following spells are added to the warlock spell list for you.
+
+BONUS CANTRIPS
+At 1st level, you learn the sacred flame and light cantrips. They count as
+warlock cantrips for you, but they don't count against your number of cantrips
+known.
+
+HEALING LIGHT
+At 1st level, you gain the ability to channel celestial energy to heal wounds.
+You have a pool of d6s that you spend to fuel this healing. The number of dice
+in the pool equals 1 + your warlock level.
+As a bonus action, you can heal one creature you can see within 60 feet of you,
+spending dice from the pool. The maximum number of dice you can spend at once
+equals your Charisma modifier (minimum of one die). Roll the dice you spend, add
+them together, and restore a number of hit points equal to the total.
+Your pool regains all expended dice when you finish a long rest.
+
+RADIANT SOUL
+Starting at 6th level, your link to the Celestial allows you to serve as a
+conduit for radiant energy. You have resistance to radiant damage, and when you
+cast a spell that deals radiant or fire damage, you can add your Charisma
+modifier to one radiant or fire damage roll of that spell against one of its
+targets.
+
+CELESTIAL RADIANCE
+Starting at 10th level, you gain temporary hit points whenever you finish a
+short or long rest. These temporary hit points equal your warlock level + your
+Charisma modifier. Additionally, choose up to five creatures you can see at the
+end of the rest. Those creatures each gain temporary hit points equal to half
+your warlock level + your Charisma modifier.
+
+SEARING VENGENCE
+Starting at 14th level, the radiant energy you channel allows you to resist
+death. When you have to make a death saving throw at the start of your turn, you
+can instead spring back to your feet with a burst of radiant energy. You regain
+hit points equal to half your hit point maximum, and then you stand up if you so
+choose. Each creature of your choice that is within 30 feet of you takes radiant
+damage equal to 2d8 + your Charisma modifier, and it is blinded until the end of
+the current turn.
+Once you use this feature, you can't use it again until you finish a long rest.
+
+SPELL SNIPER
+Prerequisite: The ability to cast at least one spell
+You have learned techniques to enhance your attacks with certain kinds of
+spells, gaining the following benefits:
+* When you cast a spell that requires you to make an attack roll, the spell's
+range is doubled.
+* Your ranged spell attacks ignore half cover and three-quarters cover.
+* You learn one cantrip that requires an attack roll. Choose the cantrip from
+the bard, cleric, druid, sorcerer, warlock, or wizard spell list. Your
+spellcasting ability for this cantrip depends on the spell list you chose from:
+Charisma for bard, sorcerer, or warlock; Wisdom for cleric or druid; or
+Intelligence for wizard.
+
+WAR CASTER
+Prerequisite: The ability to cast at least one spell
+You have practiced casting spells in the midst of combat, learning techniques
+that grant you the following benefits:
+* You have advantage on Constitution saving throws that you make to maintain
+your concentration on a spell when you take damage.
+* You can perform the somatic components of spells even when you have weapons or
+a shield in one or both hands.
+* When a hostile creature's movement provokes an opportunity attack from you,
+you can use your reaction to cast a spell at the creature, rather than making an
+opportunity attack. The spell must have a casting time of 1 action and must
+target only that creature.
+
+DESCRIPTION
+Age: 65			Height: 5'4"		Weight: 159 lb.
+Eyes: solid white	Skin: pale and glittery	Hair: platinum blonde
+
+BACKSTORY
+None
+
+ALLIES & ORGANISATIONS
+None
+
+TREASURE
+None
+
+SPELLCASTING - WARLOCK
+Spellcasting Ability Charisma   Spell Save DC 21   Spell Attack Bonus +15
+
+At will: alter self, levitate, speak with animals
+
+1/day each: crown of stars, glibness, psychic scream, true seeing
+
+Cantrips (at will): eldritch blast, friends, guidance, light, mage hand, mind
+sliver, sacred flame, shillelagh, shocking grasp, spare the dying
+
+1st-5th level (4/4 5th-level slots): armour of Agathys, blight, charm monster,
+charm person, counterspell, cure wounds, far step, flame strike, flaming sphere,
+hex, hunger of Hadar, suggestion, summon fey, wall of fire

@@ -1,0 +1,26 @@
+body {
+    background-color: #351431
+}
+
+h3, h4 {    
+    color: #8B0000;
+    font-family: "Aclonica", serif
+}
+
+#name {
+    color: #94958B
+}
+
+p, td {
+    color: grey;
+    font-family: "Philospher", serif
+}
+
+table {
+    width: 100%
+}
+
+td, th {
+    text-align: center;
+    padding: 0px 10px
+}

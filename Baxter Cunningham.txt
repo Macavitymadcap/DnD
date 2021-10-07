@@ -1,0 +1,39 @@
+
+BAXTER CUNNINGHAM
+Medium humanoid (Goliath), Lawful Good
+Armour Class 20 (plate armour, shield)
+Hit Points 164/164 (23d8+66)
+Speed 30 ft.
+STR	DEX	CON	INT	WIS	CHA
+18 (+4)	10 (+0)	17 (+3)	10 (+0)	20 (+5)	12 (+1)
+Saving ThrowsWisdom Saving Throw +11, 
+Skills Athletics +10, Insight +11, Medicine +11, Perception +11, Religion +6, 
+Senses passive Perception 21
+Languages Common, Giant
+Challenge 20 (25000 XP)
+
+Focused Casting. Taking damage can't break the sidekick's concentration on a
+spell.
+Powerful Build. The goliath counts as one size larger when determining its
+carrying capacity and the weight it can push, drag, or lift.
+Spellcasting. The Sidekick is a 20th-level spellcaster. Its spellcasting ability
+is Wisdom (spell save DC 19, +11 to hit with spell attacks). The Sidekick has
+the following Cleric spells prepared:
+
+Cantrips (at will): mending, resistance, spare the dying, toll the dead
+1st level (4/4 slots): cure wounds, healing word, sanctuary
+2nd level (3/3 slots): aid, lesser restoration, spiritual weapon
+3rd level (3/3 slots): reviviify, spirit guardians
+4th level (3/3 slots): death ward
+5th level (2/2 slots): greater restoration, mass cure wounds
+
+ACTIONS
+Spear. Melee Weapon Attack: ++10 to hit, reach 5 ft. or range 20/60 ft., one
+target. Hit: (1d6++4) piercing damage, (1d8++4) piercing damage. if used with
+two hands to make a melee attack
+
+REACTIONS
+Stone's Endurance (Recharges after a long or short rest). The goliath can focus
+itself to occasionally shrug off injury. When it takes damage, it can use its
+reaction to roll a d12. Add its Constitution modifier to the number rolled, and
+reduce the damage by that total.
