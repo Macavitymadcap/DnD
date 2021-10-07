@@ -807,47 +807,47 @@ def name(kind, option):
         (str): Full name based on parameters
     """
 
-    if kind is 'arabic':
+    if kind == 'arabic':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'arabic, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'arabic, male')}"
 
-    elif kind is 'celtic':
+    elif kind == 'celtic':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'celtic, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'celtic, male')}"
 
-    elif kind is 'chinese':
+    elif kind == 'chinese':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'chinese, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'chinese, male')}"
 
-    elif kind is 'dragonborn':
+    elif kind == 'dragonborn':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'dragonborn, female')}  {roll_range(names_df, d100(), 'dragonborn, clan')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'dragonborn, male')} {roll_range(names_df, d100(), 'dragonborn, clan')}"
 
-    elif kind is 'dwarf':
+    elif kind == 'dwarf':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'dwarf, female')} {roll_range(names_df, d100(), 'dwarf, clan')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'dwarf, male')} {roll_range(names_df, d100(), 'dwarf, clan')}"
 
-    elif kind is 'egyptian':
+    elif kind == 'egyptian':
 
         if option is 'female':
             return f"{roll_range(names_df, d100(), 'egyptian, female')}"
@@ -855,12 +855,12 @@ def name(kind, option):
         else:
             return f"{roll_range(names_df, d100(), 'egyptian, male')}"
 
-    elif kind is 'elf':
+    elif kind == 'elf':
 
         if option is 'female':
             return f"{roll_range(names_df, d100(), 'elf, female')} {roll_range(names_df, d100(), 'elf, child')} {roll_range(names_df, d100(), 'elf, family')}"
 
-    elif kind is 'english':
+    elif kind == 'english':
 
         if option is 'female':
             return f"{roll_range(names_df, d100(), 'english, female')}"
@@ -868,23 +868,23 @@ def name(kind, option):
         else:
             return f"{roll_range(names_df, d100(), 'english, male')}"
 
-    elif kind is 'french':
+    elif kind == 'french':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'french, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'french, male')}"
 
-    elif kind is 'german':
+    elif kind == 'german':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'german, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'german, male')}"
 
-    elif kind is 'gnome':
+    elif kind == 'gnome':
 
         if option is 'female':
             return f"{roll_range(names_df, d100(), 'gnome, female')} {roll_range(names_df, d100(), 'gnome, clan')}"
@@ -892,39 +892,39 @@ def name(kind, option):
         else:
             return f"{roll_range(names_df, d100(), 'gnome, male')} {roll_range(names_df, d100(), 'gnome, clan')}"
 
-    elif kind is 'greek':
+    elif kind == 'greek':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'greek, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'greek, male')}"
 
-    elif kind is 'halfling':
+    elif kind == 'halfling':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'halfling, female')} {roll_range(names_df, d100(), 'halfling, family')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'halfling, male')} {roll_range(names_df, d100(), 'halfling, family')}"
 
-    elif kind is 'half-orc':
+    elif kind == 'half-orc':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'half-orc, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'half-orc, male')}"
 
-    elif kind is 'indian':
+    elif kind == 'indian':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'indian, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'indian, male')}"
 
-    elif kind is 'japanese':
+    elif kind == 'japanese':
 
         if option is 'female':
             return f"{roll_range(names_df, d100(), 'japanese, female')}"
@@ -932,68 +932,68 @@ def name(kind, option):
         else:
             return f"{roll_range(names_df, d100(), 'japanese, male')}"
 
-    elif kind is 'mesoamerican':
+    elif kind == 'mesoamerican':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'mesoamerican, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'mesoamerican, male')}"
 
-    elif kind is 'niger-congo':
+    elif kind == 'niger-congo':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'niger-congo, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'niger-congo, male')}"
 
-    elif kind is 'norse':
+    elif kind == 'norse':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'norse, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'norse, male')}"
 
-    elif kind is 'polynesian':
+    elif kind == 'polynesian':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'polynesian, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'polynesian, male')}"
 
-    elif kind is 'roman':
+    elif kind == 'roman':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'roman, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'roman, male')}"
 
-    elif kind is 'slavic':
+    elif kind == 'slavic':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'slavic, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'slavic, male')}"
 
-    elif kind is 'spanish':
+    elif kind == 'spanish':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'spanish, female')}"
 
         else:
             return f"{roll_range(names_df, d100(), 'spanish, male')}"
 
-    elif kind is 'tiefling':
+    elif kind == 'tiefling':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'tiefling, female')}"
 
-        elif option is 'male':
+        elif option == 'male':
             return f"{roll_range(names_df, d100(), 'tiefling, male')}"
 
         else:
