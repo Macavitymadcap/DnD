@@ -35,14 +35,32 @@ Functions:
     treasure_tier4: Return roll on Individual Treasure: Challenge 17+
 """
 
-from DiceBox.dice import d4, d6, d8, d10, d12, d20, d100
-from DiceBox.dice import roll, roll_ability_scores, roll_advantage, roll_array, roll_crit, roll_disadvantage, roll_string
+from DiceBox.dice import d4
+from DiceBox.dice import d6
+from DiceBox.dice import d8
+from DiceBox.dice import d10
+from DiceBox.dice import d12
+from DiceBox.dice import d20
+from DiceBox.dice import d100
+from DiceBox.dice import roll
+from DiceBox.dice import roll_ability_scores
+from DiceBox.dice import roll_advantage
+from DiceBox.dice import roll_array
+from DiceBox.dice import roll_crit
+from DiceBox.dice import roll_disadvantage
+from DiceBox.dice import roll_string
 from DiceBox.roll_table import art_object
 from DiceBox.roll_table import check_range
 from DiceBox.roll_table import gemstone
-from DiceBox.roll_table import hoard_tier1, hoard_tier2, hoard_tier3, hoard_tier4
+from DiceBox.roll_table import hoard_tier1
+from DiceBox.roll_table import hoard_tier2
+from DiceBox.roll_table import hoard_tier3
+from DiceBox.roll_table import hoard_tier4
 from DiceBox.roll_table import magic_item
 from DiceBox.roll_table import name
 from DiceBox.roll_table import roll_range
-from DiceBox.roll_table import treasure_tier1, treasure_tier2, treasure_tier3, treasure_tier4
-
+from DiceBox.roll_table import treasure_tier1
+from DiceBox.roll_table import treasure_tier2
+from DiceBox.roll_table import treasure_tier3
+from DiceBox.roll_table import treasure_tier4
+from DiceBox.roll_table import wild_magic
