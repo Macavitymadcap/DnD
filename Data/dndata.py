@@ -39,7 +39,7 @@ beyond_1st_level_df = pd.read_csv('Data/Beyond 1st Level.csv', index_col='Level'
 names_df = pd.read_csv('Data/Xanathar Names.csv', index_col='d100', header=0)
 
 # wild_magic_df - From Player's Handbook
-wild_magic_df = pd.read_csv('Wild Magic Surge.csv', index_col='d100', header=0)
+wild_magic_df = pd.read_csv('Data/Wild Magic Surge.csv', index_col='d100', header=0)
 
 #magic item tables from Dungeon Master's Gude
 magic_items_a = pd.read_csv('Data/Magic Item Table A.csv', index_col='d100', header=0)
