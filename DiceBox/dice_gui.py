@@ -73,85 +73,85 @@ class DiceRoller:
         self.expression = ""
         self.master.configure(background="#1C2350")
         self.master.title("Dice Roller")
-        self.master.geometry("410x383")
+        self.master.geometry("290x300")
 
         # GUI widgets.
         self.roll_query = StringVar()
         self.expression_field = Entry(self.master, font="piboto 20", justify="right",
                                       textvariable=self.roll_query, fg="white", bg="#1C2350", width=17)
         self.button_1 = Button(self.master, font="piboto 10", text="1", fg="white",
-                               bg="#14668C", command=lambda: self.press(1), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(1), height=2, width=6)
         self.button_2 = Button(self.master, font="piboto 10", text="2", fg="white",
-                               bg="#14668C", command=lambda: self.press(2), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(2), height=2, width=6)
         self.button_3 = Button(self.master, font="piboto 10", text="3", fg="white",
-                               bg="#14668C", command=lambda: self.press(3), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(3), height=2, width=6)
         self.button_4 = Button(self.master, font="piboto 10", text="4", fg="white",
-                               bg="#14668C", command=lambda: self.press(4), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(4), height=2, width=6)
         self.button_5 = Button(self.master, font="piboto 10", text="5", fg="white",
-                               bg="#14668C", command=lambda: self.press(5), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(5), height=2, width=6)
         self.button_6 = Button(self.master, font="piboto 10", text="6", fg="white",
-                               bg="#14668C", command=lambda: self.press(6), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(6), height=2, width=6)
         self.button_7 = Button(self.master, font="piboto 10", text="7", fg="white",
-                               bg="#14668C", command=lambda: self.press(7), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(7), height=2, width=6)
         self.button_8 = Button(self.master, font="piboto 10", text="8", fg="white",
-                               bg="#14668C", command=lambda: self.press(8), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(8), height=2, width=6)
         self.button_9 = Button(self.master, font="piboto 10", text="9", fg="white",
-                               bg="#14668C", command=lambda: self.press(9), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(9), height=2, width=6)
         self.button_0 = Button(self.master, font="piboto 10", text="0", fg="white",
-                               bg="#14668C", command=lambda: self.press(0), height=2, width=4)
+                               bg="#14668C", command=lambda: self.press(0), height=2, width=6)
         self.button_plus = Button(self.master, font="piboto 10", text="+", fg="white",
                                   bg="#62A3B2", command=lambda: self.press("+"), height=2,
-                                  width=4)
+                                  width=6)
         self.button_divide = Button(self.master, font="piboto 10", text="/", fg="white",
                                     bg="#62A3B2", command=lambda: self.press("/"), height=2,
-                                    width=4)
+                                    width=6)
         self.button_minus = Button(self.master, font="piboto 10", text="-", fg="white",
                                    bg="#62A3B2", command=lambda: self.press("-"), height=2,
-                                   width=4)
+                                   width=6)
         self.button_multiply = Button(self.master, font="piboto 10", text="*", fg="white",
                                    bg="#62A3B2", command=lambda: self.press("*"), height=2,
-                                   width=4)
+                                   width=6)
         self.button_d4 = Button(self.master, font="piboto 10", text="d4", fg="white",
                                 bg="#20819C", command=lambda: self.press("d4"), height=2,
-                                width=4)
+                                width=6)
         self.button_d6 = Button(self.master, font="piboto 10", text="d6", fg="white",
                                 bg="#20819C", command=lambda: self.press("d6"), height=2,
-                                width=4)
+                                width=6)
         self.button_d8 = Button(self.master, font="piboto 10", text="d8", fg="white",
                                 bg="#20819C", command=lambda: self.press("d8"), height=2,
-                                width=4)
+                                width=6)
         self.button_d10 = Button(self.master, font="piboto 10", text="d10", fg="white",
                                  bg="#20819C", command=lambda: self.press("d10"), height=2,
-                                 width=4)
+                                 width=6)
         self.button_d12 = Button(self.master, font="piboto 10", text="d12", fg="white",
                                  bg="#20819C", command=lambda: self.press("d12"), height=2,
-                                 width=4)
+                                 width=6)
         self.button_d20 = Button(self.master, font="piboto 10", text="d20", fg="white",
                                  bg="#20819C", command=lambda: self.press("d20"), height=2,
-                                 width=4)
+                                 width=6)
         self.button_d100 = Button(self.master, font="piboto 10", text="d100", fg="white",
                                   bg="#20819C", command=lambda: self.press("d100"), height=2,
-                                  width=4)
+                                  width=6)
         self.button_roll = Button(self.master, font="piboto 10", text="Roll", fg="white",
-                                  bg="#2D3B6B", command=self.roll_press, height=2, width=4)
+                                  bg="#2D3B6B", command=self.roll_press, height=2, width=6)
         self.button_roll_advan = Button(self.master, font="piboto 10", text="Advan",
                                         fg="white", bg="#2D3B6B", command=self.roll_advan_press,
-                                        height=2, width=4)
+                                        height=2, width=6)
         self.button_roll_disad = Button(self.master, font="piboto 10", text="Disad",
                                         fg="white", bg="#2D3B6B", command=self.roll_disad_press,
-                                        height=2, width=4)
+                                        height=2, width=6)
         self.button_roll_array = Button(self.master, font="piboto 10", text="Array",
                                         fg="white", bg="#2D3B6B",
                                         command=self.roll_array_press, height=2,
-                                        width=4)
+                                        width=6)
         self.button_roll_crit =Button(self.master, font="piboto 10", text="Crit",
                                       fg="white", bg="#2D3B6B", 
                                       command=self.roll_crit_press, height=2,
-                                      width=4)
+                                      width=6)
         self.button_roll_scores =Button(self.master, font="piboto 10", text="Scores",
                                       fg="white", bg="#2D3B6B", 
                                       command=self.roll_scores_press, height=2,
-                                      width=4)
+                                      width=6)
         self.button_clear = Button(self.master, font="piboto 10", text="Clear", fg="white",
                                    bg="#1C2350", command=self.clear_press, height=2, 
                                    width=20)
