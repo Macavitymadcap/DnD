@@ -143,7 +143,7 @@ def roll_crit(dice, modifier=None):
     if modifier is None:
         return roll_string(dice)
 
-    elif modifier[0] is "+":
+    elif modifier[0] == "+":
         return (roll_string(dice) * 2) + int(modifier[1:])
 
     else:
@@ -158,10 +158,7 @@ def roll_advantage(string):
 
     Returns:
         roll_list: A list of rolls sorted from highest [0] to lowest [1]"""
-    roll_list = []
-
-    for i in range(2):
-        roll_list.append(roll_string(string))
+    roll_list = [roll_string(string) for i in range(2)]
 
     roll_list.sort(reverse=True)
 
@@ -176,7 +173,7 @@ def roll_disadvantage(string):
 
     Returns:
         roll_list: A list of rolls sorted from lowest [0] to highest [1]"""
-    roll_list = roll_advantage(string)
+    roll_list = [roll_string(string) for i in range(2)]
     roll_list.sort()
 
     return roll_list
