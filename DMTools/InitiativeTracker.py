@@ -60,7 +60,7 @@ class Combatant():
 
     def __str__(self):
         """Return the instance as a string of their key stats."""
-        if len(self.conditions) is 0:
+        if len(self.conditions) == 0:
             conditions = "None"
 
         else:
