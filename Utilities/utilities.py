@@ -101,7 +101,7 @@ def search_monsters(monster):
     
     Returns:
         (str): Monster stat block if found, else error message"""
-    with open('DnD/SRDjson/Monster Manual.json') as file:
+    with open('SRDjson\Monster Manual.json') as file:
         monster_manual = json.loads(file.read())
     
     for item in monster_manual:
