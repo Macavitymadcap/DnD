@@ -1,19 +1,18 @@
 <!doctype html>
-<html>
-    <head>
-        <title>Dangeons & Dragons</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
-    </head>
-    <body>
-        <h1>Dangeons & Dragons</h1>
-        <p>Welcome to the home page adventurer!</p> 
-        <p>This is a webapp filled with tools for running 5th edition Dungeons & Dragons.</p>
-        <p>It has been made with css, html, javascript and python, all hosted as a flask web app.</p>
-        <p>Try out the following links to aid you in your quest:</p>
-        <ul>
-            <li><a href="{{ url_for('dice_roller') }}">Dice Roller</a> - Roll a given string in multiple ways.</li>
-            <li>Stat Block</a> - add "/statblock/monster_name" to the url to launch that monster's statblock.</li>
-        </ul>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
+{% endblock %}
+{% block content %}
+    <h1>Dangeons & Dragons</h1>
+    <p>Welcome to the home page adventurer!</p> 
+    <p>This is a webapp filled with tools for running 5th edition Dungeons & Dragons.</p>
+    <p>It has been made with css, html, javascript and python, all hosted as a flask web app.</p>
+    <p>Try out the following links to aid you in your quest:</p>
+    <ul>
+        <li><a href="{{ url_for('dice_roller') }}">Dice Roller</a> - Roll a given string in multiple ways.</li>
+        <li>Stat Block</a> - add "/statblock/monster_name" to the url to launch that monster's statblock.</li>
+    </ul>
+{% endblock %}
