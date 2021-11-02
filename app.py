@@ -14,7 +14,7 @@ def home():
 
 @app.route("/sheet")
 def character_sheet():
-    """Return html of rendered chatacter sheet for given character.
+    """Return html of rendered character sheet for given character.
     
     Args:
         character(obj): Instance of the PlayerCharacter class"""
@@ -42,7 +42,6 @@ def stat_block(creature):
             return render_template("statblock.html", stats=monster)
         
     return render_template("statblock.html")
-
 
 @app.route("/sheet_<character>")
 def sheet(character):
