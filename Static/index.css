@@ -9,3 +9,6 @@ p, li {
     color: grey;
     font-family: "Philosopher", serif
 }
+a:hover {
+    color:#8B0000;
+}
