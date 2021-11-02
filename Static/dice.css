@@ -1,0 +1,41 @@
+body {
+    background-color: #351431;
+}
+button {
+    background-color: #8B0000; 
+    color: grey;
+    font-family: "Aclonica", serif;
+    text-align: center;
+    display: inline-block;
+  }
+h1 {    
+    color: #8B0000;
+    font-family: "Aclonica", serif;
+}
+label {
+    color: grey;
+    font-family: "Aclonica", serif;
+}
+.dice-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.dice-box > div {
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+#help_text {
+    display: none;
+    color: grey;
+    font-family: "Philospher", serif;
+}
+#roll_string {
+    background-color: #8B0000; 
+    color: grey;
+    font-family: "Philosopher", serif;
+}
+#result {
+    color: grey;
+    font-family: "Aclonica", serif
+}

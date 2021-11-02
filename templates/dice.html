@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>Dice Roller</title>
+        <link rel="stylesheet" href="dice.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
+        <script src="dice.js"></script>
+        <script>
+            function hideHelp() {
+                var x = document.getElementById("help_text");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="dice-box">
+            <div><label for="roll_string">String:</label></div>
+            <div><input type="text" id="roll_string"></div>
+        </div>
+        <div class="dice-box">
+            <div><label for="result">Result:</label></div>
+            <div id="result"></div>
+        </div>
+        <div class="dice-box">
+            <div><button onclick="document.getElementById('result').innerHTML = rollString(document.getElementById('roll_string').value)">Standard</option></div>
+            <div><button onclick="document.getElementById('result').innerHTML = rollCrit(document.getElementById('roll_string').value)">Critical</option></div> 
+        </div>
+        <div class="dice-box">   
+            <div><button onclick="document.getElementById('result').innerHTML = rollAdvan(document.getElementById('roll_string').value)">Advantage</option></div>
+            <div><button onclick="document.getElementById('result').innerHTML = rollDisad(document.getElementById('roll_string').value)">Disadvantage</option></div>
+        </div>
+        <div class="dice-box">    
+            <div><button onclick="document.getElementById('result').innerHTML = rollAbilityScores()">Abilities</option></div>
+            <div><button id="help_button" onclick="hideHelp()">Help</button></div>
+            <div id="help_text">
+                <p>Type a string of the following format, with or without spaces:
+                    <blockquote>x dy ? z</blockquote>
+                    where:
+                    <ul>
+                        <li><b>x</b> is the optional number of dice to be rolled, if none is given 1 of the specified dice is rolled.</li>
+                        <li><b>d<i>y</i></b> is the type of die to be rolled, where <i>y</i> is the number of faces on the die.</li>
+                        <li><b>?</b> is an optional operator for addition (+); subtraction (-); multiplication (*, x or X) or division (/ or ÷), used to apply a modifier to the roll.</li>
+                        <li><b>z</b> is an optional modifier, which is applied to the roll with a given operator.</li>
+                    </ul>
+                    Press one of the following buttons to roll the string in a particular way:
+                    <ul>
+                        <li><b>Standard</b> Roll the string as standard and return the total.</li>
+                        <li><b>Critical</b> Roll the dice of the string twice then return the total with modifier applied.</li>
+                        <li><b>Advantage</b> Roll the string twice and return both listed highest to lowest.</li>
+                        <li><b>Disadvantage</b> Roll the string twice and return both listed lowest to highest.</li>
+                        <li><b>Abilities</b> Roll 4d6 - the lowest 6 times and return an array ordered highest to lowest.</li>
+                    </ul></p>
+            </div>
+        </div>
+    </body>
+</html>
