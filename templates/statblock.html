@@ -1,104 +1,103 @@
 <!doctype html>
-<html>
-    <head>
+{% extends 'base.html' %}
+{% block title %}{{stats['name']}}{% endblock %}
+{% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='statblock.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
-        <title>{{stats['name']}} - Stat Block</title>
-    </head>
-    <body>
-        <h3>{{stats['name'].upper()}} </h3>
-        <p><i>{{stats['size'].capitalize()}}, {{stats['monster_type']}}, {{stats['alignment']}}</i></p>
+{% endblock %}
+{% block content %}
+    <h3>{{stats['name'].upper()}} </h3>
+    <p><i>{{stats['size'].capitalize()}}, {{stats['monster_type']}}, {{stats['alignment']}}</i></p>
+    <hr>
+    <p><b id="name">Armour Class</b> {{stats['armour_class']}} ({{stats['armour_type']}})</p>
+    <p><b id="name">Hit Points</b> {{stats['average_hp']}} <b id="name">Hit Dice</b> {{stats['hit_dice']}}</p>
+    <p><b id="name">Speed</b> {{stats['speed']}}</p>
+    <hr>
+    <table>
+        <tr>
+            <th id="name">STR</th>
+            <th id="name">DEX</th>
+            <th id="name">CON</th>
+            <th id="name">INT</th>
+            <th id="name">WIS</th>
+            <th id="name">CHA</th>
+        </tr>
+        <tr>
+            <td>{{stats['abilities']['strength']}}</td>
+            <td>{{stats['abilities']['dexterity']}}</td>
+            <td>{{stats['abilities']['constitution']}}</td>
+            <td>{{stats['abilities']['intelligence']}}</td>
+            <td>{{stats['abilities']['wisdom']}}</td>
+            <td>{{stats['abilities']['charisma']}}</td>
+        </tr>
+        <tr>
+            <td>{{"+" if stats['abilities']['strength_mod'] >= 0}}{{stats['abilities']['strength_mod']}}</td>
+            <td>{{"+" if stats['abilities']['dexterity_mod'] >= 0}}{{stats['abilities']['dexterity_mod']}}</td>
+            <td>{{"+" if stats['abilities']['constitution_mod'] >= 0}}{{stats['abilities']['constitution_mod']}}</td>
+            <td>{{"+" if stats['abilities']['intelligence_mod'] >= 0}}{{stats['abilities']['intelligence_mod']}}</td>
+            <td>{{"+" if stats['abilities']['wisdom_mod'] >= 0}}{{stats['abilities']['wisdom_mod']}}</td>
+            <td>{{"+" if stats['abilities']['charisma_mod'] >= 0}}{{stats['abilities']['charisma_mod']}}</td>
+        </tr>
+    </table>
+    <hr>
+    {% if stats['saves'] != None %}
+        <p><b id="name">Saves</b> {{stats['saves']|join(", ")}}</p id="name">
+    {% endif %}
+    {% if stats['skills'] != None %}
+        <p><b id="name">Skills</b> {{stats['skills']|join(", ")}}</p>
+    {% endif %}
+    {% if stats['damage_vulnerabilities'] != None %}
+        <p><b id="name">Damage Vulnerabilities</b> {{stats['damage_vulnerabilities']}}</p>
+    {% endif %}
+    {% if stats['damage_resistances'] != None %}
+        <p><b id="name">Damage Resistances</b> {{stats['damage_resistances']}}</p>
+    {% endif %}
+    {% if stats['damage_immunities'] != None %}
+        <p><b id="name">Damage Immunities</b> {{stats['damage_immunities']}}</p>
+    {% endif %}
+    {% if stats['condition_immunities'] != None %}
+        <p><b id="name">Condition Immunities</b> {{stats['condition_immunities']}}</p>
+    {% endif %}
+    <p><b id="name">Senses</b> {{stats['senses']}}</p>
+    <p><b id="name">Languages</b> {{stats['languages'] if stats['languages'] != None else "-"}}</p>
+    <p><b id="name">Challenge</b> {{stats['challenge_rating']}} (<i>{{stats['experience_points']}} xp</i>)</p>
+    <hr>
+    {% if stats['special_traits'] != None %}
+        {% for trait in stats['special_traits'] %}
+            <p><b id="name"><i>{{trait['name']}}.</i></b> {{trait['description']}}</p>
+        {% endfor %}
+    {% endif %}
+    <hr>
+    {% if stats['actions'] != None %}
+        <h4>ACTIONS</h4>
+        {% for action in stats['actions'] %}
+            {% if action['modifier'] %}
+                <p><b id="name"><i>{{action['name']}}.</b> {{action['attack_type']}}:</i> {{action['modifier']}} to hit, {{action['reach_range']}}, {{action['target']}}<i> Hit:</i> {{action['damage_roll'] if action['damage_roll'] != None}} {{action['damage_type'] if action['damage_roll'] != None}} {{action['x_damage_roll'] if action['x_damage_roll'] != None}} damage {{action['text'] if action['text'] != None}}</p>
+            {% elif action['save_DC'] %}
+                <p><b id="name"><i>{{action['name']}}.</b> DC {{action['save_DC']}} {{action['saving_throw']}} Saving Throw,</i>{{action['reach_range']}}, {{action['taget']}} <i>Hit:</i> {{action['damage_roll'] if action['damage_roll'] != None}} {{action['damage_type'] if action['damage_roll'] != None}} {{action['x_damage_roll'] if action['x_damage_roll'] != None}} damage {{action['text'] if action['text'] != None}}</p>
+            {% elif action['description'] %}
+                <p><i><b id="name">{{action['name']}}{{" (" if action['cost_recharge'] else "."}}{{action['cost_recharge'] if action['cost_recharge']}}{{")." if action['cost_recharge']}}</b></i> {{action['description']}}</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if stats['reactions'] != None %}
         <hr>
-        <p><b id="name">Armour Class</b> {{stats['armour_class']}} ({{stats['armour_type']}})</p>
-        <p><b id="name">Hit Points</b> {{stats['average_hp']}} <b id="name">Hit Dice</b> {{stats['hit_dice']}}</p>
-        <p><b id="name">Speed</b> {{stats['speed']}}</p>
-        <hr>
-        <table>
-            <tr>
-                <th id="name">STR</th>
-                <th id="name">DEX</th>
-                <th id="name">CON</th>
-                <th id="name">INT</th>
-                <th id="name">WIS</th>
-                <th id="name">CHA</th>
-            </tr>
-            <tr>
-                <td>{{stats['abilities']['strength']}}</td>
-                <td>{{stats['abilities']['dexterity']}}</td>
-                <td>{{stats['abilities']['constitution']}}</td>
-                <td>{{stats['abilities']['intelligence']}}</td>
-                <td>{{stats['abilities']['wisdom']}}</td>
-                <td>{{stats['abilities']['charisma']}}</td>
-            </tr>
-            <tr>
-                <td>{{"+" if stats['abilities']['strength_mod'] >= 0}}{{stats['abilities']['strength_mod']}}</td>
-                <td>{{"+" if stats['abilities']['dexterity_mod'] >= 0}}{{stats['abilities']['dexterity_mod']}}</td>
-                <td>{{"+" if stats['abilities']['constitution_mod'] >= 0}}{{stats['abilities']['constitution_mod']}}</td>
-                <td>{{"+" if stats['abilities']['intelligence_mod'] >= 0}}{{stats['abilities']['intelligence_mod']}}</td>
-                <td>{{"+" if stats['abilities']['wisdom_mod'] >= 0}}{{stats['abilities']['wisdom_mod']}}</td>
-                <td>{{"+" if stats['abilities']['charisma_mod'] >= 0}}{{stats['abilities']['charisma_mod']}}</td>
-            </tr>
-        </table>
-        <hr>
-        {% if stats['saves'] != None %}
-            <p><b id="name">Saves</b> {{stats['saves']|join(", ")}}</p id="name">
-        {% endif %}
-        {% if stats['skills'] != None %}
-            <p><b id="name">Skills</b> {{stats['skills']|join(", ")}}</p>
-        {% endif %}
-        {% if stats['damage_vulnerabilities'] != None %}
-            <p><b id="name">Damage Vulnerabilities</b> {{stats['damage_vulnerabilities']}}</p>
-        {% endif %}
-        {% if stats['damage_resistances'] != None %}
-            <p><b id="name">Damage Resistances</b> {{stats['damage_resistances']}}</p>
-        {% endif %}
-        {% if stats['damage_immunities'] != None %}
-            <p><b id="name">Damage Immunities</b> {{stats['damage_immunities']}}</p>
-        {% endif %}
-        {% if stats['condition_immunities'] != None %}
-            <p><b id="name">Condition Immunities</b> {{stats['condition_immunities']}}</p>
-        {% endif %}
-        <p><b id="name">Senses</b> {{stats['senses']}}</p>
-        <p><b id="name">Languages</b> {{stats['languages'] if stats['languages'] != None else "-"}}</p>
-        <p><b id="name">Challenge</b> {{stats['challenge_rating']}} (<i>{{stats['experience_points']}} xp</i>)</p>
-        <hr>
-        {% if stats['special_traits'] != None %}
-            {% for trait in stats['special_traits'] %}
-                <p><b id="name"><i>{{trait['name']}}.</i></b> {{trait['description']}}</p>
-            {% endfor %}
-        {% endif %}
-        <hr>
-        {% if stats['actions'] != None %}
-            <h4>ACTIONS</h4>
-            {% for action in stats['actions'] %}
-                {% if action['modifier'] %}
-                    <p><b id="name"><i>{{action['name']}}.</b> {{action['attack_type']}}:</i> {{action['modifier']}} to hit, {{action['reach_range']}}, {{action['target']}}<i> Hit:</i> {{action['damage_roll'] if action['damage_roll'] != None}} {{action['damage_type'] if action['damage_roll'] != None}} {{action['x_damage_roll'] if action['x_damage_roll'] != None}} damage {{action['text'] if action['text'] != None}}</p>
-                {% elif action['save_DC'] %}
-                    <p><b id="name"><i>{{action['name']}}.</b> DC {{action['save_DC']}} {{action['saving_throw']}} Saving Throw,</i>{{action['reach_range']}}, {{action['taget']}} <i>Hit:</i> {{action['damage_roll'] if action['damage_roll'] != None}} {{action['damage_type'] if action['damage_roll'] != None}} {{action['x_damage_roll'] if action['x_damage_roll'] != None}} damage {{action['text'] if action['text'] != None}}</p>
-                {% elif action['description'] %}
-                    <p><i><b id="name">{{action['name']}}{{" (" if action['cost_recharge'] else "."}}{{action['cost_recharge'] if action['cost_recharge']}}{{")." if action['cost_recharge']}}</b></i> {{action['description']}}</p>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-        {% if stats['reactions'] != None %}
-            <hr>
-            <h4>REACTIONS</h4>
-            {% for reaction in stats.reactions %}
-            <p><b id="name">{{reaction['name']}}.</b> {{reaction['description']}}</p>
-            {% endfor %}
-        {% endif %}
-        {% if stats['legendary_actions'] != None %}
-            <h4>LEGENDARY ACTIONS</h4>
-            <p>{{stats['legendary_actions']['text']}}</p>
-            {% for action in stats['legendary_actions']['actions'] %}
-                {% if action['modifier'] %}
-                    <p><b id="name"><i>{{action['name']}}.</b> {{action['attack_type']}}:</i> {{action['modifier']}} to hit, {{action['reach_range']}}, {{action['target']}}<i> Hit:</i> {{action['damage_roll'] if action['damage_roll'] != None}} {{action['damage_type'] if action['damage_roll'] != None}} {{action['x_damage_roll'] if action['x_damage_roll'] != None}} damage {{action['text'] if action['text'] != None}}</p>
-                {% elif action['save_DC'] %}
-                    <p><b id="name"><i>{{action['name']}}.</b> DC {{action['save_DC']}} {{action['saving_throw']}} Saving Throw,</i>{{action['reach_range']}}, {{action['taget']}} <i>Hit:</i> {{action['damage_roll'] if action['damage_roll'] != None}} {{action['damage_type'] if action['damage_roll'] != None}} {{action['x_damage_roll'] if action['x_damage_roll'] != None}} damage {{action['text'] if action['text'] != None}}</p>
-                {% elif action['description'] %}
-                    <p><i><b id="name">{{action['name']}}{{" (" if action['cost_recharge'] else "."}}{{action['cost_recharge'] if action['cost_recharge']}}{{")." if action['cost_recharge']}}</b></i> {{action['description']}}</p>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    </body>
-</html>
+        <h4>REACTIONS</h4>
+        {% for reaction in stats.reactions %}
+        <p><b id="name">{{reaction['name']}}.</b> {{reaction['description']}}</p>
+        {% endfor %}
+    {% endif %}
+    {% if stats['legendary_actions'] != None %}
+        <h4>LEGENDARY ACTIONS</h4>
+        <p>{{stats['legendary_actions']['text']}}</p>
+        {% for action in stats['legendary_actions']['actions'] %}
+            {% if action['modifier'] %}
+                <p><b id="name"><i>{{action['name']}}.</b> {{action['attack_type']}}:</i> {{action['modifier']}} to hit, {{action['reach_range']}}, {{action['target']}}<i> Hit:</i> {{action['damage_roll'] if action['damage_roll'] != None}} {{action['damage_type'] if action['damage_roll'] != None}} {{action['x_damage_roll'] if action['x_damage_roll'] != None}} damage {{action['text'] if action['text'] != None}}</p>
+            {% elif action['save_DC'] %}
+                <p><b id="name"><i>{{action['name']}}.</b> DC {{action['save_DC']}} {{action['saving_throw']}} Saving Throw,</i>{{action['reach_range']}}, {{action['taget']}} <i>Hit:</i> {{action['damage_roll'] if action['damage_roll'] != None}} {{action['damage_type'] if action['damage_roll'] != None}} {{action['x_damage_roll'] if action['x_damage_roll'] != None}} damage {{action['text'] if action['text'] != None}}</p>
+            {% elif action['description'] %}
+                <p><i><b id="name">{{action['name']}}{{" (" if action['cost_recharge'] else "."}}{{action['cost_recharge'] if action['cost_recharge']}}{{")." if action['cost_recharge']}}</b></i> {{action['description']}}</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

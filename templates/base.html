@@ -17,18 +17,11 @@
     </script>
 </head>
 <div class="topnav" id="myTopnav">
-    <a href="{{ url_for('home') }}" class="active">Home</a>
+    <a href="{{ url_for('home') }}">Home</a>
     <a href="{{ url_for('dice_roller') }}">Dice</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 </div>
 <body>
     <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-        {% block footer %}
-        &copy; Copyright 2021 by Daniel Kiernan</a>.
-        {% endblock %}
-    </div>
 </body>
 </html>
