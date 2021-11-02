@@ -4,6 +4,7 @@
         <title>Dangeons & Dragons</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
+
     </head>
     <body>
         <h1>Dangeons & Dragons</h1>
@@ -13,7 +14,7 @@
         <p>Try out the following links to aid you in your quest:</p>
         <ul>
             <li><a href="{{ url_for('dice_roller') }}">Dice Roller</a> - Roll a given string in multiple ways.</li>
-            <li>Statblock Finder - add /statblock/monster_name to the index url to load a monster stat block.</li>
+            <li> <input type="text" id="monster"><a href="{{ url_for('stat_block(document.getElementById('monster').value)') }}">Search Monsters</a> - Type a monster name into the following input and click to launch it's Statblock.</li>
         </ul>
     </body>
 </html>
