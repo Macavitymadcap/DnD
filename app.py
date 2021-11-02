@@ -20,6 +20,11 @@ def character_sheet():
         character(obj): Instance of the PlayerCharacter class"""
     return render_template("sheet.html")
 
+@app.route("/dice")
+def dice_roller():
+    """Return html of dice roller page."""
+    return render_template("dice.html")
+
 
 @app.route("/mm_<monster>")
 def search_json_monsters(monster):
