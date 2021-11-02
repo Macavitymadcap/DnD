@@ -4,7 +4,7 @@
         <title>Dice Roller</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='dice.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
-        <script src="Static\dice.js"></script>
+        <script src="{{ url_for('static', filename='dice.js') }}"></script>
         <script>
             function hideHelp() {
                 var x = document.getElementById("help_text");
