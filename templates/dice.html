@@ -36,24 +36,25 @@
         <div class="dice-box">    
             <div><button onclick="document.getElementById('result').innerHTML = rollAbilityScores()">Abilities</option></div>
             <div><button id="help_button" onclick="hideHelp()">Help</button></div>
-            <div id="help_text">
-                <p>Type a string of the following format, with or without spaces:
-                    <blockquote>x dy ? z</blockquote>
-                    where:
-                    <ul>
-                        <li><b>x</b> is the optional number of dice to be rolled, if none is given 1 of the specified dice is rolled.</li>
-                        <li><b>d<i>y</i></b> is the type of die to be rolled, where <i>y</i> is the number of faces on the die.</li>
-                        <li><b>?</b> is an optional operator for addition (+); subtraction (-); multiplication (*, x or X) or division (/ or ÷), used to apply a modifier to the roll.</li>
-                        <li><b>z</b> is an optional modifier, which is applied to the roll with a given operator.</li>
-                    </ul>
-                    Press one of the following buttons to roll the string in a particular way:
-                    <ul>
-                        <li><b>Standard</b> Roll the string as standard and return the total.</li>
-                        <li><b>Critical</b> Roll the dice of the string twice then return the total with modifier applied.</li>
-                        <li><b>Advantage</b> Roll the string twice and return both listed highest to lowest.</li>
-                        <li><b>Disadvantage</b> Roll the string twice and return both listed lowest to highest.</li>
-                        <li><b>Abilities</b> Roll 4d6 - the lowest 6 times and return an array ordered highest to lowest.</li>
-                    </ul></p>
+        </div>
+        <div id="help_text">
+            <p>Type a string of the following format, with or without spaces:
+                <blockquote>x dy ? z</blockquote>
+                where:
+                <ul>
+                    <li><b>x</b> is the optional number of dice to be rolled, if none is given 1 of the specified dice is rolled.</li>
+                    <li><b>d<i>y</i></b> is the type of die to be rolled, where <i>y</i> is the number of faces on the die.</li>
+                    <li><b>?</b> is an optional operator for addition (+); subtraction (-); multiplication (*, x or X) or division (/ or ÷), used to apply a modifier to the roll.</li>
+                    <li><b>z</b> is an optional modifier, which is applied to the roll with a given operator.</li>
+                </ul>
+                Press one of the following buttons to roll the string in a particular way:
+                <ul>
+                    <li><b>Standard</b> Roll the string as standard and return the total.</li>
+                    <li><b>Critical</b> Roll the dice of the string twice then return the total with modifier applied.</li>
+                    <li><b>Advantage</b> Roll the string twice and return both listed highest to lowest.</li>
+                    <li><b>Disadvantage</b> Roll the string twice and return both listed lowest to highest.</li>
+                    <li><b>Abilities</b> Roll 4d6 - the lowest 6 times and return an array ordered highest to lowest.</li>
+                </ul></p>
             </div>
         </div>
     </body>
