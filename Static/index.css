@@ -1,0 +1,11 @@
+body {
+    background-color: #351431;
+}
+h1 {    
+    color: #8B0000;
+    font-family: "Aclonica", serif;
+}
+p, li {
+    color: grey;
+    font-family: "Philosopher", serif
+}
