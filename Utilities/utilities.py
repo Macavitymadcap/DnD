@@ -21,7 +21,7 @@ def format_num(num):
     if num == 11 or num == 12 or num == 13:    
         return f"{num}th"
 
-    elif num is 1 or num_string[-1] == "1":
+    elif num == 1 or num_string[-1] == "1":
         return f"{num}st"
     
     elif num_string[-1] == "2":
