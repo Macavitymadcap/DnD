@@ -7,26 +7,8 @@
     <script src="{{ url_for('static', filename='dice.js') }}"></script>
     <script>
         // Display dropdown menus for roll buttons
-        function strRoll() {
-            document.getElementById("strDropdown").classList.toggle("show");
-        }
-        function dexRoll() {
-            document.getElementById("dexDropdown").classList.toggle("show");
-        }
-        function conRoll() {
-            document.getElementById("conDropdown").classList.toggle("show");
-        }
-        function intRoll() {
-            document.getElementById("intDropdown").classList.toggle("show");
-        }
-        function wisRoll() {
-            document.getElementById("wisDropdown").classList.toggle("show");
-        }
-        function chaRoll() {
-            document.getElementById("chaDropdown").classList.toggle("show");
-        }
-        function damageHeal() {
-            document.getElementById("damDropdown").classList.toggle("show");
+        function showDropDown(string) {
+            document.getElementById(string).classList.toggle("show");
         }
         // Close a dropdown if the user clicks outside of it
         window.onclick = function(event) {
@@ -53,8 +35,8 @@
             <td><b id="name">Hit Points</b> <span id="hit_points">{{stats['average_hp']}}</span></td> 
             <td><input type="number" id="mod_hp">
                 <div class="dropdown" id="damage_heal">
-                    <button onclick="damageHeal()" class="dropbtn">+/-</button>
-                    <div id="damDropdown" class="dropdown-co    ntent">
+                    <button onclick="showDropDown('damDropdown')" class="dropbtn">+/-</button>
+                    <div id="damDropdown" class="dropdown-content">
                         <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) + parseInt(document.getElementById('mod_hp').value)">Heal</button>
                         <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) - parseInt(document.getElementById('mod_hp').value)">Damage</button>
                     </div>
@@ -69,7 +51,7 @@
     <table class="abilities_table">
         <tr>
             <td><div class="dropdown">
-                    <button onclick="strRoll()" class="dropbtn">STR</button>
+                    <button onclick="showDropDown('strDropdown')" class="dropbtn">STR</button>
                     <div id="strDropdown" class="dropdown-content">
                     <button onclick="document.getElementById('str_roll').innerHTML = rollString('d20' + document.getElementById('str_mod').innerHTML)">Roll</button>
                     <button onclick="document.getElementById('str_roll').innerHTML = rollAdvan('d20' + document.getElementById('str_mod').innerHTML)">Advn</button>
@@ -78,7 +60,7 @@
               </div>
             </td>
             <td><div class="dropdown">
-                    <button onclick="dexRoll()" class="dropbtn">DEX</button>
+                    <button onclick="showDropDown('dexDropdown')" class="dropbtn">DEX</button>
                     <div id="dexDropdown" class="dropdown-content">
                     <button onclick="document.getElementById('dex_roll').innerHTML = rollString('d20' + document.getElementById('dex_mod').innerHTML)">Roll</button>
                     <button onclick="document.getElementById('dex_roll').innerHTML = rollAdvan('d20' + document.getElementById('dex_mod').innerHTML)">Advn</button>
@@ -87,7 +69,7 @@
               </div>
             </td>
             <td><div class="dropdown">
-                    <button onclick="conRoll()" class="dropbtn">CON</button>
+                    <button onclick="showDropDown('conDropdown')" class="dropbtn">CON</button>
                     <div id="conDropdown" class="dropdown-content">
                     <button onclick="document.getElementById('con_roll').innerHTML = rollString('d20' + document.getElementById('con_mod').innerHTML)">Roll</button>
                     <button onclick="document.getElementById('con_roll').innerHTML = rollAdvan('d20' + document.getElementById('con_mod').innerHTML)">Advn</button>
@@ -96,7 +78,7 @@
               </div>
             </td>
             <td><div class="dropdown">
-                    <button onclick="intRoll()" class="dropbtn">INT</button>
+                    <button onclick="showDropDown('intDropdown')" class="dropbtn">INT</button>
                     <div id="intDropdown" class="dropdown-content">
                     <button onclick="document.getElementById('int_roll').innerHTML = rollString('d20' + document.getElementById('int_mod').innerHTML)">Roll</button>
                     <button onclick="document.getElementById('int_roll').innerHTML = rollAdvan('d20' + document.getElementById('int_mod').innerHTML)">Advn</button>
@@ -105,7 +87,7 @@
               </div>
             </td>
             <td><div class="dropdown">
-                    <button onclick="wisRoll()" class="dropbtn">WIS</button>
+                    <button onclick="showDropDown('wisDropdown')" class="dropbtn">WIS</button>
                     <div id="wisDropdown" class="dropdown-content">
                     <button onclick="document.getElementById('wis_roll').innerHTML = rollString('d20' + document.getElementById('wis_mod').innerHTML)">Roll</button>
                     <button onclick="document.getElementById('wis_roll').innerHTML = rollAdvan('d20' + document.getElementById('wis_mod').innerHTML)">Advn</button>
@@ -114,7 +96,7 @@
               </div>
             </td>
             <td><div class="dropdown">
-                    <button onclick="chaRoll()" class="dropbtn">CHA</button>
+                    <button onclick="showDropDown('chaDropdown')" class="dropbtn">CHA</button>
                     <div id="chaDropdown" class="dropdown-content">
                     <button onclick="document.getElementById('cha_roll').innerHTML = rollString('d20' + document.getElementById('cha_mod').innerHTML)">Roll</button>
                     <button onclick="document.getElementById('cha_roll').innerHTML = rollAdvan('d20' + document.getElementById('cha_mod').innerHTML)">Advn</button>
@@ -152,16 +134,16 @@
     {% if stats['saves'] != None %}
         <p><b id="name">Saves</b> 
         {% for save in stats['saves'] %}
-        {{save['name']}} <span id="{{save['name']}}">{{save['modifier']}}</span>, 
+            <button onclick="showDropDown(element.innerHTML)" class="dropbtn">{{save['name']}}</button> <span id="{{save['name']}}">{{save['modifier']}} </span>
         {% endfor %}
-        </p>
+        <span id="saving_throw"></span></p>
     {% endif %}
     {% if stats['skills'] != None %}
-        <p><b id="name">Skills</b>
-        {% for skill in stats['skills'] %}
-        {{skill['name']}} <span id="{{skill['name']}}">{{skill['modifier']}}</span>, 
-        {% endfor %}
-        </p>
+        <p><b id="name">Skills</b> 
+            {% for skill in stats['skills'] %}
+            <button onclick="showDropDown(element.innerHTML)" class="dropbtn">{{skill['name']}}</button> <span id="{{skill['name']}}">{{skill['modifier']}} </span>
+            {% endfor %}
+            <span id="skill_check"></span></p>
     {% endif %}
     {% if stats['damage_vulnerabilities'] != None %}
         <p><b id="name">Damage Vulnerabilities</b> {{stats['damage_vulnerabilities']}}</p>
