@@ -162,17 +162,13 @@ swarm_of_insects = Monster("Swarm of Insects", "medium", "swarm of tiny beasts",
                                "Swarm", "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.")],
                            actions=[Attack("Bites", "Melee Weapon Attack", 3, "reach 0 ft.", "one target in the swarm's space.", "4d4", None, "piercing", "2d4", None, "piercing", "4d4 piercing damage, 2d4 piercing damage if the swarm has half of its hit points or fewer.")])
 
-monster_set = set([aboleth, ettercap, ghast, giant_spider, giant_wolf_spider, maw_demon, 
-                  phase_spider, orc, smoke_mephit, steam_mephit, 
-                  swarm_of_insects])
-
 #Non-SRD MOnsters & NPCs
 krell_grohlg = Monster("Krell Grohlg", "medium", "humanoid (half-orc)", "chaotic evil", 
                        11, "16 with barkskin", 27, "5d8+5", "30 ft.", 
                        AbilityScores(18, 12, 13, 12, 15, 11), 
                        "darkvision 60 ft., passive Perception 14", "Common, Druidic, Orc", "2", 
-                       skills=[Trait("Medicine", "+4"), Trait("Nature", "+3"), 
-                               Trait("Perception", "+4")], 
+                       skills=[AbilityCheck("Medicine", "+4"), AbilityCheck("Nature", "+3"), 
+                               AbilityCheck("Perception", "+4")], 
                        special_traits=[Action("Relentless Endurance", "1/day", "When the half-orc is reduced to 0 hit points but not killed outright, the half-orc can drop to 1 hit point instead."), 
                                        Spellcasting("half-orc", "4th", "Wisdom", 12, 4, "Druid", "druidcraft, produce flame, shillelagh", "entangle, longstrider, speak with animals, thunderwave", "flaming sphere, barkskin", spell_slots=[4, 3])], 
                        actions=[Attack("Quarterstaff", "Melee Weapon Attack", 6, "reach 5 ft.", "one target", "1d6", 4, "bludgeoning", "1d8", 4, "bludgeoning", " if wielded with two hands.")])
@@ -191,3 +187,6 @@ skeletal_alchemist = Monster("Skeletal Alchemist", "medium", "undead", "lawful e
                                      "one target", "1d6", 1, "slashing"),
                               Attack("Lob Acid", "Ranged Weapon Attack", 3, "30/120 ft.", "one target", "1d8", 1, "acid")])
 
+monster_set = set([aboleth, ettercap, ghast, giant_spider, giant_wolf_spider, krell_grohlg, maw_demon, 
+                  phase_spider, orc, skeletal_alchemist, smoke_mephit, steam_mephit, 
+                  swarm_of_insects])
