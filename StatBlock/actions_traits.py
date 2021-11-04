@@ -850,7 +850,8 @@ class PactMagic:
         roll_to_hit (func) Return int of roll to hit armour class:
         roll_advantage (func): Return list of ints to hit AC with advantage
         roll_disadvantage (func): Return list of ints to hit AC with disadvantage
-        use_spell_slot (func): Update current_spell_slot after casting a levelled spell"""
+        use_spell_slot (func): Update current_spell_slot after casting a levelled spell
+        json (obj): JSON object of the instance"""
 
     def __init__(self, caster_level, save_DC, spell_attack, cantrips, spells,
                  spell_slots, slot_level):
@@ -869,7 +870,8 @@ class PactMagic:
         Attributes:
             stat_string (str): String combing all the stats for spellcasting
             current_spell_slots (int): Number of current spell slots available
-            text(str): String of the creature's stats and spellcasting rules"""
+            text(str): String of the creature's stats and spellcasting rules
+            json (obj): JSON object of the instance"""
         self.caster_level = caster_level
         self.save_DC = save_DC
         self.spell_attack = format_mod(spell_attack)
@@ -891,7 +893,7 @@ class PactMagic:
         self.current_spell_slots = deepcopy(self.spell_slots)
         self.slot_level = slot_level
         self.text = f"The warlock is a {self.caster_level}-level spellcaster. Its spellcasting ability is Charisma {self.stat_string}. It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:\n"
-
+        self.json = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return formatted string summarising the pact magic instance."""
