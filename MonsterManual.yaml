@@ -136,7 +136,7 @@ krell grohlg:
   Challenge: 2
   Special Traits:
     Relentless Endurance: When reduced to 0 hit points, The krell grohlg drops to 1 hit point instead (but can't do this again until they finish a long rest).
-    Savage Attacks. When they score a critical hit, The krell grohlg can roll one of the weapon's damage dice and add it to the extra damage of the critical hit.
+    Savage Attacks: When they score a critical hit, The krell grohlg can roll one of the weapon's damage dice and add it to the extra damage of the critical hit.
     Spellcasting: 
       spell save DC: 12
       to hit: +4
@@ -147,7 +147,7 @@ krell grohlg:
         1st level: {slots: 4, spells: [entangle, longstrider, speak with animals, thunderwave]}
         2nd level: {slots: 3, spells: [barkskin, flaming sphere]}
   Actions:
-    Quarterstaff: {kind: Melee Weapon Attack, to hit: +2, to hit or: +4, to hit or text: with shillelagh, reach: 5 ft., target: one target, hit: 3 roll damage: 1d6, damage type: bludgeoning, or hit: 4 or roll damage: 1d8, or damage type: bludgeoning, text: 'if wielded with two hands, or 6 (1d8 + 2) bludgeoning damage with shillelagh.'}
+    Quarterstaff: {kind: Melee Weapon Attack, to hit: +2, to hit or: +4, to hit or text: with shillelagh, reach: 5 ft., target: one target, hit: 3, roll damage: 1d6, damage type: bludgeoning, or hit: 4, or roll damage: 1d8, or damage type: bludgeoning, text: 'if wielded with two hands, or 6 (1d8 + 2) bludgeoning damage with shillelagh.'}
 maw demon:  
   Name: Maw Demon
   Size: Medium 
