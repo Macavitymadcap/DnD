@@ -20,6 +20,7 @@ from DiceBox import roll_string
 from Data import stats_by_cr_df
 
 class Monster:
+
     """Class returns an object of a creature that is modifiable and rollable.
     
     The class makes use of classes from the actions_traits module to implement
@@ -66,7 +67,7 @@ class Monster:
             current_hp (int): Number deepcopied from average_hp for modifying
             temporary_hp (int): Number of temporary hit points creature has
             skills_dict (dict): Dictionary of skills based on abilities
-            json (obj): Javascript object of the instance
+            json_object(obj): Javascript object of the instance
             """
         self.name = name
         self.size = size
@@ -119,7 +120,7 @@ class Monster:
         self.actions = actions
         self.reactions = reactions
         self.legendary_actions = legendary_actions
-        #self.json = json.dumps(self.__dict__)
+        #self.json_object = json.dumps(self.__dict__, cls=MonsterEncoder)
 
     def roll_skill_check(self, skill_name, advantage=False, disadvantage=False):
         """Return int of roll of skill check with advantage/disadantage.
@@ -454,3 +455,12 @@ class Monster:
         with open(f"{self.name}.txt", "w") as writer:
             writer.write(self.__str__())
         system(f"less '{self.name}.txt'")
+
+
+class MonsterEncoder(json.JSONEncoder):
+    """Class for converting a monster instance into a javascript object."""
+    def default(self, obj):
+        if hasattr(obj, 'json_object'):
+            return obj.json_object
+        else:
+            return json.JSONEncoder.default(self, obj)

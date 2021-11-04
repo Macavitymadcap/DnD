@@ -43,14 +43,16 @@ class Trait:
     Attributes:
         name (str): String of the trait's name
         description (str): String describing the trait's features
-        json (obj): JSON object of the instance"""
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, name=None, description=None):
         """Initialise the Trait class.
 
-        Args:
+    Args:
         name (str): String of the trait's name. Defaults to None
-        description (str): String of the trait's features. Defaults to None"""
+        description (str): String of the trait's features. Defaults to None
+    Attributes:
+        json_object(obj): JSON object of the instance"""
         if name is None:
             pass
 
@@ -63,7 +65,7 @@ class Trait:
         else:
             self.description = description
         
-        self.json = json.dumps(self.__dict__)
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return string of instance 80 characters to a line in a paragraph."""
@@ -88,6 +90,7 @@ class AbilityCheck(Trait):
             modifier (str): String of modifier applied to roll of d20"""
         self.name = name
         self.modifier = modifier
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return string of check with name and modifier."""
@@ -131,7 +134,7 @@ class AbilityScores:
         intelligence_mod (int): Number for intelligence modifier from DataFrame
         wisdom_mod (int): Number for wisdom modifier from DataFrame
         charisma_mod (int): Number for charisma modifier from DataFrame
-        json (obj): JSON object of the instance"""
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, strength, dexterity, constitution, intelligence, wisdom, charisma):
         """Initialise the AbilityScores instance.
@@ -151,7 +154,7 @@ class AbilityScores:
             intelligence_mod (int): Number for intelligence modifier from DataFrame
             wisdom_mod (int): Number for wisdom modifier from DataFrame
             charisma_mod (int): Number for charisma modifier from DataFrame
-            json (obj): JSON object of the instance"""
+            json_object(obj): JSON object of the instance"""
         self.strength = strength
         self.dexterity = dexterity
         self.constitution = constitution
@@ -164,7 +167,7 @@ class AbilityScores:
         self.intelligence_mod = modifiers[self.intelligence]
         self.wisdom_mod = modifiers[self.wisdom]
         self.charisma_mod = modifiers[self.charisma]
-        self.json = json.dumps(self.__dict__)
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return string tabling the instance's scores and modifiers."""
@@ -180,7 +183,8 @@ class Action(Trait):
     Attributes:
         name (str): String of name of the instance
         cost_recharge (str): String for recharge or rest period of instance
-        description (str): String describing the instance's features."""
+        description (str): String describing the instance's features
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, name, cost_recharge=None, description=None):
         """Initialise the Action instance.
@@ -188,9 +192,13 @@ class Action(Trait):
         Args:
             name (str): String of name of the instance
             cost_recharge (str): String for recharge or rest period of instance
-            description (str): String describing the instance's features"""
+            description (str): String describing the instance's features
+        
+        Attributes:
+            json_object(obj): JSON object of the instance"""
         super().__init__(name, description)
         self.cost_recharge = cost_recharge
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return string of instance with 80 characters a line per paragraph."""
@@ -222,7 +230,8 @@ class Attack(Trait):
         roll_to_hit (func) Return int of roll to hit armour class:
         roll_advantage (func): Return list of ints to hit armour class with advantage
         roll_disadvantage (func): Return list of ints to hit armour class with disadvantage
-        roll_damage (func): Return int of damage roll for Attack"""
+        roll_damage (func): Return int of damage roll for Attack
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, name, attack_type, modifier, reach_range, target,
                  damage_die=None, damage_mod=None, damage_type=None,
@@ -246,7 +255,9 @@ class Attack(Trait):
         
         Attributes:
             damage_roll (str): String of damage dice and modifier combined
-            x_damage_roll (str): String of extra damage dice and modifier combined"""
+            x_damage_roll (str): String of extra damage dice and modifier combined
+            json_object(obj): JSON object of the instance"""
+            
         self.name = name
         self.attack_type = attack_type
         self.modifier = format_mod(modifier)
@@ -272,6 +283,7 @@ class Attack(Trait):
 
         self.x_damage_type = x_damage_type
         self.text = text
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return string of the Attack with 80 characters a line per paragraph."""
@@ -360,7 +372,8 @@ class SaveAction(Trait):
         x_damage_roll (str): String of extra damage dice and modifier combined
         x_damage_type (str): String of the extra damage's type
         text (str): String of additional text for the attack
-        roll_damage (func): Return int of damage roll for SaveAction"""
+        roll_damage (func): Return int of damage roll for SaveAction
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, name, save_DC, saving_throw, reach_range=None, target=None,
                  damage_die=None, damage_mod=None, damage_type=None, 
@@ -383,7 +396,8 @@ class SaveAction(Trait):
         
         Attributes
             damage_roll (str): String of damage dice and modifier combined
-            x_damage_roll (str): String of extra damage dice and modifier combined"""
+            x_damage_roll (str): String of extra damage dice and modifier combined
+            json_object(obj): JSON object of the instance"""
         self.name = name
         self.save_DC = save_DC
         self.saving_throw = saving_throw
@@ -408,6 +422,7 @@ class SaveAction(Trait):
 
         self.x_damage_type = x_damage_type
         self.text = text
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return string of the SaveAction 80 characters a line per paragraph."""
@@ -473,7 +488,8 @@ class LegendaryActions(Trait):
     Attributes:
         name (str): String of the instance's name
         actions (lst): List of Action, Attack and SaveAction instances
-        text (int): String that proceeds the actions."""
+        text (int): String that proceeds the actions
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, name, actions):
         """Initialise the LegendaryActions instance.
@@ -483,10 +499,12 @@ class LegendaryActions(Trait):
             actions (lst): List of Action, Attack and SaveAction instances
 
         Attributes:
-            text (int): String that proceeds the actions"""
+            text (int): String that proceeds the actions
+            json_object(obj): JSON object of the instance"""
         super().__init__(name)
         self.actions = actions
         self.text = f"The {self.name} can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature’s turn. The {self.name} regains spent legendary actions at the start of its turn."
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return a string of the legendary action text followed by the action's names."""
@@ -510,7 +528,7 @@ class Spell():
         duration (str): String of the time the spell's effects last
         text (str): String describing the effects of the spell
         higher_levels (str): String of the spell's effects at higher levels
-        json (obj): JSON object of the instance"""
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, name, level, school, casting_time, range, components,
                  duration, text, higher_levels):
@@ -527,7 +545,7 @@ class Spell():
             higher_levels (str): String of the spell's effects at higher levels
         
         Attributes:
-            json (obj): JSON object of the instance"""
+            json_object(obj): JSON object of the instance"""
         self.name = name
         self.level = level
         self.school = school
@@ -537,7 +555,7 @@ class Spell():
         self.duration = duration
         self.text = text
         self.higher_levels = higher_levels
-        self.json = json.dumps(self.__dict__)
+        #self.json_object = json.dumps(self.__dict__)
 
     def __repr__(self):
         """Retun a string representation of the object."""
@@ -583,7 +601,8 @@ class InnateSpellcasting(Trait):
         text (str): String detailing the creature's stats and introduces spells
         roll_to_hit (func) Return int of roll to hit armour class:
         roll_advantage (func): Return list of ints to hit armour class with advantage
-        roll_disadvantage (func): Return list of ints to hit armour class with disadvantage"""
+        roll_disadvantage (func): Return list of ints to hit armour class with disadvantage
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, name, ability, at_will=None, one_day=None, two_day=None,
                  three_day=None, save_DC=None, spell_attack=None, extra=None):
@@ -602,7 +621,8 @@ class InnateSpellcasting(Trait):
 
         Attributes:
             stat_string (str): String combing all the stats for spellcasting
-            text (str): String detailing the creature's stats and introduces spells"""
+            text (str): String detailing the creature's stats and introduces spells
+            json_object(obj): JSON object of the instance"""
         super().__init__(name)
         self.ability = ability
         self.at_will = at_will
@@ -630,6 +650,7 @@ class InnateSpellcasting(Trait):
             self.stat_string = f"({self.spell_attack} to hit with spell attacks)"
 
         self.text = f"The {self.name.lower()}'s innate spellcasting ability is {self.ability} {self.stat_string}. It can innately cast the following spells, requiring no material components:\n"
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return formatted string detailing the InnateSpellcasting instance."""
@@ -692,7 +713,8 @@ class Spellcasting(Trait):
         roll_to_hit (func) Return int of roll to hit armour class:
         roll_advantage (func): Return list of ints to hit armour class with advantage
         roll_disadvantage (func): Return list of ints to hit armour class with disadvantage
-        use_spell_slot (func): Update current_spell_slot after casting a levelled spell"""
+        use_spell_slot (func): Update current_spell_slot after casting a levelled spell
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, name, caster_level, ability=None, save_DC=None, spell_attack=None,
                  spell_class=None, cantrips=None, level_1=None, level_2=None, level_3=None,
@@ -723,7 +745,8 @@ class Spellcasting(Trait):
         Attributes:
             stat_string (str): String combing all the stats for spellcasting
             current_spell_slots (lst): List of current spell slots available
-            text(str): String detailing the creature's stats and introduces spells"""
+            text(str): String detailing the creature's stats and introduces spells
+            json_object(obj): JSON object of the instance"""
         super().__init__(name)
         self.caster_level = caster_level
         self.ability = ability
@@ -766,6 +789,7 @@ class Spellcasting(Trait):
 
         self.extra = extra
         self.text = f"The {self.name} is a {self.caster_level}-level spellcaster. Its spellcasting ability is {self.ability} {self.stat_string}. The {self.name} has the following {self.spell_class} spells prepared:\n"
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return formatted string of the Spellcasting instance."""
@@ -851,7 +875,7 @@ class PactMagic:
         roll_advantage (func): Return list of ints to hit AC with advantage
         roll_disadvantage (func): Return list of ints to hit AC with disadvantage
         use_spell_slot (func): Update current_spell_slot after casting a levelled spell
-        json (obj): JSON object of the instance"""
+        json_object(obj): JSON object of the instance"""
 
     def __init__(self, caster_level, save_DC, spell_attack, cantrips, spells,
                  spell_slots, slot_level):
@@ -871,7 +895,7 @@ class PactMagic:
             stat_string (str): String combing all the stats for spellcasting
             current_spell_slots (int): Number of current spell slots available
             text(str): String of the creature's stats and spellcasting rules
-            json (obj): JSON object of the instance"""
+            json_object(obj): JSON object of the instance"""
         self.caster_level = caster_level
         self.save_DC = save_DC
         self.spell_attack = format_mod(spell_attack)
@@ -893,7 +917,7 @@ class PactMagic:
         self.current_spell_slots = deepcopy(self.spell_slots)
         self.slot_level = slot_level
         self.text = f"The warlock is a {self.caster_level}-level spellcaster. Its spellcasting ability is Charisma {self.stat_string}. It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:\n"
-        self.json = json.dumps(self.__dict__)
+        #self.json_object = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return formatted string summarising the pact magic instance."""
