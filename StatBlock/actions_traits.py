@@ -23,6 +23,7 @@ is also a class that does not inherit from Trait that represents a spell and
 it's constituents."""
 
 from copy import deepcopy
+import json
 
 from DiceBox import roll_advantage
 from DiceBox import roll_crit
@@ -41,7 +42,8 @@ class Trait:
 
     Attributes:
         name (str): String of the trait's name
-        description (str): String describing the trait's features"""
+        description (str): String describing the trait's features
+        json (obj): JSON object of the instance"""
 
     def __init__(self, name=None, description=None):
         """Initialise the Trait class.
@@ -60,6 +62,8 @@ class Trait:
 
         else:
             self.description = description
+        
+        self.json = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return string of instance 80 characters to a line in a paragraph."""
@@ -126,7 +130,8 @@ class AbilityScores:
         constitution_mod (int): Number for constitution modifier from DataFrame
         intelligence_mod (int): Number for intelligence modifier from DataFrame
         wisdom_mod (int): Number for wisdom modifier from DataFrame
-        charisma_mod (int): Number for charisma modifier from DataFrame"""
+        charisma_mod (int): Number for charisma modifier from DataFrame
+        json (obj): JSON object of the instance"""
 
     def __init__(self, strength, dexterity, constitution, intelligence, wisdom, charisma):
         """Initialise the AbilityScores instance.
@@ -145,7 +150,8 @@ class AbilityScores:
             constitution_mod (int): Number for constitution modifier from DataFrame
             intelligence_mod (int): Number for intelligence modifier from DataFrame
             wisdom_mod (int): Number for wisdom modifier from DataFrame
-            charisma_mod (int): Number for charisma modifier from DataFrame"""
+            charisma_mod (int): Number for charisma modifier from DataFrame
+            json (obj): JSON object of the instance"""
         self.strength = strength
         self.dexterity = dexterity
         self.constitution = constitution
@@ -158,6 +164,7 @@ class AbilityScores:
         self.intelligence_mod = modifiers[self.intelligence]
         self.wisdom_mod = modifiers[self.wisdom]
         self.charisma_mod = modifiers[self.charisma]
+        self.json = json.dumps(self.__dict__)
 
     def __str__(self):
         """Return string tabling the instance's scores and modifiers."""
@@ -502,7 +509,8 @@ class Spell():
         components (str): String of the components required to cast the spell
         duration (str): String of the time the spell's effects last
         text (str): String describing the effects of the spell
-        higher_levels (str): String of the spell's effects at higher levels"""
+        higher_levels (str): String of the spell's effects at higher levels
+        json (obj): JSON object of the instance"""
 
     def __init__(self, name, level, school, casting_time, range, components,
                  duration, text, higher_levels):
@@ -516,7 +524,10 @@ class Spell():
             components (str): String of the components required to cast the spell
             duration (str): String of the time the spell's effects last
             text (str): String describing the effects of the spell
-            higher_levels (str): String of the spell's effects at higher levels"""
+            higher_levels (str): String of the spell's effects at higher levels
+        
+        Attributes:
+            json (obj): JSON object of the instance"""
         self.name = name
         self.level = level
         self.school = school
@@ -526,6 +537,7 @@ class Spell():
         self.duration = duration
         self.text = text
         self.higher_levels = higher_levels
+        self.json = json.dumps(self.__dict__)
 
     def __repr__(self):
         """Retun a string representation of the object."""

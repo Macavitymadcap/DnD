@@ -9,6 +9,7 @@ its ability scores, actions, attacks, traits, legendary actions and other
 rollable and none rollable traits."""
 
 from copy import deepcopy
+import json
 from os import system
 
 from DiceBox import d20
@@ -65,6 +66,7 @@ class Monster:
             current_hp (int): Number deepcopied from average_hp for modifying
             temporary_hp (int): Number of temporary hit points creature has
             skills_dict (dict): Dictionary of skills based on abilities
+            json (obj): Javascript object of the instance
             """
         self.name = name
         self.size = size
@@ -117,7 +119,7 @@ class Monster:
         self.actions = actions
         self.reactions = reactions
         self.legendary_actions = legendary_actions
-
+        #self.json = json.dumps(self.__dict__)
 
     def roll_skill_check(self, skill_name, advantage=False, disadvantage=False):
         """Return int of roll of skill check with advantage/disadantage.
