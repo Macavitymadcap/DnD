@@ -37,7 +37,7 @@ button {
     color: grey;
     font-family: "Aclonica", serif;
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
 }
 
 button:hover {
@@ -46,7 +46,7 @@ button:hover {
 
 .dropdown {
     position: relative;
-    display: block; 
+    display: inline-flexbox; 
 }
   
 .dropdown-content {

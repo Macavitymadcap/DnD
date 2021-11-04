@@ -32,16 +32,15 @@
     <p><b id="name">Armour Class</b> {{stats['armour_class']}} ({{stats['armour_type']}})</p>
     <p><table class="hp_table">
         <tr>
-            <td><b id="name">Hit Points</b> <span id="hit_points">{{stats['average_hp']}}</span></td> 
-            <td><input type="number" id="mod_hp">
-                <div class="dropdown" id="damage_heal">
-                    <button onclick="showDropDown('damDropdown')" class="dropbtn">+/-</button>
-                    <div id="damDropdown" class="dropdown-content">
-                        <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) + parseInt(document.getElementById('mod_hp').value)">Heal</button>
-                        <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) - parseInt(document.getElementById('mod_hp').value)">Damage</button>
-                    </div>
+            <td><div class="dropdown" id="damage_heal">
+                <button onclick="showDropDown('damDropdown')" class="dropbtn">Hit Points</button>
+                <div id="damDropdown" class="dropdown-content">
+                    <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) + parseInt(document.getElementById('mod_hp').value)">Heal</button>
+                    <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) - parseInt(document.getElementById('mod_hp').value)">Damage</button>
                 </div>
-            </td>
+            </div>
+            <span id="hit_points">{{stats['average_hp']}}</span></td> 
+            <td><input type="number" id="mod_hp"></td>
             <td><b id="name">Temp HP</b> <input type="number"></td>
             <td><button onclick="document.getElementById('hit_points').innerHTML = rollString(document.getElementById('hit_dice').innerHTML)">Hit Dice</button> <span id="hit_dice">{{stats['hit_dice']}}</span></td>            
         </tr>
@@ -134,14 +133,14 @@
     {% if stats['saves'] != None %}
         <p><b id="name">Saves</b> 
         {% for save in stats['saves'] %}
-            <button onclick="showDropDown(element.innerHTML)" class="dropbtn">{{save['name']}}</button> <span id="{{save['name']}}">{{save['modifier']}} </span>
+            <button onclick="document.getElementById('saving_throw').innerHTML =  rollString('d20')">{{save['name']}}</button> <span id="{{save['name']}}">{{save['modifier']}} </span>
         {% endfor %}
         <span id="saving_throw"></span></p>
     {% endif %}
     {% if stats['skills'] != None %}
         <p><b id="name">Skills</b> 
             {% for skill in stats['skills'] %}
-            <button onclick="showDropDown(element.innerHTML)" class="dropbtn">{{skill['name']}}</button> <span id="{{skill['name']}}">{{skill['modifier']}} </span>
+            <button onclick="document.getElementById('skill_check').innerHTML =  rollString('d20')">{{skill['name']}}</button> <span id="{{skill['name']}}">{{skill['modifier']}} </span>
             {% endfor %}
             <span id="skill_check"></span></p>
     {% endif %}
