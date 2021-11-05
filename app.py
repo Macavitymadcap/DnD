@@ -1,5 +1,6 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, json
+import yaml
 
 from gracie_lou import gracie
 from Utilities import search_monsters
@@ -25,6 +26,14 @@ def dice_roller():
     """Return html of dice roller page."""
     return render_template("dice.html")
 
+@app.route("/monsters")
+def monsterpedia():
+    """Return html of searchable Monster Manual.yaml."""
+    with open('MonsterManual.yaml', 'r') as yaml_file:
+        yaml_monsters = yaml.safe_load(yaml_file)
+    json_monsters = json.dumps(yaml_monsters)
+    
+    return render_template("monstersearch.html", monsters=json_monsters)
 
 @app.route("/mm_<monster>")
 def search_json_monsters(monster):
@@ -42,15 +51,6 @@ def stat_block(creature):
             return render_template("statblock.html", stats=monster)
         
     return render_template("statblock.html")
-
-@app.route("/sheet_<character>")
-def sheet(character):
-    try:
-        if character == "gracie":
-            return f"<pre>{gracie.get_sheet(full=True)}</pre>"
-    
-    except:
-        return f"<p>Character '{character}' not found.</p>"
 
 
 if __name__ =="__main__":

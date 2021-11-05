@@ -1,0 +1,22 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% block title %}Monsterpedia{% endblock %}
+{% block head %}
+<script>
+    monsterpedia = JSON.parse(document.getElementById("monsters div"))
+
+    function search_monsters(monster_string) {
+        for (monster in monsterpedia) {
+            if (monster.Name.toLowerCase() === monster_string) {
+                return monster;
+            }
+        }
+    }
+</script>
+{% endblock %}
+{% block content %}
+<div id="monsters div" hidden>{{ monsters }}</div>
+<br>
+<span id="search area"><input type="text" id="monster name"><button onclick="document.getElementById('result').innerHTML = monsterpedia">Search Monsters</button></span>
+<p id="result"></p>
+{% endblock %}
