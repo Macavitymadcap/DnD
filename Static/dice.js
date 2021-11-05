@@ -127,7 +127,7 @@ function rollCrit(string) {
             roll += rollD(parseInt(die.slice(1)))
         }
     }
-    list = [numDice, die, operator, modifier, roll];
+    const list = [numDice, die, operator, modifier, roll];
     if (operator == "-") {
         return roll - modifier;
     } else if (operator = "+") {
