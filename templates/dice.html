@@ -14,48 +14,69 @@
                 x.style.display = "none";
             }
         }
+            // Display dropdown menus for roll buttons
+    function showDropDown(string) {
+        document.getElementById(string).classList.toggle("show");
+    }
+    // Close a dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+        }
+    }
     </script>
 {% endblock %}
 {% block content %}
-    <h3>Dice Roller</h3>
-    <div class="dice-box">
-        <div><label for="roll_string">String:</label></div>
-        <div><input type="text" id="roll_string" size="8"></div>
-    </div>
-    <div class="dice-box">
-        <div><label for="result">Result:</label></div>
-        <div id="result"></div>
-    </div>
-    <div class="dice-box">
-        <div><button onclick="document.getElementById('result').innerHTML = rollString(document.getElementById('roll_string').value)">Standard</button></div>
-        <div><button onclick="document.getElementById('result').innerHTML = rollCrit(document.getElementById('roll_string').value)">Critical</button></div> 
-    </div>
-    <div class="dice-box">   
-        <div><button onclick="document.getElementById('result').innerHTML = rollAdvan(document.getElementById('roll_string').value)">Advantage</button></div>
-        <div><button onclick="document.getElementById('result').innerHTML = rollDisad(document.getElementById('roll_string').value)">Disadvantage</button></div>
-    </div>
-    <div class="dice-box">    
-        <div><button onclick="document.getElementById('result').innerHTML = rollAbilityScores()">Abilities</option></div>
-        <div><button id="help_button" onclick="hideHelp()">Help</button></div>
-    </div>
-    <div id="help_text">
-        <p>Type a string of the following format, with or without spaces:
-            <blockquote>x dy ? z</blockquote>
-            where:
-            <ul>
-                <li><b>x</b> is the optional number of dice to be rolled, if none is given 1 of the specified dice is rolled.</li>
-                <li><b>d<i>y</i></b> is the type of die to be rolled, where <i>y</i> is the number of faces on the die.</li>
-                <li><b>?</b> is an optional operator for addition (+); subtraction (-); multiplication (*, x or X) or division (/ or ÷), used to apply a modifier to the roll.</li>
-                <li><b>z</b> is an optional modifier, which is applied to the roll with a given operator.</li>
-            </ul>
-            Press one of the following buttons to roll the string in a particular way:
-            <ul>
-                <li><b>Standard</b> Roll the string as standard and return the total.</li>
-                <li><b>Critical</b> Roll the dice of the string twice then return the total with modifier applied.</li>
-                <li><b>Advantage</b> Roll the string twice and return both listed highest to lowest.</li>
-                <li><b>Disadvantage</b> Roll the string twice and return both listed lowest to highest.</li>
-                <li><b>Abilities</b> Roll 4d6 - the lowest 6 times and return an array ordered highest to lowest.</li>
-            </ul></p>
-        </div>
-    </div>
+<br>
+<h2>Dice Roller</h2>
+<table class="roll-table">
+    <tr>
+        <td><label for="roll_string">String:</label></td>
+        <td><input type="text" id="roll_string" size="8"></td>
+        <td>
+            <div class="dropdown">
+                <button onclick="showDropDown('strDropdown')" class="dropbtn">Roll</button>
+                <div id="strDropdown" class="dropdown-content">
+                    <button onclick="document.getElementById('result').innerHTML = rollString(document.getElementById('roll_string').value)">Stand</button>
+                    <button onclick="document.getElementById('result').innerHTML = rollAdvan(document.getElementById('roll_string').value)">Advan</button>
+                    <button onclick="document.getElementById('result').innerHTML = rollDisad(document.getElementById('roll_string').value)">Disad</button>
+                    <button onclick="document.getElementById('result').innerHTML = rollCrit(document.getElementById('roll_string').value)">Crit</button>
+                    <button onclick="document.getElementById('result').innerHTML = rollAbilityScores()">Scores</button>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="result">Result:</label></td>
+        <td id="result"></td>
+        <td><button id="help_button" onclick="hideHelp()">Help</button></td>
+    </tr>
+</table>
+<div id="help_text" style="display: none;">
+    <p>Type a string of the following format, with or without spaces:
+        <blockquote>x dy ? z</blockquote>
+        where:
+        <ul>
+            <li><b>x</b> is the optional number of dice to be rolled, if none is given 1 of the specified die is rolled.</li>
+            <li><b>d<i>y</i></b> is the type of die to be rolled, where <i>y</i> is the number of faces on the die.</li>
+            <li><b>?</b> is an optional operator for addition (+); subtraction (-); multiplication (*, x or X) or division (/ or ÷), used to apply a modifier to the roll.</li>
+            <li><b>z</b> is an optional modifier, which is applied to the roll with a given operator.</li>
+        </ul>
+        then press 'Roll' to choose one of the following ways to roll the string:
+        <ul>
+            <li><b>Stand</b> Roll the string as standard and return the total.</li>
+            <li><b>Crit</b> Roll the dice of the string twice then return the total with modifier applied.</li>
+            <li><b>Advan</b> Roll the string twice and return both listed highest to lowest.</li>
+            <li><b>Disad</b> Roll the string twice and return both listed lowest to highest.</li>
+            <li><b>Scores</b> Roll 4d6 - the lowest 6 times and return an array ordered highest to lowest.</li>
+        </ul>
+    </p>
+</div>
 {% endblock %}

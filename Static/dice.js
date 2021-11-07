@@ -150,13 +150,13 @@ function rollArray(num, string) {
 function rollAdvan(string) {
     rolls = rollArray(2, string);
     rolls.sort(function(a, b){return b - a});
-    return rolls;
+    return rolls.join(' / ');
 }
 
 function rollDisad(string) {
     rolls = rollArray(2, string);
     rolls.sort(function(a, b){return a - b});
-    return rolls;
+    return rolls.join(' / ');
 }
 
 function rollAbilityScores() {
@@ -168,5 +168,5 @@ function rollAbilityScores() {
         rolls.push(roll.reduce(function(total, num){return total + num}));
     }
     rolls.sort(function(a, b){return b - a});
-    return rolls;
+    return rolls.join(', ');
 }

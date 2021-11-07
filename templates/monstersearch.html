@@ -3,20 +3,16 @@
 {% block title %}Monsterpedia{% endblock %}
 {% block head %}
 <script>
-    monsterpedia = JSON.parse(document.getElementById("monsters div"))
-
-    function search_monsters(monster_string) {
-        for (monster in monsterpedia) {
-            if (monster.Name.toLowerCase() === monster_string) {
-                return monster;
-            }
-        }
-    }
+    const fs = require('fs');
+    function searchMonsters(string) { 
+        let rawdata = fs.readFileSync('./MonsterManual.json');
+        let monsters = JSON.parse(rawdata);
+        return monsters[string.toLowerCase()]
+}
 </script>
 {% endblock %}
 {% block content %}
-<div id="monsters div" hidden>{{ monsters }}</div>
-<br>
-<span id="search area"><input type="text" id="monster name"><button onclick="document.getElementById('result').innerHTML = monsterpedia">Search Monsters</button></span>
+<span id="search area"><input type="text" id="monster_name"><button onclick="document.getElementById('result').innerHTML = searchMonsters('orc')">Search Monsters</button></span>
 <p id="result"></p>
+<p></p>
 {% endblock %}
