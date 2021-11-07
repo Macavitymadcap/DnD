@@ -51,7 +51,7 @@
                 "text": "If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature\u00e2\u20ac\u2122s skin becomes translucent and slimy, the creature can\u00e2\u20ac\u2122t regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
             },
             "Tail": {
-                "kind": "Melee Weapon Attack\"",
+                "kind": "Melee Weapon Attack",
                 "to hit": 9,
                 "reach": "10 ft",
                 "target": "one target",
@@ -72,8 +72,7 @@
                 "hit": 10,
                 "damage roll": "3d6",
                 "damage type": "psychic",
-                "text": "One creature charmed by the aboleth takes 10 (3d6) psychic damage",
-                "and the aboleth regains hit points equal to the damage the creature takes.": null
+                "text": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes."
             }
         }
     },
@@ -125,8 +124,7 @@
                 "plus hit": 4,
                 "plus damage roll": "1d8",
                 "plus damage type": "poison",
-                "text": "The target must succeed on a DC 11 Constitution saving throw or be poisoned for 1 minute. The creature can repeat the saving throw at the end of each of its turns",
-                "ending the effect on itself on a success.": null
+                "text": "The target must succeed on a DC 11 Constitution saving throw or be poisoned for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
             },
             "Claws": {
                 "kind": "Melee Weapon Attack",
@@ -158,9 +156,7 @@
                 "hit": 4,
                 "damage roll": "1d4 + 2",
                 "damage type": "bludgeoning",
-                "text": "and the target is grappled (escape DC 12). Until this grapple ends",
-                "the target can't breathe": null,
-                "and the ettercap has advantage on attack rolls against it.": null
+                "text": "and the target is grappled (escape DC 12). Until this grapple ends, the target can't breathe, and the ettercap has advantage on attack rolls against it."
             }
         }
     },
@@ -213,9 +209,7 @@
                 "hit": 10,
                 "damage roll": "2d6 + 3",
                 "damage type": "slashing",
-                "text": "If the target is a creature other than an undead",
-                "it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns": null,
-                "ending the effect on itself on a success.": null
+                "text": "If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
             }
         }
     },
@@ -260,12 +254,7 @@
                 "hit": 7,
                 "roll damage": "1d8 + 3",
                 "damage type": "piercing",
-                "text": "and the target must make a DC 11 Constitution saving throw",
-                "taking 9 (2d8) poison damage on a failed save": null,
-                "or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points": null,
-                "the target is stable but poisoned for 1 hour": null,
-                "even after regaining hit points": null,
-                "and is paralyzed while poisoned in this way.": null
+                "text": "and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."
             },
             "Web": {
                 "kind": "Ranged Weapon Attack",
@@ -273,11 +262,7 @@
                 "to hit": 5,
                 "range": "30/60 ft.",
                 "target": "one creature",
-                "hit": "The target is restrained by webbing. As an action",
-                "the restrained target can make a DC 12 Strength check": null,
-                "bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning": null,
-                "poison": null,
-                "and psychic damage).": null
+                "hit": "The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage)."
             }
         }
     },
@@ -548,12 +533,7 @@
                 "hit": 7,
                 "damage roll": "1d10 + 2",
                 "damage type": "piercing",
-                "text": "and the target must make a DC 11 Constitution saving throw",
-                "taking 18 (4d8) poison damage on a failed save": null,
-                "or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points": null,
-                "the target is stable but poisoned for 1 hour": null,
-                "even after regaining hit points": null,
-                "and is paralyzed while poisoned in this way.": null
+                "text": "and the target must make a DC 11 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."
             }
         }
     },

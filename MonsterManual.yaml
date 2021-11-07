@@ -24,13 +24,13 @@ aboleth:
     Probing Telepathy: If a creature communicates telepathically with the aboleth, the aboleth learns the creature’s greatest desires if the aboleth can see the creature.
   Actions:
     Multiattack: The aboleth makes three tentacle attacks.
-    Tentacle: {kind: "Melee Weapon Attack", to hit: 9, reach: 10 ft., target: one target, hit: 12, damage roll: 2d6 + 5, damage type: bludgeoning, text: 'If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature’s skin becomes translucent and slimy, the creature can’t regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed.'} 
-    Tail: {kind: Melee Weapon Attack", to hit: 9, reach: 10 ft, target: one target, hit: 15, damage roll: 3d6 + 5, damage type: bludgeoning}
+    Tentacle: {kind: Melee Weapon Attack, to hit: 9, reach: 10 ft., target: one target, hit: 12, damage roll: 2d6 + 5, damage type: bludgeoning, text: 'If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature’s skin becomes translucent and slimy, the creature can’t regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed.'} 
+    Tail: {kind: Melee Weapon Attack, to hit: 9, reach: 10 ft, target: one target, hit: 15, damage roll: 3d6 + 5, damage type: bludgeoning}
     Enslave: {Recharge: 3/Day, text: 'The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth’s control and can’t take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth.'}
   Legendary Actions: 
     Detect: The aboleth makes a Wisdom (Perception) check.
     Tail Swipe: The aboleth makes one tail attack.
-    Psychic Drain: {cost: 2, hit: 10, damage roll: 3d6, damage type: psychic, text: One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes.}
+    Psychic Drain: {cost: 2, hit: 10, damage roll: 3d6, damage type: psychic, text: 'One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes.'}
 ettercap:
   Name: Ettercap
   Size: Medium 
@@ -45,7 +45,7 @@ ettercap:
     Stealth: +4
     Survival: +3
   Senses: darkvision 60 ft., passive Perception 13
-  Languages: —
+  Languages: "—"
   Challenge: 2
   Special Traits:
     Spider Climb: The ettercap can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
@@ -53,10 +53,10 @@ ettercap:
     Web Walker: The ettercap ignores movement restrictions caused by webbing.
   Actions:
     Multiattack: 'The ettercap makes two attacks: one with its bite and one with its claws.'
-    Bite: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 6, damage roll: 1d8 + 2, damage type: piercing, plus hit: 4, plus damage roll: 1d8, plus damage type: poison, text: The target must succeed on a DC 11 Constitution saving throw or be poisoned for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.}
+    Bite: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 6, damage roll: 1d8 + 2, damage type: piercing, plus hit: 4, plus damage roll: 1d8, plus damage type: poison, text: "The target must succeed on a DC 11 Constitution saving throw or be poisoned for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."}
     Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one target, hit: 7, dagame roll: 2d4 + 2, damage type: slashing}
     Web: {kind: Ranged Weapon Attack, Recharge: 5–6, to hit: +4, range: 30/60 ft., target: one Large or smaller creature, hit: The creature is restrained by webbing. As an action, the restrained creature can make a DC 11 Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning, poison and psychic damage.}
-    Web Garrote: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., taget: one Medium or Small creature against which the ettercap has advantage on the attack roll, hit: 4, damage roll: 1d4 + 2, damage type: bludgeoning, text: and the target is grappled (escape DC 12). Until this grapple ends, the target can't breathe, and the ettercap has advantage on attack rolls against it.}
+    Web Garrote: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., taget: one Medium or Small creature against which the ettercap has advantage on the attack roll, hit: 4, damage roll: 1d4 + 2, damage type: bludgeoning, text: "and the target is grappled (escape DC 12). Until this grapple ends, the target can't breathe, and the ettercap has advantage on attack rolls against it."}
 ghast:
   Name: Ghast
   Size: Medium 
@@ -77,7 +77,7 @@ ghast:
     Turn Defiance: The ghast and any ghouls within 30 feet of it have advantage on saving throws against effects that turn undead.
   Actions:
     Bite: {kind: Melee Weapon Attack, to hit: +3, reach: 5 ft., target: one creature, hit: 12, damage roll: 2d8 + 3, damage type: piercing}
-    Claws: {kind: Melee Weapon Attack, to hit: +5, reach: 5 ft., target: one target, hit: 10, damage roll: 2d6 + 3, damage type: slashing, text: If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.}
+    Claws: {kind: Melee Weapon Attack, to hit: +5, reach: 5 ft., target: one target, hit: 10, damage roll: 2d6 + 3, damage type: slashing, text: 'If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.'}
 giant spider:
   Name: Giant Spider
   Size: Large beast
@@ -89,15 +89,15 @@ giant spider:
   Skills:
    Stealth: +7
   Senses: blindsight 10 ft., darkvision 60 ft., passive Perception 10
-  Languages: —
+  Languages: "—"
   Challenge: 1
   Special Traits:
     Spider Climb: The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
     Web Sense: While in contact with a web, the spider knows the exact location of any other creature in contact with the same web.
     Web Walker: The spider ignores movement restrictions caused by webbing.
   Actions:
-    Bite: {kind: Melee Weapon Attack, to hit: +5, reach: 5 ft., target: one creature, hit: 7, roll damage: 1d8 + 3, damage type: piercing, text: and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.}
-    Web: {kind: Ranged Weapon Attack, Recharge: 5–6, to hit: +5, range: 30/60 ft., target: one creature, hit: The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).}
+    Bite: {kind: Melee Weapon Attack, to hit: +5, reach: 5 ft., target: one creature, hit: 7, roll damage: 1d8 + 3, damage type: piercing, text: "and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."}
+    Web: {kind: Ranged Weapon Attack, Recharge: 5–6, to hit: +5, range: 30/60 ft., target: one creature, hit: "The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage)."}
 giant wolf spider:
   Name: Giant Wolf Spider
   Size: Medium beast, unaligned
@@ -109,7 +109,7 @@ giant wolf spider:
     Perception: +3
     Stealth: +7
   Senses: blindsight 10 ft., darkvision 60 ft., passive Perception 13
-  Languages: —
+  Languages: "—"
   Challenge: 1/4
   Special Traits:
     Spider Climb: The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
@@ -198,14 +198,14 @@ phase spider:
   Skills:
     Stealth: +6
   Senses: darkvision 60 ft., passive Perception 10
-  Languages: —
+  Languages: "—"
   Challenge: 3
   Special Traits:
     Ethereal Jaunt: As a bonus action, the spider can magically shift from the Material Plane to the Ethereal Plane, or vice versa.
     Spider Climb: The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
     Web Walker: The spider ignores movement restrictions caused by webbing.
   Actions:
-    Bite: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 7, damage roll: 1d10 + 2, damage type: piercing, text: and the target must make a DC 11 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.}
+    Bite: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 7, damage roll: 1d10 + 2, damage type: piercing, text: "and the target must make a DC 11 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."}
 smoke mephit:
   Name: Smoke Mephit
   Size: Small 

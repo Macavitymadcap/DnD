@@ -3,16 +3,18 @@
 {% block title %}Monsterpedia{% endblock %}
 {% block head %}
 <script>
+    // Search json_data for matching monster
     const fs = require('fs');
-    function searchMonsters(string) { 
-        let rawdata = fs.readFileSync('./MonsterManual.json');
-        let monsters = JSON.parse(rawdata);
-        return monsters[string.toLowerCase()]
-}
+    function searchMonsters() {
+        let string = document.getElementById('monster_name').value;
+        let monsters = JSON.parse(document.getElementById("json_data").innerHTML);
+        return JSON.stringify(monsters[string.toLowerCase()], undefined, 4);
+    }
 </script>
 {% endblock %}
 {% block content %}
-<span id="search area"><input type="text" id="monster_name"><button onclick="document.getElementById('result').innerHTML = searchMonsters('orc')">Search Monsters</button></span>
-<p id="result"></p>
+<p id="json_data" hidden>{{ monsters }}</p>
+<span id="search area"><input type="text" id="monster_name"><button onclick="document.getElementById('result').innerHTML = searchMonsters()">Search Monsters</button></span>
+<pre id="result"></pre>
 <p></p>
 {% endblock %}

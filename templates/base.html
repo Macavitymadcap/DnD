@@ -7,21 +7,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}"/>
     <script>
         /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-        function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
+        function toggleTopNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
         }
     </script>
 </head>
 <div class="topnav" id="myTopnav">
-    <a href="{{ url_for('home') }}">Dangeons & Dragons</a>
+    <a href="{{ url_for('index') }}">Home</a>
     <a href="{{ url_for('dice_roller') }}">Dice</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    <a href="{{ url_for('monsterpedia') }}">Monsters</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleTopNav()"><i class="fa fa-bars"></i></a>
 </div>
+<br>
+<br>
 <body>
     <div id="content">{% block content %}{% endblock %}</div>
 </body>
