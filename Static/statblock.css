@@ -21,7 +21,7 @@ input[type='number']{
     color: #94958B
 }
 
-p, td {
+p, td, span {
     color: grey;
     font-family: "Philospher", serif
 }
