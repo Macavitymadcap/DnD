@@ -147,6 +147,9 @@ def roll_crit(dice: str, modifier: int = None) -> int:
     Args:
         dice (str): A string of a number of dice
         modifier (str): A string of an operator (+|-) and number
+    
+    Attributes:
+        roll (int): Int of total dice rolled
 
     Returns:
         roll_string: A roll of double dice"""
