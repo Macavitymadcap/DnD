@@ -12,44 +12,54 @@ an array of starting ability scores."""
 
 from random import randint
 import re
+from typing import Callable
 
+def roll_d(num: int) -> int:
+    """Return a random number between 1 and num.
+    
+    Args:
+        num (int): An int for the number of faces on the die
+    
+    Returns:
+        roll (int): Int of the the number rolled."""
+    return randint(1, num)
 
-def d4():
+def d4() -> int:
     """Return a random number between 1 and 4."""
-    return randint(1, 4)
+    return roll_d(4)
 
 
-def d6():
+def d6() -> int:
     """Return a random number between 1 and 6."""
-    return randint(1, 6)
+    return roll_d(6)
 
 
-def d8():
+def d8() -> int:
     """Return a random number between 1 and 8."""
-    return randint(1, 8)
+    return roll_d(8)
 
 
-def d10():
+def d10() -> int:
     """Return a random number between 1 and 10."""
-    return randint(1, 10)
+    return roll_d(10)
 
 
-def d12():
+def d12() -> int:
     """Return a random number between 1 and 12."""
-    return randint(1, 12)
+    return roll_d(12)
 
 
-def d20():
+def d20() -> int:
     """Return a random number between 1 and 20."""
-    return randint(1, 20)
+    return roll_d(20)
 
 
-def d100():
+def d100() -> int:
     """Return a random number between 1 and 100."""
-    return randint(1, 100)
+    return roll_d(100)
 
 
-def roll(num, die):
+def roll(num: int, die: Callable[[None], int]) -> int:
     """Return a die or dice rolled a number of times.
 
     Args:
@@ -66,7 +76,7 @@ def roll(num, die):
     return roll_total
 
 
-def roll_string(string):
+def roll_string(string: str) -> int:
     """Return a roll of a number of given dice with modifiers.
 
     Args:
@@ -131,7 +141,7 @@ def roll_string(string):
             return roll(int(num_dice_stripped), eval(die.group().lower()))
 
 
-def roll_crit(dice, modifier=None):
+def roll_crit(dice: str, modifier: int = None) -> int:
     """Return a roll of doubled dice with modifiers.
 
     Args:
@@ -150,7 +160,7 @@ def roll_crit(dice, modifier=None):
         return (roll_string(dice) * 2) - int(modifier[1:])
 
 
-def roll_advantage(string):
+def roll_advantage(string: str) -> list[int]:
     """Return two calls to roll_string sorted highest to lowest.
 
     Args:
@@ -165,7 +175,7 @@ def roll_advantage(string):
     return roll_list
 
 
-def roll_disadvantage(string):
+def roll_disadvantage(string: str) -> list[int]:
     """Return call to roll_advantage sorted lowest to highest.
 
     Args:
@@ -179,7 +189,7 @@ def roll_disadvantage(string):
     return roll_list
 
 
-def roll_array(string):
+def roll_array(string: str) -> list[int]:
     """Return an array of a number of die rolls with modifiers.
 
     Args:
@@ -195,7 +205,7 @@ def roll_array(string):
     return rolls
 
 
-def roll_ability_scores():
+def roll_ability_scores() -> list[int]:
     """Return a list of 6 4d6 minus the lowest for each group.
 
     Attributes:
