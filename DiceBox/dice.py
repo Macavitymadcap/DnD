@@ -224,7 +224,7 @@ def roll_ability_scores() -> list[int]:
     Returns:
         abilities: An array of 6 calls to ability_die sorted highest to lowest"""
 
-    def ability_die():
+    def ability_die() -> int:
         ability = 0
         four_d6 = roll_array("4d6")
         four_d6.sort()
