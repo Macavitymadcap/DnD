@@ -840,7 +840,7 @@ def name(kind: str, option: str) -> str:
 
     elif kind == 'egyptian':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'egyptian, female')}"
 
         else:
@@ -848,12 +848,12 @@ def name(kind: str, option: str) -> str:
 
     elif kind == 'elf':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'elf, female')} {roll_range(names_df, d100(), 'elf, child')} {roll_range(names_df, d100(), 'elf, family')}"
 
     elif kind == 'english':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'english, female')}"
 
         else:
@@ -917,7 +917,7 @@ def name(kind: str, option: str) -> str:
 
     elif kind == 'japanese':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'japanese, female')}"
 
         else:
