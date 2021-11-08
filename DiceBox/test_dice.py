@@ -18,6 +18,7 @@ from dice import roll_d
 from dice import roll_disadvantage
 from dice import roll_string
 
+
 class die_test(unittest.TestCase):
     """Class for testing the dx and roll functions."""
 
@@ -87,7 +88,7 @@ class die_test(unittest.TestCase):
 
     def test_lists(self):
         """Test that array-based roll functions return lists."""
-        
+
         advantage_roll = roll_advantage(self.standard_string)
         disadvantage_roll = roll_disadvantage(self.standard_string)
         array_roll = roll_array(self.array_string)
@@ -97,7 +98,7 @@ class die_test(unittest.TestCase):
         self.assertIsInstance(disadvantage_roll, list)
         self.assertIsInstance(array_roll, list)
         self.assertIsInstance(scores_roll, list)
-        
+
 
 if __name__ == "__main__":
     unittest.main()
