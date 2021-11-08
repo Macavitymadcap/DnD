@@ -7,8 +7,6 @@ treasure hoards.
 """
 from typing import Callable
 
-from pandas.core.frame import DataFrame
-
 from Data import art_objects_25gp
 from Data import art_objects_250gp
 from Data import art_objects_750gp
@@ -90,7 +88,7 @@ def check_range(num: int, string: str) -> bool:
     return check_num(num, get_range(string))
 
 
-def roll_range(dataframe: DataFrame, die_roll: Callable, column: str) -> str:
+def roll_range(dataframe: object, die_roll: Callable, column: str) -> str:
     """Return roll on given dataframe column.
 
     Args:
