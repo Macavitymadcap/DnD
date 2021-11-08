@@ -1,3 +1,5 @@
+"""Script for testing the functions of the dice module."""
+
 import unittest
 
 from dice import d4
@@ -18,8 +20,10 @@ from dice import roll_string
 
 class die_test(unittest.TestCase):
     """Class for testing the dx and roll functions."""
+
     def setUp(self) -> None:
         """Set up the variables used in tests"""
+
         self.standard_string = '1d20+2'
         self.crit_string = '2d6'
         self.crit_mod = '+2'
@@ -40,6 +44,7 @@ class die_test(unittest.TestCase):
 
     def test_range(self):
         """Test that the output of each roll function is in expected range."""
+
         d3_roll = roll_d(3)
         d4_roll = d4()
         d6_roll = d6()
@@ -82,6 +87,7 @@ class die_test(unittest.TestCase):
 
     def test_lists(self):
         """Test that array-based roll functions return lists."""
+        
         advantage_roll = roll_advantage(self.standard_string)
         disadvantage_roll = roll_disadvantage(self.standard_string)
         array_roll = roll_array(self.array_string)
