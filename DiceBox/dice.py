@@ -14,15 +14,17 @@ from random import randint
 import re
 from typing import Callable
 
+
 def roll_d(num: int) -> int:
     """Return a random number between 1 and num.
-    
+
     Args:
         num (int): An int for the number of faces on the die
-    
+
     Returns:
         roll (int): Int of the the number rolled."""
     return randint(1, num)
+
 
 def d4() -> int:
     """Return a random number between 1 and 4."""
@@ -147,7 +149,7 @@ def roll_crit(dice: str, modifier: str = None) -> int:
     Args:
         dice (str): A string of a number of dice
         modifier (str): A string of an operator (+|-) and number
-    
+
     Attributes:
         roll (int): Int of total dice rolled
 
@@ -166,7 +168,7 @@ def roll_crit(dice: str, modifier: str = None) -> int:
     else:
         for i in range(2):
             roll += roll_string(dice)
-            
+
         return roll - int(modifier[1:])
 
 
