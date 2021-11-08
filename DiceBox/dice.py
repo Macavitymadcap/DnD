@@ -141,7 +141,7 @@ def roll_string(string: str) -> int:
             return roll(int(num_dice_stripped), eval(die.group().lower()))
 
 
-def roll_crit(dice: str, modifier: int = None) -> int:
+def roll_crit(dice: str, modifier: str = None) -> int:
     """Return a roll of doubled dice with modifiers.
 
     Args:
