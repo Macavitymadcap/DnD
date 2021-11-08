@@ -378,19 +378,19 @@ def hoard_tier1():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_10)}\nMagic Items: {', '.join(magic_items_c)}"
 
     elif hoard_roll in range(79, 81):
-        return f"Coins: {coins}\Art Objects: {', '.join(art_25)}\nMagic Items: {', '.join(magic_items_c)}"
+        return f"Coins: {coins}\nArt Objects: {', '.join(art_25)}\nMagic Items: {', '.join(magic_items_c)}"
 
     elif hoard_roll in range(81, 86):
         return f"Coins: {coins}\nGemstones: {', '.join(gems_50)}\nMagic Items: {', '.join(magic_items_c)}"
 
     elif hoard_roll in range(86, 93):
-        return f"Coins: {coins}\Art Objects: {', '.join(art_25)}\nMagic Items: {', '.join(magic_items_f)}"
+        return f"Coins: {coins}\nArt Objects: {', '.join(art_25)}\nMagic Items: {', '.join(magic_items_f)}"
 
     elif hoard_roll in range(93, 98):
         return f"Coins: {coins}\nGemstones: {', '.join(gems_50)}\nMagic Items: {', '.join(magic_items_f)}"
 
     elif hoard_roll in range(98, 100):
-        return f"Coins: {coins}\Art Objects: {', '.join(art_25)}\nMagic Items: {magic_items_g}"
+        return f"Coins: {coins}\nArt Objects: {', '.join(art_25)}\nMagic Items: {magic_items_g}"
 
     elif hoard_roll == 100:
         return f"Coins: {coins}\nGemstones: {', '.join(art_25)}\nMagic Items: {magic_items_g}"
@@ -711,10 +711,10 @@ def hoard_tier4():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_1000)}\nMagic Items: {', '.join(magic_items_c)}"
 
     elif hoard_roll in range(6, 9):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_c)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_c)}"
 
     elif hoard_roll in range(9, 12):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_c)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_c)}"
 
     elif hoard_roll in range(12, 15):
         return f"Coins: {coins}\nGemstones: {', '.join(gems_5000)}\nMagic Items: {', '.join(magic_items_c)}"
@@ -723,10 +723,10 @@ def hoard_tier4():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_1000)}\nMagic Items: {', '.join(magic_items_d)}"
 
     elif hoard_roll in range(23, 31):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_d)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_d)}"
 
     elif hoard_roll in range(31, 39):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_d)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_d)}"
 
     elif hoard_roll in range(39, 47):
         return f"Coins: {coins}\nGemstones: {', '.join(gems_5000)}\nMagic Items: {', '.join(magic_items_d)}"
@@ -735,10 +735,10 @@ def hoard_tier4():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_1000)}\nMagic Items: {', '.join(magic_items_e)}"
 
     elif hoard_roll in range(53, 59):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_e)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_e)}"
 
     elif hoard_roll in range(59, 64):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_e)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_e)}"
 
     elif hoard_roll in range(64, 69):
         return f"Coins: {coins}\nGemstones: {', '.join(gems_5000)}\nMagic Items: {', '.join(magic_items_e)}"
@@ -747,10 +747,10 @@ def hoard_tier4():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_1000)}\nMagic Items: {', '.join(magic_items_g)}"
 
     elif hoard_roll == 70:
-        return f"Coins: {coins}\nGemstones: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_g)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_g)}"
 
     elif hoard_roll == 71:
-        return f"Coins: {coins}\nGemstones: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_g)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_g)}"
 
     elif hoard_roll == 72:
         return f"Coins: {coins}\nGemstones: {', '.join(gems_5000)}\nMagic Items: {', '.join(magic_items_g)}"
@@ -759,10 +759,10 @@ def hoard_tier4():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_1000)}\nMagic Items: {', '.join(magic_items_h)}"
 
     elif hoard_roll in range(75, 77):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_h)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_h)}"
 
     elif hoard_roll in range(77, 79):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_h)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_h)}"
 
     elif hoard_roll in range(79, 81):
         return f"Coins: {coins}\nGemstones: {', '.join(gems_5000)}\nMagic Items: {', '.join(magic_items_h)}"
@@ -771,10 +771,10 @@ def hoard_tier4():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_1000)}\nMagic Items: {', '.join(magic_items_i)}"
 
     elif hoard_roll in range(86, 91):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_i)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_2500)}\nMagic Items: {', '.join(magic_items_i)}"
 
     elif hoard_roll in range(91, 96):
-        return f"Coins: {coins}\nGemstones: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_i)}"
+        return f"Coins: {coins}\Art Objects: {', '.join(art_7500)}\nMagic Items: {', '.join(magic_items_i)}"
 
     elif hoard_roll in range(91, 101):
         return f"Coins: {coins}\nGemstones: {', '.join(gems_5000)}\nMagic Items: {', '.join(magic_items_i)}"
