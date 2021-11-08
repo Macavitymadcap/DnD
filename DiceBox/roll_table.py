@@ -5,6 +5,9 @@ and then roll on a given dataframe. These functions are then used to roll for
 art objects; gemstones; individual treasure; magic items; names and 
 treasure hoards.
 """
+from typing import Callable
+
+from pandas.core.frame import DataFrame
 
 from Data import art_objects_25gp
 from Data import art_objects_250gp
@@ -38,7 +41,7 @@ from DiceBox.dice import d12
 from DiceBox.dice import d100
 from DiceBox.dice import roll
 
-def check_range(num, string):
+def check_range(num: int, string: str) -> bool:
     """Return True if num in string, False if not.
 
     Args:
@@ -52,7 +55,7 @@ def check_range(num, string):
     Returns:
         check_num(num, get_range(string)): True if num in String, False if not"""
 
-    def get_range(string):
+    def get_range(string: str) -> range:
         """Return a range from a given string.
 
         Args:
@@ -67,7 +70,7 @@ def check_range(num, string):
 
         return to_range
 
-    def check_num(num, range):
+    def check_num(num: int, range: range) -> bool:
         """Return True if num in range, False if not.
 
         Args:
@@ -87,7 +90,7 @@ def check_range(num, string):
     return check_num(num, get_range(string))
 
 
-def roll_range(dataframe, die_roll, column):
+def roll_range(dataframe: DataFrame, die_roll: Callable, column: str) -> str:
     """Return roll on given dataframe column.
 
     Args:
@@ -107,14 +110,14 @@ def roll_range(dataframe, die_roll, column):
         else:
             return dataframe.at[index, column]
 
-def wild_magic():
+def wild_magic() -> str:
     """"Return a roll on wild magic surge table.
     
     Returns:
         string: String of effect of wild magic surge"""    
     return roll_range(wild_magic_df, d100(), 'Effect')
 
-def art_object(value):
+def art_object(value: int) -> str:
     """Return a roll on an art objects table of a given value.
 
     Args:
@@ -139,7 +142,7 @@ def art_object(value):
         return art_objects_7500gp.at[d8(), 'Object']
 
 
-def gemstone(value):
+def gemstone(value: int) -> str:
     """Return a roll on a gemstone table of a given value.
 
     Args:
@@ -168,7 +171,7 @@ def gemstone(value):
         return gemstones_5000gp.at[d4(), 'Stone Description']
 
 
-def magic_item(table):
+def magic_item(table: str) -> str:
     """Return a magic item table rolled from a given table.
 
     Args:
@@ -215,7 +218,7 @@ def magic_item(table):
             return roll_range(magic_items_i, roll_i, 'Magic Item')
 
 
-def treasure_tier1():
+def treasure_tier1() -> str:
     """Return roll on Individual Treasure: Challenge 0-4.
 
     Attributes:
@@ -241,7 +244,7 @@ def treasure_tier1():
         return f"{d6()} pp"
 
 
-def treasure_tier2():
+def treasure_tier2() -> str:
     """Return roll on Individual Treasure: Challenge 7-10.
 
     Attributes:
@@ -267,7 +270,7 @@ def treasure_tier2():
         return f"{roll(2, d6) * 10} gp, {roll(3, d6)} pp"
 
 
-def treasure_tier3():
+def treasure_tier3() -> str:
     """Return roll on Individual Treasure: Challenge 11-16.
 
     Attributes:
@@ -290,7 +293,7 @@ def treasure_tier3():
         return f"{roll(2, d6) * 100} gp, {roll(2, d6) * 10} pp"
 
 
-def treasure_tier4():
+def treasure_tier4() -> str:
     """Return roll on Individual Treasure: Challenge 17+.
 
     Attributes:
@@ -310,7 +313,7 @@ def treasure_tier4():
         return f"{d6() * 1000} gp, {roll(2, d6) * 100} pp"
 
 
-def hoard_tier1():
+def hoard_tier1() -> str:
     """Return roll on Treasure Hoard: Challenge 0-4.
 
     Attributes:
@@ -396,7 +399,7 @@ def hoard_tier1():
         return f"Coins: {coins}\nGemstones: {', '.join(art_25)}\nMagic Items: {magic_items_g}"
 
 
-def hoard_tier2():
+def hoard_tier2() -> str:
     """Return roll on Treasure Hoard: Challenge 5-10.
 
     Attributes:
@@ -526,7 +529,7 @@ def hoard_tier2():
         return f"Coins: {coins}\nArt Objects: {', '.join(art_250)}\nMagic Items: {magic_items_h}"
 
 
-def hoard_tier3():
+def hoard_tier3() -> str:
     """Return roll on Treasure Hoard: Challenge 11-17.
 
     Attributes:
@@ -668,7 +671,7 @@ def hoard_tier3():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_1000)}\nMagic Items: {magic_items_i}"
 
 
-def hoard_tier4():
+def hoard_tier4() -> str:
     """Return roll on Treasure Hoard: Challenge 17+.
 
     Attributes:
@@ -780,7 +783,7 @@ def hoard_tier4():
         return f"Coins: {coins}\nGemstones: {', '.join(gems_5000)}\nMagic Items: {', '.join(magic_items_i)}"
 
 
-def name(kind, option):
+def name(kind: str, option: str) -> str:
     """Return string of name rolled on names_df for given kind and option.
 
     Args:
