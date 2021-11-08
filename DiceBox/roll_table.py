@@ -877,7 +877,7 @@ def name(kind: str, option: str) -> str:
 
     elif kind == 'gnome':
 
-        if option is 'female':
+        if option == 'female':
             return f"{roll_range(names_df, d100(), 'gnome, female')} {roll_range(names_df, d100(), 'gnome, clan')}"
 
         else:
