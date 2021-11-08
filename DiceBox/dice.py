@@ -150,14 +150,21 @@ def roll_crit(dice: str, modifier: int = None) -> int:
 
     Returns:
         roll_string: A roll of double dice"""
+    roll = 0
     if modifier is None:
         return roll_string(dice)
 
     elif modifier[0] == "+":
-        return (roll_string(dice) * 2) + int(modifier[1:])
+        for i in range(2):
+            roll += roll_string(dice)
+
+        return roll + int(modifier[1:])
 
     else:
-        return (roll_string(dice) * 2) - int(modifier[1:])
+        for i in range(2):
+            roll += roll_string(dice)
+            
+        return roll - int(modifier[1:])
 
 
 def roll_advantage(string: str) -> list[int]:
