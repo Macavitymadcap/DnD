@@ -6,27 +6,36 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
     <script src="{{ url_for('static', filename='dice.js') }}"></script>
     <script>
+        // Search json_data for matching monster
+        const fs = require('fs');
+        function searchMonsters() {
+            let string = document.getElementById('monster_name').innerHTML;
+            let monsters = JSON.parse(document.getElementById("json_data").innerHTML);
+            return monsters[string.toLowerCase()];
+        }
         // Display dropdown menus for roll buttons
         function showDropDown(string) {
             document.getElementById(string).classList.toggle("show");
         }
         // Close a dropdown if the user clicks outside of it
         window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
                 }
-            }
             }
         }
     </script>
 {% endblock %}
 {% block content %}
-    <h3>{{stats['name'].upper()}}</h3>
+<p id="json_data" hidden>{{ monsters }}</p>
+<h2>Monster StatBlock</h2>
+    <h3 id="monster_name">{{stats['name'].upper()}}</h3>
     <p><i>{{stats['size'].capitalize()}}, {{stats['monster_type']}}, {{stats['alignment']}}</i></p>
     <hr>
     <p><b id="name">Armour Class</b> {{stats['armour_class']}} ({{stats['armour_type']}})</p>
@@ -136,7 +145,10 @@
         <span id="saving_throw"></span></p>
     {% endif %}
     {% if stats['skills'] != None %}
-        <p><b id="name">Skills</b> 
+    <script>
+        let monster_skills = Object.values(searchMonsters()['Skills']);
+    </script>
+        <p><b id="name">Skills</b>
             {% for skill in stats['skills'] %}
             <button onclick="document.getElementById('skill_check').innerHTML =  rollString('d20')">{{skill['name']}}</button> <span id="{{skill['name']}}">{{skill['modifier']}} </span>
             {% endfor %}
