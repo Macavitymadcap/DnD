@@ -190,10 +190,18 @@
                     statblock += `<p><b>${trait}.</b> ${traits[trait]}</p>`;
                 }
             }
+            if (stats["Actions"]) {
+                statblock += `<h4>ACTIONS</h4>`
+                var actions = stats["Actions"];
+                for (action in actions) {
+                    statblock += `<p><b>${action}</b> </p>`;
+                }
+            }
             return statblock;
         }
         else {
-            return `404 - '${string}' not found.`
+            return `<h3>404</h3>
+                <p>'${string}' not found.<p>`
         }
     }
     // Display dropdown menus for roll buttons
