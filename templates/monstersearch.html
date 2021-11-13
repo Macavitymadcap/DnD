@@ -130,44 +130,40 @@
                 </tr>
             </table>`;
             if (stats["Saving Throws"]) {
-                statblock += `<p><table>
-                    <tr>
-                        <td><b>Saving Throws</b></td>`;
+                statblock += `<p><div class="flex_line">
+                        <div><b>Saving Throws</b></div>`;
                 var saves = stats["Saving Throws"];
                 for (const save in saves) {
-                    statblock += `<td class="dropdown">
+                    statblock += `<div class="dropdown">
                         <button onclick="showDropDown('${save}Dropdown')" class="dropbtn">${save}</button>
                         <div id="${save}Dropdown" class="dropdown-content">
                         <button onclick="document.getElementById('saving_throw').innerHTML = rollString('d20+' + '${saves[save]}')">Roll</button>
                         <button onclick="document.getElementById('saving_throw').innerHTML = rollAdvan('d20+' + '${saves[save]}')">Advn</button>
                         <button onclick="document.getElementById('saving_throw').innerHTML = rollDisad('d20+' + '${saves[save]}')">Disad</button>
                     </div>
-                </td>
-                <td>${addOperator(saves[save])}</td> `;
+                </div>
+                <div>${addOperator(saves[save])}</div> `;
                 }
-                statblock += `<td id="saving_throw"></td>
-                    </tr>
-                </table></p>`;
+                statblock += `<div id="saving_throw"></div>
+            </div></p>`;
             }
             if (stats["Skills"]) {
-                statblock += `<p><table>
-                    <tr>
-                        <td><b>Skills</b></td>`;
+                statblock += `<p><div class="flex_line">
+                        <div><b>Skills</b></div>`;
                 var skills = stats["Skills"];
                 for (const skill in skills) {
-                    statblock += `<td class="dropdown">
+                    statblock += `<div class="dropdown">
                         <button onclick="showDropDown('${skill}Dropdown')" class="dropbtn">${skill}</button>
                         <div id="${skill}Dropdown" class="dropdown-content">
                         <button onclick="document.getElementById('skill_check').innerHTML = rollString('d20+' + '${skills[skill]}')">Roll</button>
                         <button onclick="document.getElementById('skill_check').innerHTML = rollAdvan('d20+' + '${skills[skill]}')">Advn</button>
                         <button onclick="document.getElementById('skill_check').innerHTML = rollDisad('d20+' + '${skills[skill]}')">Disad</button>
                     </div>
-                </td>
-                <td>${addOperator(skills[skill])}</td> `;
+                </div>
+                <div>${addOperator(skills[skill])}</div> `;
                 }
-                statblock += `<td id="skill_check"></td>
-                    </tr>
-                </table></p>`;
+                statblock += `<div id="skill_check"></div>
+            </div></p>`;
             }
             if (stats["Damage Vulnerabilities"]) {
                 statblock += `<p><b>Damage Vulnerabilities</b> ${stats["Damage Vulnerabilities"]}</p>`;
@@ -200,27 +196,37 @@
                     if (action === "Multiattack") {
                         break; 
                     }
-                    statblock += `<p><i><b>${action}.</b></i> <i>${actions[action]["kind"]}</i> ${addOperator(actions[action]["to hit"])} <span class="dropdown">
-                        <button onclick="showDropDown('${action}ToHitDropdown')" class="dropbtn">To Hit</button>
-                        <span id="${action}ToHitDropdown" class="dropdown-content">
-                            <button onclick="document.getElementById('${action}-roll').innerHTML = rollString('d20' + '${addOperator(actions[action]["to hit"])}')">Roll</button>
-                            <button onclick="document.getElementById('${action}-roll').innerHTML = rollAdvan('d20' + '${addOperator(actions[action]["to hit"])}')">Advn</button>
-                            <button onclick="document.getElementById('${action}-roll').innerHTML = rollDisad('d20' + '${addOperator(actions[action]["to hit"])}')">Disad</button>
-                        </span>
-                    </span> `;
+                    statblock += `<p><div class="flex_line">
+                            <div><i><b>${action}.</b></i> </div>
+                            <div><i>${actions[action]["kind"]}</i> </div>
+                            <div>${addOperator(actions[action]["to hit"])} </div>
+                            <div class="dropdown">
+                                <button onclick="showDropDown('${action}ToHitDropdown')" class="dropbtn">To Hit</button>
+                                <div id="${action}ToHitDropdown" class="dropdown-content">
+                                    <button onclick="document.getElementById('${action}-roll').innerHTML = rollString('d20' + '${addOperator(actions[action]["to hit"])}')">Roll</button>
+                                    <button onclick="document.getElementById('${action}-roll').innerHTML = rollAdvan('d20' + '${addOperator(actions[action]["to hit"])}')">Advn</button>
+                                    <button onclick="document.getElementById('${action}-roll').innerHTML = rollDisad('d20' + '${addOperator(actions[action]["to hit"])}')">Disad</button>
+                                </div>
+                            </div>`;
                     if (actions[action]["reach"]) {
-                        statblock += `reach ${actions[action]["reach"]}, `;
+                        statblock += `<div>reach ${actions[action]["reach"]}, </div>`;
                     }
                     if (actions[action]["range"]) {
-                        statblock += `range ${actions[action]["range"]}, `;
+                        statblock += `<div>range ${actions[action]["range"]}, </div>`;
                     }
-                    statblock += `${actions[action]["target"]}. <span class="dropdown">
+                    statblock += `<div>${actions[action]["target"]}. </div>
+                        <div class="dropdown">
                         <button onclick="showDropDown('${action}HitDropdown')" class="dropbtn">Hit</button>
-                        <span id="${action}HitDropdown" class="dropdown-content">
+                        <div id="${action}HitDropdown" class="dropdown-content">
                             <button onclick="document.getElementById('${action}-roll').innerHTML = rollString('${actions[action]["damage roll"]}')">Roll</button>
                             <button onclick="document.getElementById('${action}-roll').innerHTML = rollCrit('${actions[action]["damage roll"]}')">Crit</button>
-                        </span>
-                    </span> ${actions[action]["hit"]} (${actions[action]["damage roll"]}) ${actions[action]["damage type"]} damage. <span id="${action}-roll"></span>`;
+                        </div>
+                    </div>
+                    <div>${actions[action]["hit"]} </div>
+                    <div>(${actions[action]["damage roll"]}) </div> 
+                    <div>${actions[action]["damage type"]} damage. </div> 
+                    <div id="${action}-roll"></div>
+                </div></p>`;
                 }
                 }
                 return statblock;

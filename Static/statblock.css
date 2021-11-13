@@ -24,7 +24,7 @@ input[type='number']{
     color: #94958B
 }
 
-p, td, span {
+p, td, span, div {
     color: grey;
     font-family: "Philospher", serif
 }
@@ -34,7 +34,16 @@ p, td, span {
     text-align: center;
     padding: 0px 5px
 }
-
+.flex_line {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+.flex_line > div {
+    margin: 2px;
+}
 button {
     background-color: #8B0000; 
     color: grey;
