@@ -2,8 +2,6 @@ from flask import Flask
 from flask import render_template, json
 import yaml
 
-from gracie_lou import gracie
-from Utilities import search_monsters
 from StatBlock import monster_set
 
 app = Flask(__name__)
@@ -13,18 +11,11 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/sheet")
-def character_sheet():
-    """Return html of rendered character sheet for given character.
-    
-    Args:
-        character(obj): Instance of the PlayerCharacter class"""
-    return render_template("sheet.html")
-
 @app.route("/dice")
 def dice_roller():
     """Return html of dice roller page."""
     return render_template("dice.html")
+
 
 @app.route("/monsters")
 def monsterpedia():
@@ -34,11 +25,6 @@ def monsterpedia():
     json_monsters = json.dumps(yaml_monsters)
     
     return render_template("monstersearch.html", monsters=json_monsters)
-
-@app.route("/mm_<monster>")
-def search_json_monsters(monster):
-    monster_name = monster.replace("_", " ")
-    return f"<pre>{search_monsters(monster_name)}</pre>"
 
 
 @app.route("/statblock/<creature>")

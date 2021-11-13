@@ -130,7 +130,7 @@
                 </tr>
             </table>`;
             if (stats["Saving Throws"]) {
-                statblock += `<table>
+                statblock += `<p><table>
                     <tr>
                         <td><b>Saving Throws</b></td>`;
                 var saves = stats["Saving Throws"];
@@ -147,10 +147,10 @@
                 }
                 statblock += `<td id="saving_throw"></td>
                     </tr>
-                </table>`;
+                </table></p>`;
             }
             if (stats["Skills"]) {
-                statblock += `<table>
+                statblock += `<p><table>
                     <tr>
                         <td><b>Skills</b></td>`;
                 var skills = stats["Skills"];
@@ -167,7 +167,7 @@
                 }
                 statblock += `<td id="skill_check"></td>
                     </tr>
-                </table>`;
+                </table></p>`;
             }
             if (stats["Damage Vulnerabilities"]) {
                 statblock += `<p><b>Damage Vulnerabilities</b> ${stats["Damage Vulnerabilities"]}</p>`;
@@ -184,6 +184,12 @@
             statblock += `<p><b>Senses</b> ${stats["Senses"]}</p>
                 <p><b>Languages</b> ${stats["Languages"]}</p>
                 <p><b>Challenge</b> ${stats["Challenge"]}</p>`
+            if (stats["Special Traits"]) {
+                var traits = stats["Special Traits"];
+                for (trait in traits) {
+                    statblock += `<p><b>${trait}.</b> ${traits[trait]}</p>`;
+                }
+            }
             return statblock;
         }
         else {
