@@ -59,54 +59,54 @@
             <td><div class="dropdown">
                     <button onclick="showDropDown('strDropdown')" class="dropbtn">STR</button>
                     <div id="strDropdown" class="dropdown-content">
-                    <button onclick="document.getElementById('str_roll').innerHTML = rollString('d20' + document.getElementById('str_mod').innerHTML)">Roll</button>
-                    <button onclick="document.getElementById('str_roll').innerHTML = rollAdvan('d20' + document.getElementById('str_mod').innerHTML)">Advn</button>
-                    <button onclick="document.getElementById('str_roll').innerHTML = rollDisad('d20' + document.getElementById('str_mod').innerHTML)">Disad</button>
+                    <button onclick="document.getElementById('str_roll').innerHTML = rollString('d20+' + document.getElementById('str_mod').innerHTML)">Roll</button>
+                    <button onclick="document.getElementById('str_roll').innerHTML = rollAdvan('d20+' + document.getElementById('str_mod').innerHTML)">Advn</button>
+                    <button onclick="document.getElementById('str_roll').innerHTML = rollDisad('d20+' + document.getElementById('str_mod').innerHTML)">Disad</button>
                 </div>
               </div>
             </td>
             <td><div class="dropdown">
                     <button onclick="showDropDown('dexDropdown')" class="dropbtn">DEX</button>
                     <div id="dexDropdown" class="dropdown-content">
-                    <button onclick="document.getElementById('dex_roll').innerHTML = rollString('d20' + document.getElementById('dex_mod').innerHTML)">Roll</button>
-                    <button onclick="document.getElementById('dex_roll').innerHTML = rollAdvan('d20' + document.getElementById('dex_mod').innerHTML)">Advn</button>
-                    <button onclick="document.getElementById('dex_roll').innerHTML = rollDisad('d20' + document.getElementById('dex_mod').innerHTML)">Disad</button>
+                    <button onclick="document.getElementById('dex_roll').innerHTML = rollString('d20+' + document.getElementById('dex_mod').innerHTML)">Roll</button>
+                    <button onclick="document.getElementById('dex_roll').innerHTML = rollAdvan('d20+' + document.getElementById('dex_mod').innerHTML)">Advn</button>
+                    <button onclick="document.getElementById('dex_roll').innerHTML = rollDisad('d20+' + document.getElementById('dex_mod').innerHTML)">Disad</button>
                 </div>
               </div>
             </td>
             <td><div class="dropdown">
                     <button onclick="showDropDown('conDropdown')" class="dropbtn">CON</button>
                     <div id="conDropdown" class="dropdown-content">
-                    <button onclick="document.getElementById('con_roll').innerHTML = rollString('d20' + document.getElementById('con_mod').innerHTML)">Roll</button>
-                    <button onclick="document.getElementById('con_roll').innerHTML = rollAdvan('d20' + document.getElementById('con_mod').innerHTML)">Advn</button>
-                    <button onclick="document.getElementById('con_roll').innerHTML = rollDisad('d20' + document.getElementById('con_mod').innerHTML)">Disad</button>
+                    <button onclick="document.getElementById('con_roll').innerHTML = rollString('d20+' + document.getElementById('con_mod').innerHTML)">Roll</button>
+                    <button onclick="document.getElementById('con_roll').innerHTML = rollAdvan('d20+' + document.getElementById('con_mod').innerHTML)">Advn</button>
+                    <button onclick="document.getElementById('con_roll').innerHTML = rollDisad('d20+' + document.getElementById('con_mod').innerHTML)">Disad</button>
                 </div>
               </div>
             </td>
             <td><div class="dropdown">
                     <button onclick="showDropDown('intDropdown')" class="dropbtn">INT</button>
                     <div id="intDropdown" class="dropdown-content">
-                    <button onclick="document.getElementById('int_roll').innerHTML = rollString('d20' + document.getElementById('int_mod').innerHTML)">Roll</button>
-                    <button onclick="document.getElementById('int_roll').innerHTML = rollAdvan('d20' + document.getElementById('int_mod').innerHTML)">Advn</button>
-                    <button onclick="document.getElementById('int_roll').innerHTML = rollDisad('d20' + document.getElementById('int_mod').innerHTML)">Disad</button>
+                    <button onclick="document.getElementById('int_roll').innerHTML = rollString('d20+' + document.getElementById('int_mod').innerHTML)">Roll</button>
+                    <button onclick="document.getElementById('int_roll').innerHTML = rollAdvan('d20+' + document.getElementById('int_mod').innerHTML)">Advn</button>
+                    <button onclick="document.getElementById('int_roll').innerHTML = rollDisad('d20+' + document.getElementById('int_mod').innerHTML)">Disad</button>
                 </div>
               </div>
             </td>
             <td><div class="dropdown">
                     <button onclick="showDropDown('wisDropdown')" class="dropbtn">WIS</button>
                     <div id="wisDropdown" class="dropdown-content">
-                    <button onclick="document.getElementById('wis_roll').innerHTML = rollString('d20' + document.getElementById('wis_mod').innerHTML)">Roll</button>
-                    <button onclick="document.getElementById('wis_roll').innerHTML = rollAdvan('d20' + document.getElementById('wis_mod').innerHTML)">Advn</button>
-                    <button onclick="document.getElementById('wis_roll').innerHTML = rollDisad('d20' + document.getElementById('wis_mod').innerHTML)">Disad</button>
+                    <button onclick="document.getElementById('wis_roll').innerHTML = rollString('d20+' + document.getElementById('wis_mod').innerHTML)">Roll</button>
+                    <button onclick="document.getElementById('wis_roll').innerHTML = rollAdvan('d20+' + document.getElementById('wis_mod').innerHTML)">Advn</button>
+                    <button onclick="document.getElementById('wis_roll').innerHTML = rollDisad('d20+' + document.getElementById('wis_mod').innerHTML)">Disad</button>
                 </div>
               </div>
             </td>
             <td><div class="dropdown">
                     <button onclick="showDropDown('chaDropdown')" class="dropbtn">CHA</button>
                     <div id="chaDropdown" class="dropdown-content">
-                    <button onclick="document.getElementById('cha_roll').innerHTML = rollString('d20' + document.getElementById('cha_mod').innerHTML)">Roll</button>
-                    <button onclick="document.getElementById('cha_roll').innerHTML = rollAdvan('d20' + document.getElementById('cha_mod').innerHTML)">Advn</button>
-                    <button onclick="document.getElementById('cha_roll').innerHTML = rollDisad('d20' + document.getElementById('cha_mod').innerHTML)">Disad</button>
+                    <button onclick="document.getElementById('cha_roll').innerHTML = rollString('d20+' + document.getElementById('cha_mod').innerHTML)">Roll</button>
+                    <button onclick="document.getElementById('cha_roll').innerHTML = rollAdvan('d20+' + document.getElementById('cha_mod').innerHTML)">Advn</button>
+                    <button onclick="document.getElementById('cha_roll').innerHTML = rollDisad('d20+' + document.getElementById('cha_mod').innerHTML)">Disad</button>
                 </div>
               </div>
             </td>
@@ -140,7 +140,7 @@
     {% if stats['saves'] != None %}
         <p><b id="name">Saves</b> 
         {% for save in stats['saves'] %}
-            <button onclick="document.getElementById('saving_throw').innerHTML =  rollString('d20')">{{save['name']}}</button> <span id="{{save['name']}}">{{save['modifier']}} </span>
+            <button onclick="document.getElementById('saving_throw').innerHTML =  rollString('d20+')">{{save['name']}}</button> <span id="{{save['name']}}">{{save['modifier']}} </span>
         {% endfor %}
         <span id="saving_throw"></span></p>
     {% endif %}
@@ -150,7 +150,7 @@
     </script>
         <p><b id="name">Skills</b>
             {% for skill in stats['skills'] %}
-            <button onclick="document.getElementById('skill_check').innerHTML =  rollString('d20')">{{skill['name']}}</button> <span id="{{skill['name']}}">{{skill['modifier']}} </span>
+            <button onclick="document.getElementById('skill_check').innerHTML =  rollString('d20+')">{{skill['name']}}</button> <span id="{{skill['name']}}">{{skill['modifier']}} </span>
             {% endfor %}
             <span id="skill_check"></span></p>
     {% endif %}

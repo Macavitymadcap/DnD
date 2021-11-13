@@ -6,11 +6,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
 <script src="{{ url_for('static', filename='dice.js') }}"></script>
 <script>
-    // Search json_data for matching monster
     const fs = require('fs');
+    // Return modifier of score prefixed with + or -
     function getModifier(num) {
-        return Math.floor((num - 10) / 2);
+        let mod = Math.floor((num - 10) / 2);
+        if (mod >= 0) {
+            return "+" + mod;
+        } else {
+            return mod;
+        }
     }
+    // Search json_data for matching monster
     function searchMonsters() {
         let string = document.getElementById('monster_name').value;
         let monsters = JSON.parse(document.getElementById("json_data").innerHTML);
@@ -37,80 +43,80 @@
                 <span><b id="name">Temp HP</b> <input type="number"></span>
                 <span><button onclick="document.getElementById('hit_points').innerHTML = rollString(document.getElementById('hit_dice').innerHTML)">Hit Dice</button> <span id="hit_dice">${stats["Hit Points"][1]}</span></span>            
             </p>
-            <p><b id="name">Speed</b> {{stats['speed']}}</p>
+            <p><b id="name">Speed</b> ${stats["Speed"]}</p>
             <hr>
             <table class="abilities_table">
                 <tr>
                     <td><div class="dropdown">
                             <button onclick="showDropDown('strDropdown')" class="dropbtn">STR</button>
                             <div id="strDropdown" class="dropdown-content">
-                            <button onclick="document.getElementById('str_roll').innerHTML = rollString('d20' + ${stats[""]}">Roll</button>
-                            <button onclick="document.getElementById('str_roll').innerHTML = rollAdvan('d20' + document.getElementById('str_mod').innerHTML)">Advn</button>
-                            <button onclick="document.getElementById('str_roll').innerHTML = rollDisad('d20' + document.getElementById('str_mod').innerHTML)">Disad</button>
+                            <button onclick="document.getElementById('str_roll').innerHTML = rollString('d20' + '${getModifier(stats["Abilities"][0])}')">Roll</button>
+                            <button onclick="document.getElementById('str_roll').innerHTML = rollAdvan('d20' + '${getModifier(stats["Abilities"][0])}')">Advn</button>
+                            <button onclick="document.getElementById('str_roll').innerHTML = rollDisad('d20' + '${getModifier(stats["Abilities"][0])}')">Disad</button>
                         </div>
                     </div>
                     </td>
                     <td><div class="dropdown">
                             <button onclick="showDropDown('dexDropdown')" class="dropbtn">DEX</button>
                             <div id="dexDropdown" class="dropdown-content">
-                            <button onclick="document.getElementById('dex_roll').innerHTML = rollString('d20' + document.getElementById('dex_mod').innerHTML)">Roll</button>
-                            <button onclick="document.getElementById('dex_roll').innerHTML = rollAdvan('d20' + document.getElementById('dex_mod').innerHTML)">Advn</button>
-                            <button onclick="document.getElementById('dex_roll').innerHTML = rollDisad('d20' + document.getElementById('dex_mod').innerHTML)">Disad</button>
+                            <button onclick="document.getElementById('dex_roll').innerHTML = rollString('d20' + '${getModifier(stats["Abilities"][1])}')">Roll</button>
+                            <button onclick="document.getElementById('dex_roll').innerHTML = rollAdvan('d20' + '${getModifier(stats["Abilities"][1])}')">Advn</button>
+                            <button onclick="document.getElementById('dex_roll').innerHTML = rollDisad('d20' + '${getModifier(stats["Abilities"][1])}')">Disad</button>
                         </div>
                     </div>
                     </td>
                     <td><div class="dropdown">
                             <button onclick="showDropDown('conDropdown')" class="dropbtn">CON</button>
                             <div id="conDropdown" class="dropdown-content">
-                            <button onclick="document.getElementById('con_roll').innerHTML = rollString('d20' + document.getElementById('con_mod').innerHTML)">Roll</button>
-                            <button onclick="document.getElementById('con_roll').innerHTML = rollAdvan('d20' + document.getElementById('con_mod').innerHTML)">Advn</button>
-                            <button onclick="document.getElementById('con_roll').innerHTML = rollDisad('d20' + document.getElementById('con_mod').innerHTML)">Disad</button>
+                            <button onclick="document.getElementById('con_roll').innerHTML = rollString('d20' + '${getModifier(stats["Abilities"][2])}')">Roll</button>
+                            <button onclick="document.getElementById('con_roll').innerHTML = rollAdvan('d20' + '${getModifier(stats["Abilities"][2])}')">Advn</button>
+                            <button onclick="document.getElementById('con_roll').innerHTML = rollDisad('d20' + '${getModifier(stats["Abilities"][2])}')">Disad</button>
                         </div>
                     </div>
                     </td>
                     <td><div class="dropdown">
                             <button onclick="showDropDown('intDropdown')" class="dropbtn">INT</button>
                             <div id="intDropdown" class="dropdown-content">
-                            <button onclick="document.getElementById('int_roll').innerHTML = rollString('d20' + document.getElementById('int_mod').innerHTML)">Roll</button>
-                            <button onclick="document.getElementById('int_roll').innerHTML = rollAdvan('d20' + document.getElementById('int_mod').innerHTML)">Advn</button>
-                            <button onclick="document.getElementById('int_roll').innerHTML = rollDisad('d20' + document.getElementById('int_mod').innerHTML)">Disad</button>
+                            <button onclick="document.getElementById('int_roll').innerHTML = rollString('d20' + '${getModifier(stats["Abilities"][3])}')">Roll</button>
+                            <button onclick="document.getElementById('int_roll').innerHTML = rollAdvan('d20' + '${getModifier(stats["Abilities"][3])}')">Advn</button>
+                            <button onclick="document.getElementById('int_roll').innerHTML = rollDisad('d20' + '${getModifier(stats["Abilities"][3])}')">Disad</button>
                         </div>
                     </div>
                     </td>
                     <td><div class="dropdown">
                             <button onclick="showDropDown('wisDropdown')" class="dropbtn">WIS</button>
                             <div id="wisDropdown" class="dropdown-content">
-                            <button onclick="document.getElementById('wis_roll').innerHTML = rollString('d20' + document.getElementById('wis_mod').innerHTML)">Roll</button>
-                            <button onclick="document.getElementById('wis_roll').innerHTML = rollAdvan('d20' + document.getElementById('wis_mod').innerHTML)">Advn</button>
-                            <button onclick="document.getElementById('wis_roll').innerHTML = rollDisad('d20' + document.getElementById('wis_mod').innerHTML)">Disad</button>
+                            <button onclick="document.getElementById('wis_roll').innerHTML = rollString('d20' + '${getModifier(stats["Abilities"][4])}')">Roll</button>
+                            <button onclick="document.getElementById('wis_roll').innerHTML = rollAdvan('d20' + '${getModifier(stats["Abilities"][4])}')">Advn</button>
+                            <button onclick="document.getElementById('wis_roll').innerHTML = rollDisad('d20' + '${getModifier(stats["Abilities"][4])}')">Disad</button>
                         </div>
                     </div>
                     </td>
                     <td><div class="dropdown">
                             <button onclick="showDropDown('chaDropdown')" class="dropbtn">CHA</button>
                             <div id="chaDropdown" class="dropdown-content">
-                            <button onclick="document.getElementById('cha_roll').innerHTML = rollString('d20' + document.getElementById('cha_mod').innerHTML)">Roll</button>
-                            <button onclick="document.getElementById('cha_roll').innerHTML = rollAdvan('d20' + document.getElementById('cha_mod').innerHTML)">Advn</button>
-                            <button onclick="document.getElementById('cha_roll').innerHTML = rollDisad('d20' + document.getElementById('cha_mod').innerHTML)">Disad</button>
+                            <button onclick="document.getElementById('cha_roll').innerHTML = rollString('d20' + '${getModifier(stats["Abilities"][5])}')">Roll</button>
+                            <button onclick="document.getElementById('cha_roll').innerHTML = rollAdvan('d20' + '${getModifier(stats["Abilities"][5])}')">Advn</button>
+                            <button onclick="document.getElementById('cha_roll').innerHTML = rollDisad('d20' + '${getModifier(stats["Abilities"][5])}')">Disad</button>
                         </div>
                     </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>{{stats['abilities']['strength']}}</td>
-                    <td>{{stats['abilities']['dexterity']}}</td>
-                    <td>{{stats['abilities']['constitution']}}</td>
-                    <td>{{stats['abilities']['intelligence']}}</td>
-                    <td>{{stats['abilities']['wisdom']}}</td>
-                    <td>{{stats['abilities']['charisma']}}</td>
+                    <td>${stats['Abilities'][0]}</td>
+                    <td>${stats['Abilities'][1]}</td>
+                    <td>${stats['Abilities'][2]}</td>
+                    <td>${stats['Abilities'][3]}</td>
+                    <td>${stats['Abilities'][4]}</td>
+                    <td>${stats['Abilities'][5]}</td>
                 </tr>
                 <tr>
-                    <td id="str_mod">{{"+" if stats['abilities']['strength_mod'] >= 0}}{{stats['abilities']['strength_mod']}}</td>
-                    <td id="dex_mod">{{"+" if stats['abilities']['dexterity_mod'] >= 0}}{{stats['abilities']['dexterity_mod']}}</td>
-                    <td id="con_mod">{{"+" if stats['abilities']['constitution_mod'] >= 0}}{{stats['abilities']['constitution_mod']}}</td>
-                    <td id="int_mod">{{"+" if stats['abilities']['intelligence_mod'] >= 0}}{{stats['abilities']['intelligence_mod']}}</td>
-                    <td id="wis_mod">{{"+" if stats['abilities']['wisdom_mod'] >= 0}}{{stats['abilities']['wisdom_mod']}}</td>
-                    <td id="cha_mod">{{"+" if stats['abilities']['charisma_mod'] >= 0}}{{stats['abilities']['charisma_mod']}}</td>
+                    <td id="str_mod">${getModifier(stats["Abilities"][0])}</td>
+                    <td id="dex_mod">${getModifier(stats["Abilities"][1])}</td>
+                    <td id="con_mod">${getModifier(stats["Abilities"][2])}</td>
+                    <td id="int_mod">${getModifier(stats["Abilities"][3])}</td>
+                    <td id="wis_mod">${getModifier(stats["Abilities"][4])}</td>
+                    <td id="cha_mod">${getModifier(stats["Abilities"][5])}</td>
                 </tr>
                 <tr>
                     <td><span id="str_roll"></span></td>
