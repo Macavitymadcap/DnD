@@ -169,6 +169,21 @@
                     </tr>
                 </table>`;
             }
+            if (stats["Damage Vulnerabilities"]) {
+                statblock += `<p><b>Damage Vulnerabilities</b> ${stats["Damage Vulnerabilities"]}</p>`;
+            }
+            if (stats["Damage Resistances"]) {
+                statblock += `<p><b>Damage Resistances</b> ${stats["Damage Resistances"]}</p>`;
+            }
+            if (stats["Damage Immunities"]) {
+                statblock += `<p><b>Damage Immunities</b> ${stats["Damage Immunities"]}</p>`;
+            }
+            if (stats["Condition Immunities"]) {
+                statblock += `<p><b>Condition Immunities</b> ${stats["Condition Immunities"]}</p>`;
+            }
+            statblock += `<p><b>Senses</b> ${stats["Senses"]}</p>
+                <p><b>Languages</b> ${stats["Languages"]}</p>
+                <p><b>Challenge</b> ${stats["Challenge"]}</p>`
             return statblock;
         }
         else {
