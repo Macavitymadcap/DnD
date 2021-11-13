@@ -7,14 +7,18 @@
 <script src="{{ url_for('static', filename='dice.js') }}"></script>
 <script>
     const fs = require('fs');
+    // Return number with + if 0 or higher
+    function addOperator(num) {
+        if (num >= 0) {
+            return "+" + num;
+        } else {
+            return num;
+        }
+    }
     // Return modifier of score prefixed with + or -
     function getModifier(num) {
         let mod = Math.floor((num - 10) / 2);
-        if (mod >= 0) {
-            return "+" + mod;
-        } else {
-            return mod;
-        }
+        return addOperator(mod)
     }
     // Search json_data for matching monster
     function searchMonsters() {
@@ -23,8 +27,7 @@
         let stats = monsters[string.toLowerCase()];
         if (stats) {
             let statblock = `<h3>${stats["Name"].toUpperCase()}</h3>
-            <p><i>${stats["Size"]}, ${stats["Kind"]}, ${stats["Alignment"]}</i></p>
-            <hr>`;
+            <p><i>${stats["Size"]}, ${stats["Kind"]}, ${stats["Alignment"]}</i></p>`;
             if (stats["Armour Class"] instanceof Array) {
                 statblock += `<p><b>Armour Class</b> ${stats["Armour Class"][0]} (<i>${stats["Armour Class"][1]}</i>)</p>`;
             } else {
@@ -44,7 +47,6 @@
                 <span><button onclick="document.getElementById('hit_points').innerHTML = rollString(document.getElementById('hit_dice').innerHTML)">Hit Dice</button> <span id="hit_dice">${stats["Hit Points"][1]}</span></span>            
             </p>
             <p><b id="name">Speed</b> ${stats["Speed"]}</p>
-            <hr>
             <table class="abilities_table">
                 <tr>
                     <td><div class="dropdown">
@@ -126,8 +128,27 @@
                     <td><span id="wis_roll"></span></td>
                     <td><span id="cha_roll"></span></td>
                 </tr>
-            </table>
-            <hr>`;
+            </table>`;
+            if (stats["Saving Throws"]) {
+                statblock += `<table>
+                    <tr>
+                        <td><b>Saving Throws</b></td>`;
+                var saves = stats["Saving Throws"];
+                for (const save in saves) {
+                    statblock += `<td class="dropdown">
+                        <button onclick="showDropDown('${save}Dropdown')" class="dropbtn">${save}</button>
+                        <div id="${save}Dropdown" class="dropdown-content">
+                        <button onclick="document.getElementById('saving_throw').innerHTML = rollString('d20+' + '${saves[save]}')">Roll</button>
+                        <button onclick="document.getElementById('saving_throw').innerHTML = rollAdvan('d20+' + '${saves[save]}')">Advn</button>
+                        <button onclick="document.getElementById('saving_throw').innerHTML = rollDisad('d20+' + '${saves[save]}')">Disad</button>
+                    </div>
+                </td>
+                <td>${addOperator(saves[save])}</td> `;
+                }
+                statblock += `<td id="saving_throw"></td>
+                    </tr>
+                </tabe>`;
+            }
             return statblock;
         }
         else {
