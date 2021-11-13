@@ -45,7 +45,7 @@ ettercap:
     Stealth: +4
     Survival: +3
   Senses: darkvision 60 ft., passive Perception 13
-  Languages: "—"
+  Languages: "-"
   Challenge: 2
   Special Traits:
     Spider Climb: The ettercap can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
@@ -89,7 +89,7 @@ giant spider:
   Skills:
    Stealth: +7
   Senses: blindsight 10 ft., darkvision 60 ft., passive Perception 10
-  Languages: "—"
+  Languages: "-"
   Challenge: 1
   Special Traits:
     Spider Climb: The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
@@ -109,7 +109,7 @@ giant wolf spider:
     Perception: +3
     Stealth: +7
   Senses: blindsight 10 ft., darkvision 60 ft., passive Perception 13
-  Languages: "—"
+  Languages: "-"
   Challenge: 1/4
   Special Traits:
     Spider Climb: The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
@@ -198,7 +198,7 @@ phase spider:
   Skills:
     Stealth: +6
   Senses: darkvision 60 ft., passive Perception 10
-  Languages: "—"
+  Languages: "-"
   Challenge: 3
   Special Traits:
     Ethereal Jaunt: As a bonus action, the spider can magically shift from the Material Plane to the Ethereal Plane, or vice versa.
