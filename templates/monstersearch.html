@@ -8,7 +8,14 @@
     function searchMonsters() {
         let string = document.getElementById('monster_name').value;
         let monsters = JSON.parse(document.getElementById("json_data").innerHTML);
-        return JSON.stringify(monsters[string.toLowerCase()], undefined, 4);
+        let stats = monsters[string.toLowerCase()];
+        if (stats) {
+            let statblock = `${stats["Name"]}\n${stats["Size"]}, ${stats["Type"]}, ${stats["Alignment"]}`;
+            return statblock;
+        }
+        else {
+            return `404 - '${string}' not found.`
+        }
     }
 </script>
 {% endblock %}
@@ -16,5 +23,4 @@
 <p id="json_data" hidden>{{ monsters }}</p>
 <span id="search area"><input type="text" id="monster_name"><button onclick="document.getElementById('result').innerHTML = searchMonsters()">Search Monsters</button></span>
 <pre id="result"></pre>
-<p></p>
 {% endblock %}
