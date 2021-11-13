@@ -147,7 +147,27 @@
                 }
                 statblock += `<td id="saving_throw"></td>
                     </tr>
-                </tabe>`;
+                </table>`;
+            }
+            if (stats["Skills"]) {
+                statblock += `<table>
+                    <tr>
+                        <td><b>Skills</b></td>`;
+                var skills = stats["Skills"];
+                for (const skill in skills) {
+                    statblock += `<td class="dropdown">
+                        <button onclick="showDropDown('${skill}Dropdown')" class="dropbtn">${skill}</button>
+                        <div id="${skill}Dropdown" class="dropdown-content">
+                        <button onclick="document.getElementById('skill_check').innerHTML = rollString('d20+' + '${skills[skill]}')">Roll</button>
+                        <button onclick="document.getElementById('skill_check').innerHTML = rollAdvan('d20+' + '${skills[skill]}')">Advn</button>
+                        <button onclick="document.getElementById('skill_check').innerHTML = rollDisad('d20+' + '${skills[skill]}')">Disad</button>
+                    </div>
+                </td>
+                <td>${addOperator(skills[skill])}</td> `;
+                }
+                statblock += `<td id="skill_check"></td>
+                    </tr>
+                </table>`;
             }
             return statblock;
         }
