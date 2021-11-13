@@ -62,7 +62,7 @@ ghast:
   Size: Medium 
   Kind: undead
   Alignment: chaotic evil
-  Armour Class: [13]
+  Armour Class: 13
   Hit Points: [36, 8d8]
   Speed: 30 ft.
   Abilities: [16, 17, 10, 11, 10, 8]
@@ -170,7 +170,7 @@ maw demon:
 orc:
   Name: Orc
   Size: Medium
-  Type: humanoid (orc)
+  Kind: humanoid (orc)
   Alignment: chaotic evil
   Armour Class: [13, hide armour]
   Hit Points: [15, 2d8 + 6]
@@ -211,7 +211,7 @@ smoke mephit:
   Size: Small 
   Kind: elemental
   Alignment: neutral evil
-  Armour Class: [12]
+  Armour Class: 12
   Hit Points: [22, 5d6 + 5]
   Speed: 30 ft., fly 30 ft.
   Abilities: [6, 14, 12, 10, 10, 11]
@@ -235,7 +235,7 @@ steam mephit:
   Size: Small
   Kind: elemental
   Alignment: neutral evil
-  Armor Class: [10]
+  Armour Class: 10
   Hit Points: [21, 6d6]
   Speed: 30 ft., fly 30 ft.
   Abilities: [5, 11, 10, 11, 10, 12]

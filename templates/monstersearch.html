@@ -2,25 +2,154 @@
 {% extends 'base.html' %}
 {% block title %}Monsterpedia{% endblock %}
 {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='statblock.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
+<script src="{{ url_for('static', filename='dice.js') }}"></script>
 <script>
     // Search json_data for matching monster
     const fs = require('fs');
+    function getModifier(num) {
+        return Math.floor((num - 10) / 2);
+    }
     function searchMonsters() {
         let string = document.getElementById('monster_name').value;
         let monsters = JSON.parse(document.getElementById("json_data").innerHTML);
         let stats = monsters[string.toLowerCase()];
         if (stats) {
-            let statblock = `${stats["Name"]}\n${stats["Size"]}, ${stats["Type"]}, ${stats["Alignment"]}`;
+            let statblock = `<h3>${stats["Name"].toUpperCase()}</h3>
+            <p><i>${stats["Size"]}, ${stats["Kind"]}, ${stats["Alignment"]}</i></p>
+            <hr>`;
+            if (stats["Armour Class"] instanceof Array) {
+                statblock += `<p><b>Armour Class</b> ${stats["Armour Class"][0]} (<i>${stats["Armour Class"][1]}</i>)</p>`;
+            } else {
+                statblock += `<p><b>Armour Class</b> ${stats["Armour Class"]}</p>`;
+            }
+            statblock += `<p>
+                <span><div class="dropdown" id="damage_heal">
+                    <button onclick="showDropDown('damDropdown')" class="dropbtn">Hit Points</button>
+                    <div id="damDropdown" class="dropdown-content">
+                        <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) + parseInt(document.getElementById('mod_hp').value)">Heal</button>
+                        <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) - parseInt(document.getElementById('mod_hp').value)">Damage</button>
+                    </div>
+                </span>
+                <span id="hit_points">${stats["Hit Points"][0]}</span> 
+                <span><input type="number" id="mod_hp"></span>
+                <span><b id="name">Temp HP</b> <input type="number"></span>
+                <span><button onclick="document.getElementById('hit_points').innerHTML = rollString(document.getElementById('hit_dice').innerHTML)">Hit Dice</button> <span id="hit_dice">${stats["Hit Points"][1]}</span></span>            
+            </p>
+            <p><b id="name">Speed</b> {{stats['speed']}}</p>
+            <hr>
+            <table class="abilities_table">
+                <tr>
+                    <td><div class="dropdown">
+                            <button onclick="showDropDown('strDropdown')" class="dropbtn">STR</button>
+                            <div id="strDropdown" class="dropdown-content">
+                            <button onclick="document.getElementById('str_roll').innerHTML = rollString('d20' + ${stats[""]}">Roll</button>
+                            <button onclick="document.getElementById('str_roll').innerHTML = rollAdvan('d20' + document.getElementById('str_mod').innerHTML)">Advn</button>
+                            <button onclick="document.getElementById('str_roll').innerHTML = rollDisad('d20' + document.getElementById('str_mod').innerHTML)">Disad</button>
+                        </div>
+                    </div>
+                    </td>
+                    <td><div class="dropdown">
+                            <button onclick="showDropDown('dexDropdown')" class="dropbtn">DEX</button>
+                            <div id="dexDropdown" class="dropdown-content">
+                            <button onclick="document.getElementById('dex_roll').innerHTML = rollString('d20' + document.getElementById('dex_mod').innerHTML)">Roll</button>
+                            <button onclick="document.getElementById('dex_roll').innerHTML = rollAdvan('d20' + document.getElementById('dex_mod').innerHTML)">Advn</button>
+                            <button onclick="document.getElementById('dex_roll').innerHTML = rollDisad('d20' + document.getElementById('dex_mod').innerHTML)">Disad</button>
+                        </div>
+                    </div>
+                    </td>
+                    <td><div class="dropdown">
+                            <button onclick="showDropDown('conDropdown')" class="dropbtn">CON</button>
+                            <div id="conDropdown" class="dropdown-content">
+                            <button onclick="document.getElementById('con_roll').innerHTML = rollString('d20' + document.getElementById('con_mod').innerHTML)">Roll</button>
+                            <button onclick="document.getElementById('con_roll').innerHTML = rollAdvan('d20' + document.getElementById('con_mod').innerHTML)">Advn</button>
+                            <button onclick="document.getElementById('con_roll').innerHTML = rollDisad('d20' + document.getElementById('con_mod').innerHTML)">Disad</button>
+                        </div>
+                    </div>
+                    </td>
+                    <td><div class="dropdown">
+                            <button onclick="showDropDown('intDropdown')" class="dropbtn">INT</button>
+                            <div id="intDropdown" class="dropdown-content">
+                            <button onclick="document.getElementById('int_roll').innerHTML = rollString('d20' + document.getElementById('int_mod').innerHTML)">Roll</button>
+                            <button onclick="document.getElementById('int_roll').innerHTML = rollAdvan('d20' + document.getElementById('int_mod').innerHTML)">Advn</button>
+                            <button onclick="document.getElementById('int_roll').innerHTML = rollDisad('d20' + document.getElementById('int_mod').innerHTML)">Disad</button>
+                        </div>
+                    </div>
+                    </td>
+                    <td><div class="dropdown">
+                            <button onclick="showDropDown('wisDropdown')" class="dropbtn">WIS</button>
+                            <div id="wisDropdown" class="dropdown-content">
+                            <button onclick="document.getElementById('wis_roll').innerHTML = rollString('d20' + document.getElementById('wis_mod').innerHTML)">Roll</button>
+                            <button onclick="document.getElementById('wis_roll').innerHTML = rollAdvan('d20' + document.getElementById('wis_mod').innerHTML)">Advn</button>
+                            <button onclick="document.getElementById('wis_roll').innerHTML = rollDisad('d20' + document.getElementById('wis_mod').innerHTML)">Disad</button>
+                        </div>
+                    </div>
+                    </td>
+                    <td><div class="dropdown">
+                            <button onclick="showDropDown('chaDropdown')" class="dropbtn">CHA</button>
+                            <div id="chaDropdown" class="dropdown-content">
+                            <button onclick="document.getElementById('cha_roll').innerHTML = rollString('d20' + document.getElementById('cha_mod').innerHTML)">Roll</button>
+                            <button onclick="document.getElementById('cha_roll').innerHTML = rollAdvan('d20' + document.getElementById('cha_mod').innerHTML)">Advn</button>
+                            <button onclick="document.getElementById('cha_roll').innerHTML = rollDisad('d20' + document.getElementById('cha_mod').innerHTML)">Disad</button>
+                        </div>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{stats['abilities']['strength']}}</td>
+                    <td>{{stats['abilities']['dexterity']}}</td>
+                    <td>{{stats['abilities']['constitution']}}</td>
+                    <td>{{stats['abilities']['intelligence']}}</td>
+                    <td>{{stats['abilities']['wisdom']}}</td>
+                    <td>{{stats['abilities']['charisma']}}</td>
+                </tr>
+                <tr>
+                    <td id="str_mod">{{"+" if stats['abilities']['strength_mod'] >= 0}}{{stats['abilities']['strength_mod']}}</td>
+                    <td id="dex_mod">{{"+" if stats['abilities']['dexterity_mod'] >= 0}}{{stats['abilities']['dexterity_mod']}}</td>
+                    <td id="con_mod">{{"+" if stats['abilities']['constitution_mod'] >= 0}}{{stats['abilities']['constitution_mod']}}</td>
+                    <td id="int_mod">{{"+" if stats['abilities']['intelligence_mod'] >= 0}}{{stats['abilities']['intelligence_mod']}}</td>
+                    <td id="wis_mod">{{"+" if stats['abilities']['wisdom_mod'] >= 0}}{{stats['abilities']['wisdom_mod']}}</td>
+                    <td id="cha_mod">{{"+" if stats['abilities']['charisma_mod'] >= 0}}{{stats['abilities']['charisma_mod']}}</td>
+                </tr>
+                <tr>
+                    <td><span id="str_roll"></span></td>
+                    <td><span id="dex_roll"></span></td>
+                    <td><span id="con_roll"></span></td>
+                    <td><span id="int_roll"></span></td>
+                    <td><span id="wis_roll"></span></td>
+                    <td><span id="cha_roll"></span></td>
+                </tr>
+            </table>
+            <hr>`;
             return statblock;
         }
         else {
             return `404 - '${string}' not found.`
         }
     }
+    // Display dropdown menus for roll buttons
+    function showDropDown(string) {
+        document.getElementById(string).classList.toggle("show");
+    }
+    // Close a dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
 </script>
 {% endblock %}
 {% block content %}
 <p id="json_data" hidden>{{ monsters }}</p>
+<br>
 <span id="search area"><input type="text" id="monster_name"><button onclick="document.getElementById('result').innerHTML = searchMonsters()">Search Monsters</button></span>
-<pre id="result"></pre>
+<div id="result"></div>
 {% endblock %}
