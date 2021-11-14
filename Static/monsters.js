@@ -216,9 +216,9 @@ function searchMonsters() {
                     }
                     statblock += `<div>${actions[action]["target"]}.</div>`
                     if (actions[action]["hit"]) {
-                        statblock += `<div>${actions[action]["hit"]}</div>
-                        <div class="dropdown">
+                        statblock += `<div class="dropdown">
                             <button onclick="showDropDown('${action}HitDropdown')" class="dropbtn">Hit</button>
+                            <div> ${actions[action]["hit"]}</div>
                             <div id="${action}HitDropdown" class="dropdown-content">
                                 <button onclick="document.getElementById('${action}-roll').innerHTML = rollString('${actions[action]["damage roll"]}')">Roll</button>
                                 <button onclick="document.getElementById('${action}-roll').innerHTML = rollCrit('${actions[action]["damage roll"]}')">Crit</button>
