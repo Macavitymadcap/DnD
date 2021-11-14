@@ -27,20 +27,5 @@ def monsterpedia():
     return render_template("monstersearch.html", monsters=json_monsters)
 
 
-@app.route("/statblock/<creature>")
-def stat_block(creature):
-    with open('MonsterManual.yaml', 'r') as yaml_file:
-        yaml_monsters = yaml.safe_load(yaml_file)
-    json_monsters = json.dumps(yaml_monsters)
-    monster_name = creature.replace("_", " ")
-    for item in monster_set:
-        if monster_name == item.name.lower():
-            monster = item
-
-            return render_template("statblock.html", stats=monster, monsters=json_monsters)
-        
-    return render_template("statblock.html")
-
-
 if __name__ =="__main__":
     app.run()
