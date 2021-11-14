@@ -20,7 +20,7 @@ def dice_roller():
 @app.route("/monsters")
 def monsterpedia():
     """Return html of searchable Monster Manual.yaml."""
-    with open('MonsterManual.yaml', 'r') as yaml_file:
+    with open('Static\MonsterManual.yaml', 'r') as yaml_file:
         yaml_monsters = yaml.safe_load(yaml_file)
     json_monsters = json.dumps(yaml_monsters)
     
