@@ -3,7 +3,7 @@ body {
 }
 button {
     background-color: #8B0000; 
-    color: grey;
+    color: #94958B;
     font-family: "Aclonica", serif;
     text-align: center;
     display: inline-block;
@@ -24,21 +24,21 @@ td {
     text-align: center;
 }
 label {
-    color: grey;
+    color: #94958B;
     font-family: "Aclonica", serif;
 }
 #help_text {
     display: none;
-    color: grey;
+    color: #94958B;
     font-family: "Philospher", serif;
 }
 #roll_string {
     background-color: #8B0000; 
-    color: grey;
+    color: #94958B;
     font-family: "Philosopher", serif;
 }
 #result {
-    color: grey;
+    color: #94958B;
     font-family: "Aclonica", serif
 }
 .dropdown {
