@@ -190,7 +190,7 @@
                 statblock += `<h4>ACTIONS</h4>`
                 var actions = stats["Actions"];
                 if (actions["Multiattack"]) {
-                    statblock += `<p><i><b>Multiattack</b></i> ${actions["Multiattack"]}</p>`
+                    statblock += `<p><i><b>Multiattack.</b></i> ${actions["Multiattack"]}</p>`
                 }
                 for (action in actions) {
                     if (action === "Multiattack") {
@@ -256,8 +256,8 @@
 </script>
 {% endblock %}
 {% block content %}
+<h2>Statblock Search</h2>
 <p id="json_data" hidden>{{ monsters }}</p>
-<br>
-<span id="search area"><input type="text" id="monster_name"><button onclick="document.getElementById('result').innerHTML = searchMonsters()">Search Monsters</button></span>
+<div id="search-area"><input type="text" id="monster_name">  <button onclick="document.getElementById('result').innerHTML = searchMonsters()">Search</button></div>
 <div id="result"></div>
 {% endblock %}

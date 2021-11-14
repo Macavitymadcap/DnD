@@ -11,7 +11,7 @@ h2 {
 }
 input {
     background-color: #8B0000; 
-    color: grey;
+    color: #94958B;
     font-family: "Philosopher", serif;
 }
 input[type='number']{
@@ -23,9 +23,13 @@ input[type='number']{
 #name {
     color: #94958B
 }
-
+#search-area {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
 p, td, span, div {
-    color: grey;
+    color: #94958B;
     font-family: "Philospher", serif
 }
 
@@ -38,7 +42,7 @@ p, td, span, div {
     display: flex;
     align-items: stretch;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 .flex_line > div {
