@@ -6,7 +6,7 @@ body {
 
 h2, h3, h4 {    
     color: #8B0000;
-    font-family: "Aclonica", serif
+    font-family: "Aclonica", serif;
 }
 h2 {
     text-align: center;
@@ -15,9 +15,11 @@ input {
     background-color: #8B0000; 
     color: #94958B;
     font-family: "Philosopher", serif;
+    font-size: medium;
+    width: 10rem;
 }
 input[type='number']{
-    width: 30px;
+    width: 2rem;
 }
 #damage_heal {
     display: inline-block;
@@ -28,7 +30,7 @@ input[type='number']{
     text-align: center;
 }
 .abilities_table {
-    width: fit-content;
+    width:max-content;
     text-align: center;
 }
 .flex_line {
@@ -37,10 +39,10 @@ input[type='number']{
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
+    padding-bottom: 6px;
 }
 .flex_line > div {
     margin: 2px;
-    overflow-wrap: break-word;
 }
 button {
     background-color: #8B0000; 
@@ -54,7 +56,7 @@ button:hover {
 }
 .dropdown {
     position: relative;
-    display: inline-flex; 
+    display: inline-flex;
 }
 .dropdown-content {
     display: none;
@@ -63,5 +65,7 @@ button:hover {
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    align-items: center;
+    text-align: center;
 }
-.show {display: block;}
+.show {display: inline-block;}

@@ -229,7 +229,7 @@ smoke mephit:
   Actions:
     Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 4, damage roll: 1d4 + 2, damage type: slashing}
     Cinder Breath: {recharge: 6, text: The mephit exhales a 15-foot cone of smoldering ash. Each creature in that area must succeed on a DC 10 Dexterity saving throw or be blinded until the end of the mephit's next turn.}
-    Summon Mephits (1/Day): The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.
+    Summon Mephits: {recharge: 1/Day, text: "The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."}
 steam mephit:
   Name: Steam Mephit
   Size: Small
@@ -250,5 +250,5 @@ steam mephit:
   Actions:
     Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 2, damage roll: 1d4, damage type: slashing, plus hit: 2, plus damage roll: 1d4, plus damage type: fire}
     Steam Breath: {recharge: 6, hit 4, damage roll: 1d8, damage type: fie, text: The mephit exhales a 15-foot cone of scalding steam. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 4 (1d8) fire damage on a failed save, or half as much damage on a successful one.}
-    Summon Mephits (1/Day): The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.
+    Summon Mephits: {recharge: 1/Day, text: "The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action."}
 ...
