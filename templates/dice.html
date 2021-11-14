@@ -14,23 +14,6 @@
                 x.style.display = "none";
             }
         }
-            // Display dropdown menus for roll buttons
-    function showDropDown(string) {
-        document.getElementById(string).classList.toggle("show");
-    }
-    // Close a dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-        }
-    }
     </script>
 {% endblock %}
 {% block content %}

@@ -19,7 +19,7 @@ function searchMonsters() {
     let stats = monsters[string.toLowerCase()];
     if (stats) {
         let statblock = `<h3>${stats["Name"].toUpperCase()}</h3>
-        <p><i>${stats["Size"]}, ${stats["Kind"]}, ${stats["Alignment"]}</i></p>`;
+        <p><i>${stats["Size"]} ${stats["Kind"]}, ${stats["Alignment"]}</i></p>`;
         if (stats["Armour Class"] instanceof Array) {
             statblock += `<p><b>Armour Class</b> ${stats["Armour Class"][0]} (<i>${stats["Armour Class"][1]}</i>)</p>`;
         } else {
