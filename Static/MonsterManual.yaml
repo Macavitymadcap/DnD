@@ -24,9 +24,9 @@ aboleth:
     Probing Telepathy: If a creature communicates telepathically with the aboleth, the aboleth learns the creature’s greatest desires if the aboleth can see the creature.
   Actions:
     Multiattack: The aboleth makes three tentacle attacks.
-    Tentacle: {kind: Melee Weapon Attack, to hit: 9, reach: 10 ft., target: one target, hit: 12, damage roll: 2d6 + 5, damage type: bludgeoning, text: 'If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature’s skin becomes translucent and slimy, the creature can’t regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed.'} 
+    Tentacle: {kind: Melee Weapon Attack, to hit: 9, reach: 10 ft., target: one target, hit: 12, damage roll: 2d6 + 5, damage type: bludgeoning, text: "If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."} 
     Tail: {kind: Melee Weapon Attack, to hit: 9, reach: 10 ft, target: one target, hit: 15, damage roll: 3d6 + 5, damage type: bludgeoning}
-    Enslave: {Recharge: 3/Day, text: 'The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth’s control and can’t take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth.'}
+    Enslave: {recharge: 3/Day, text: "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth."}
   Legendary Actions: 
     Detect: The aboleth makes a Wisdom (Perception) check.
     Tail Swipe: The aboleth makes one tail attack.
@@ -55,7 +55,7 @@ ettercap:
     Multiattack: 'The ettercap makes two attacks: one with its bite and one with its claws.'
     Bite: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 6, damage roll: 1d8 + 2, damage type: piercing, plus hit: 4, plus damage roll: 1d8, plus damage type: poison, text: "The target must succeed on a DC 11 Constitution saving throw or be poisoned for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."}
     Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one target, hit: 7, dagame roll: 2d4 + 2, damage type: slashing}
-    Web: {kind: Ranged Weapon Attack, Recharge: 5–6, to hit: +4, range: 30/60 ft., target: one Large or smaller creature, hit: The creature is restrained by webbing. As an action, the restrained creature can make a DC 11 Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning, poison and psychic damage.}
+    Web: {kind: Ranged Weapon Attack, recharge: 5–6, to hit: +4, range: 30/60 ft., target: one Large or smaller creature, hit: The creature is restrained by webbing. As an action, the restrained creature can make a DC 11 Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning, poison and psychic damage.}
     Web Garrote: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., taget: one Medium or Small creature against which the ettercap has advantage on the attack roll, hit: 4, damage roll: 1d4 + 2, damage type: bludgeoning, text: "and the target is grappled (escape DC 12). Until this grapple ends, the target can't breathe, and the ettercap has advantage on attack rolls against it."}
 ghast:
   Name: Ghast
@@ -96,8 +96,8 @@ giant spider:
     Web Sense: While in contact with a web, the spider knows the exact location of any other creature in contact with the same web.
     Web Walker: The spider ignores movement restrictions caused by webbing.
   Actions:
-    Bite: {kind: Melee Weapon Attack, to hit: +5, reach: 5 ft., target: one creature, hit: 7, roll damage: 1d8 + 3, damage type: piercing, text: "and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."}
-    Web: {kind: Ranged Weapon Attack, Recharge: 5–6, to hit: +5, range: 30/60 ft., target: one creature, hit: "The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage)."}
+    Bite: {kind: Melee Weapon Attack, to hit: +5, reach: 5 ft., target: one creature, hit: 7, damage roll: 1d8 + 3, damage type: piercing, text: "and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."}
+    Web: {kind: Ranged Weapon Attack, recharge: 5–6, to hit: +5, range: 30/60 ft., target: one creature, hit: "The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage)."}
 giant wolf spider:
   Name: Giant Wolf Spider
   Size: Medium beast, unaligned
@@ -147,7 +147,7 @@ krell grohlg:
         1st level: {slots: 4, spells: [entangle, longstrider, speak with animals, thunderwave]}
         2nd level: {slots: 3, spells: [barkskin, flaming sphere]}
   Actions:
-    Quarterstaff: {kind: Melee Weapon Attack, to hit: +2, to hit or: +4, to hit or text: with shillelagh, reach: 5 ft., target: one target, hit: 3, roll damage: 1d6, damage type: bludgeoning, or hit: 4, or roll damage: 1d8, or damage type: bludgeoning, text: 'if wielded with two hands, or 6 (1d8 + 2) bludgeoning damage with shillelagh.'}
+    Quarterstaff: {kind: Melee Weapon Attack, to hit: +2, to hit or: +4, to hit or text: with shillelagh, reach: 5 ft., target: one target, hit: 3, damage roll: 1d6, damage type: bludgeoning, or hit: 4, or damage roll: 1d8, or damage type: bludgeoning, text: 'if wielded with two hands, or 6 (1d8 + 2) bludgeoning damage with shillelagh.'}
 maw demon:  
   Name: Maw Demon
   Size: Medium 
@@ -166,7 +166,7 @@ maw demon:
   Special Traits:
     Rampage: When it reduces a creature to 0 hit points with a melee attack on its turn, the maw demon can take a bonus action to move up to half its speed and make a bite attack.
   Actions:
-    Bite: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one target, hit: 11, roll damage: 2d8 + 2,  damage type: piercing}
+    Bite: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one target, hit: 11, damage roll: 2d8 + 2,  damage type: piercing}
 orc:
   Name: Orc
   Size: Medium
@@ -227,8 +227,8 @@ smoke mephit:
     Death Burst: When the mephit dies, it leaves behind a cloud of smoke that fills a 5-foot-radius sphere centered on its space. The sphere is heavily obscured. Wind disperses the cloud, which otherwise lasts for 1 minute.
     Innate Spellcasting (1/Day): The mephit can innately cast dancing lights, requiring no material components. Its innate spellcasting ability is Charisma.
   Actions:
-    Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 4, roll damage: 1d4 + 2, damage type: slashing}
-    Cinder Breath: {Recharge: 6, text: The mephit exhales a 15-foot cone of smoldering ash. Each creature in that area must succeed on a DC 10 Dexterity saving throw or be blinded until the end of the mephit's next turn.}
+    Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 4, damage roll: 1d4 + 2, damage type: slashing}
+    Cinder Breath: {recharge: 6, text: The mephit exhales a 15-foot cone of smoldering ash. Each creature in that area must succeed on a DC 10 Dexterity saving throw or be blinded until the end of the mephit's next turn.}
     Summon Mephits (1/Day): The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.
 steam mephit:
   Name: Steam Mephit
@@ -248,7 +248,7 @@ steam mephit:
     Death Burst: When the mephit dies, it explodes in a cloud of steam. Each creature within 5 feet of the mephit must succeed on a DC 10 Dexterity saving throw or take 4 (1d8) fire damage.
     Innate Spellcasting (1/Day): The mephit can innately cast blur, requiring no material components. Its innate spellcasting ability is Charisma.
   Actions:
-    Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 2, roll damage: 1d4, damage type: slashing, plus hit: 2, plus damage roll: 1d4, plus damage type: fire}
-    Steam Breath: {Recharge: 6, hit 4, damage roll: 1d8, damage type: fie, text: The mephit exhales a 15-foot cone of scalding steam. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 4 (1d8) fire damage on a failed save, or half as much damage on a successful one.}
+    Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 2, damage roll: 1d4, damage type: slashing, plus hit: 2, plus damage roll: 1d4, plus damage type: fire}
+    Steam Breath: {recharge: 6, hit 4, damage roll: 1d8, damage type: fie, text: The mephit exhales a 15-foot cone of scalding steam. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 4 (1d8) fire damage on a failed save, or half as much damage on a successful one.}
     Summon Mephits (1/Day): The mephit has a 25 percent chance of summoning 1d4 mephits of its kind. A summoned mephit appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other mephits. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.
 ...
