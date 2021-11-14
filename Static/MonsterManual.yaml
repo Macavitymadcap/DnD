@@ -45,7 +45,7 @@ ettercap:
     Stealth: +4
     Survival: +3
   Senses: darkvision 60 ft., passive Perception 13
-  Languages: "—"
+  Languages: "-"
   Challenge: 2
   Special Traits:
     Spider Climb: The ettercap can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
@@ -54,9 +54,9 @@ ettercap:
   Actions:
     Multiattack: 'The ettercap makes two attacks: one with its bite and one with its claws.'
     Bite: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one creature, hit: 6, damage roll: 1d8 + 2, damage type: piercing, plus hit: 4, plus damage roll: 1d8, plus damage type: poison, text: "The target must succeed on a DC 11 Constitution saving throw or be poisoned for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."}
-    Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one target, hit: 7, dagame roll: 2d4 + 2, damage type: slashing}
-    Web: {kind: Ranged Weapon Attack, recharge: 5–6, to hit: +4, range: 30/60 ft., target: one Large or smaller creature, hit: The creature is restrained by webbing. As an action, the restrained creature can make a DC 11 Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning, poison and psychic damage.}
-    Web Garrote: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., taget: one Medium or Small creature against which the ettercap has advantage on the attack roll, hit: 4, damage roll: 1d4 + 2, damage type: bludgeoning, text: "and the target is grappled (escape DC 12). Until this grapple ends, the target can't breathe, and the ettercap has advantage on attack rolls against it."}
+    Claws: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one target, hit: 7, damage roll: 2d4 + 2, damage type: slashing}
+    Web: {kind: Ranged Weapon Attack, recharge: 5–6, to hit: +4, range: 30/60 ft., target: one Large or smaller creature, text: "The creature is restrained by webbing. As an action, the restrained creature can make a DC 11 Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning, poison and psychic damage."}
+    Web Garrote: {kind: Melee Weapon Attack, to hit: +4, reach: 5 ft., target: one Medium or Small creature against which the ettercap has advantage on the attack roll, hit: 4, damage roll: 1d4 + 2, damage type: bludgeoning, text: "and the target is grappled (escape DC 12). Until this grapple ends, the target can't breathe, and the ettercap has advantage on attack rolls against it."}
 ghast:
   Name: Ghast
   Size: Medium 
@@ -170,7 +170,7 @@ maw demon:
 orc:
   Name: Orc
   Size: Medium
-  Type: humanoid (orc)
+  Kind: humanoid (orc)
   Alignment: chaotic evil
   Armour Class: [13, hide armour]
   Hit Points: [15, 2d8 + 6]

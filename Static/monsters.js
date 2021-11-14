@@ -196,7 +196,8 @@ function searchMonsters() {
                         }
                         statblock += `${actions[action]["text"]}</div>`
                 } else {
-                    statblock += `<p><div class="flex_line"><div><i><b>${action}.</b></i></div>
+                    statblock += `<p><div class="flex_line">
+                        <div><i><b>${action}.</b></i></div>
                         <div><i>${actions[action]["kind"]}</i></div>
                         <div>${addOperator(actions[action]["to hit"])}</div>
                         <div class="dropdown">
@@ -213,17 +214,33 @@ function searchMonsters() {
                     if (actions[action]["range"]) {
                         statblock += `<div>range ${actions[action]["range"]},</div>`;
                     }
-                    statblock += `<div>${actions[action]["target"]}.</div> 
+                    statblock += `<div>${actions[action]["target"]}.</div>`
+                    if (actions[action]["hit"]) {
+                        statblock += `<div>${actions[action]["hit"]}</div>
                         <div class="dropdown">
                             <button onclick="showDropDown('${action}HitDropdown')" class="dropbtn">Hit</button>
                             <div id="${action}HitDropdown" class="dropdown-content">
                                 <button onclick="document.getElementById('${action}-roll').innerHTML = rollString('${actions[action]["damage roll"]}')">Roll</button>
                                 <button onclick="document.getElementById('${action}-roll').innerHTML = rollCrit('${actions[action]["damage roll"]}')">Crit</button>
                             </div>
-                        </div> 
-                        <div>${actions[action]["hit"]}</div>
+                        </div>
                         <div>(${actions[action]["damage roll"]})</div>
-                        <div>${actions[action]["damage type"]} damage.</div>`;
+                        <div>${actions[action]["damage type"]} damage</div>`;
+                    } else {
+                        statblock += `<div><button>Hit</button><div>`
+                    }
+                    if (actions[action]["plus hit"]) {
+                        statblock += `<div>, plus ${actions[action]["plus hit"]}</div>
+                        <div class="dropdown">
+                            <button onclick="showDropDown('${action}PlusHitDropdown')" class="dropbtn">Hit</button>
+                            <div id="${action}PlusHitDropdown" class="dropdown-content">
+                                <button onclick="document.getElementById('${action}-roll').innerHTML = rollString('${actions[action]["plus damage roll"]}')">Roll</button>
+                                <button onclick="document.getElementById('${action}-roll').innerHTML = rollCrit('${actions[action]["plus damage roll"]}')">Crit</button>
+                            </div>
+                        </div>
+                        <div>(${actions[action]["plus damage roll"]})</div>
+                        <div>${actions[action]["plus damage type"]} damage</div>`;
+                    }
                     if (actions[action]["text"]) {
                         statblock += `<div>${actions[action]["text"]}</div>`;
                     }
