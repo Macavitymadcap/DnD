@@ -8,10 +8,10 @@
 {% block content %}
     <h2>Welcome Adventurer!</h2>
     <p>This is a webapp filled with tools for running 5th edition Dungeons & Dragons.</p>
-    <p>It has been made with css, html, javascript and python, all hosted as a flask web app.</p>
+    <p>It has been made with css, html, javascript, python & yaml, all hosted as a flask web app.</p>
     <p>Try out the following links to aid you in your quest:</p>
     <ul>
         <li><a href="{{ url_for('dice_roller') }}">Dice Roller</a> - Roll a given string in multiple ways.</li>
-        <li><a href="{{ url_for('monsterpedia') }}">Stat Block</a>  - Search for a monster's statblock.</li>
+        <li><a href="{{ url_for('monsterpedia') }}">Monsterpedia</a>  - Search for a monster's statblock.</li>
     </ul>
 {% endblock %}
