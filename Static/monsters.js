@@ -246,7 +246,7 @@ function searchMonsters() {
         }
     else {
         return `<h3>404</h3>
-            <p>'${string}' not found.<p>`;
+            <p>'${string}' not found, Check your spelling and try again. <p>`;
     }
 }
 }
