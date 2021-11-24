@@ -24,9 +24,9 @@
         <td><input type="text" id="roll_string" size="8"></td>
         <td>
             <div class="dropdown">
-                <button onclick="showDropDown('strDropdown')" class="dropbtn">Roll</button>
+                <button onclick="showDropDown('strDropdown')" class="dropbtn">Roll Dice</button>
                 <div id="strDropdown" class="dropdown-content">
-                    <button onclick="document.getElementById('result').innerHTML = rollString(document.getElementById('roll_string').value)">Stand</button>
+                    <button onclick="document.getElementById('result').innerHTML = rollString(document.getElementById('roll_string').value)">Roll</button>
                     <button onclick="document.getElementById('result').innerHTML = rollAdvan(document.getElementById('roll_string').value)">Advan</button>
                     <button onclick="document.getElementById('result').innerHTML = rollDisad(document.getElementById('roll_string').value)">Disad</button>
                     <button onclick="document.getElementById('result').innerHTML = rollCrit(document.getElementById('roll_string').value)">Crit</button>
@@ -53,7 +53,7 @@
         </ul>
         then press 'Roll' to choose one of the following ways to roll the string:
         <ul>
-            <li><b>Stand</b> Roll the string as standard and return the total.</li>
+            <li><b>Roll</b> Roll the string as standard and return the total.</li>
             <li><b>Crit</b> Roll the dice of the string twice then return the total with modifier applied.</li>
             <li><b>Advan</b> Roll the string twice and return both listed highest to lowest.</li>
             <li><b>Disad</b> Roll the string twice and return both listed lowest to highest.</li>
