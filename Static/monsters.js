@@ -219,7 +219,7 @@ function searchMonsters() {
                             </div>
                             <div> ${actions[action]["hit"]}</div>
                             <div>(${actions[action]["damage roll"]})</div>
-                            <div>${actions[action]["damage type"]} damage</div>`;
+                            <div>${actions[action]["damage type"]} damage <span id="${action}-damage-roll"></span></div>`;
                     } else {
                         statblock += `<div><i>Hit: </i>`
                     }
@@ -238,9 +238,8 @@ function searchMonsters() {
                     if (actions[action]["text"]) {
                         statblock += `<span>${actions[action]["text"]}</span>`;
                     }
-                    statblock += `<span id="${action}-damage-roll"></span>
-                </div>`;
                 }
+                statblock += `</div>`
             }
         return statblock;
         }
