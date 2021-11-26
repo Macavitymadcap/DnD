@@ -1,14 +1,12 @@
 body {
     background-color: #351431;
+    color: #94958B;
+    font-family: "Philosopher", serif
 }
 h2 {    
     color: #8B0000;
     font-family: "Aclonica", serif;
     text-align: center;
-}
-p, li {
-    color: grey;
-    font-family: "Philosopher", serif
 }
 a:hover {
     color:#8B0000;
