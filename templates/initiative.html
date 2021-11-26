@@ -1,0 +1,42 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% block title %}Initiative Tracker{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='initiative.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica|Philospher">
+<script src="{{ url_for('static', filename='initiative.js')}}"></script>
+{% endblock %}
+{% block content %}
+    <h1>Initiative Tracker</h1>
+    <div>
+        <ul id="instructions">
+            <li>Fill in the empty cells with a combatant's details, then click 'Add Row' to add them to the table.</li>
+            <li>Once all combatants have been added, click 'Sort Table' to sort the table by descending initiative order.</li>
+            <li>Click 'Next Turn' to start the encounter and whenever a new turn begins to highlight the current initiative.</li>
+            <li>All combatant cells can be edited by clicking them, and the whole row can be deleted by clicking 'Delete'.</li>
+        </ul>
+    </div>
+    <h2>Round: <span id="round-num">0</span> Turn: <span id="turn-num">0</span> <button onclick="nextTurn()">Next Turn</button></h2>
+    <table align="center" id="encounter" border=1>
+        <tr id="header-row">
+            <th>Initiative</th>
+            <th>Name</th>
+            <th>Armour Class</th>
+            <th>Hit Points</th>
+            <th>Temporary Hit Points</th>
+            <th>Conditions</th>
+            <th><button onclick="sortTable()">Sort Table</button></th>
+        </tr>
+    </table>
+    <table align="center" id="add-combatant-table" border=1>
+        <tr id="add-combatant-row">
+            <td id="new_initiative" contenteditable="true"></td> 
+            <td id="new_name" contenteditable="true"></td>
+            <td id="new_armour_class" contenteditable="true"></td>
+            <td id="new_hit_points" contenteditable="true"></td>
+            <td id="new_temp_hp" contenteditable="true"></td>
+            <td id="new_conditions" contenteditable="true"></td>
+            <td><button onclick="addRow()">Add Row</button></td>
+        </tr>
+    </table>
+{% endblock %}

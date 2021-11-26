@@ -26,6 +26,11 @@ def monsterpedia():
     
     return render_template("monstersearch.html", monsters=json_monsters)
 
+@app.route("/initiative")
+def initiative_tracker():
+    """Return html of initiative tracker page."""
+    return render_template("initiative.html")
+
 
 if __name__ =="__main__":
     app.run()
