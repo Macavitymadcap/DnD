@@ -8,6 +8,9 @@ h2, h3, h4 {
     color: #8B0000;
     font-family: "Aclonica", serif;
 }
+b {
+    font-family: "Aclonica", serif;
+}
 h2 {
     text-align: center;
 }
