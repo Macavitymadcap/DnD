@@ -9,7 +9,7 @@ table {
     border-width: .5rem .5rem .5rem .5rem;
     table-layout: auto;
 }
-h1, h2, h3, th, button {
+h2, h3, th, button {
     font-family: "Aclonica", serif;
     color: #8B0000;
     text-align: center;

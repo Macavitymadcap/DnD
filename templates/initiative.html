@@ -7,7 +7,7 @@
 <script src="{{ url_for('static', filename='initiative.js')}}"></script>
 {% endblock %}
 {% block content %}
-    <h1>Initiative Tracker</h1>
+    <h2>Initiative Tracker</h2>
     <div>
         <ul id="instructions">
             <li>Fill in the empty cells with a combatant's details, then click 'Add Row' to add them to the table.</li>
@@ -16,7 +16,7 @@
             <li>All combatant cells can be edited by clicking them, and the whole row can be deleted by clicking 'Delete'.</li>
         </ul>
     </div>
-    <h2>Round: <span id="round-num">0</span> Turn: <span id="turn-num">0</span> <button onclick="nextTurn()">Next Turn</button></h2>
+    <h3>Round: <span id="round-num">0</span> Turn: <span id="turn-num">0</span> <button onclick="nextTurn()">Next Turn</button></h3>
     <table align="center" id="encounter" border=1>
         <tr id="header-row">
             <th>Initiative</th>
