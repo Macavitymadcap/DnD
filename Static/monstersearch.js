@@ -177,20 +177,20 @@ function searchMonsters() {
             if (actions["Multiattack"]) {
                 statblock += `<p><i><b>Multiattack.</b></i> ${actions["Multiattack"]}</p>`
             }
-            for (action in actions) {
+            for (const action in actions) {
                 if (action === "Multiattack") {
                     continue; 
                 }
                 // spellcasting
                 if (typeof actions[action]["to hit"] === 'undefined') {
-                    statblock += `<div class="flex_line">
+                    statblock += `<p><div class="flex_line">
                         <div><i><b>${action}</b></i>`;
                         if (actions[action]["recharge"]) {
                             statblock += `<b><i> (${actions[action]["recharge"]}). </i></b>`;
                         }
                         statblock += `${actions[action]["text"]}</div>`
                 } else {
-                    statblock += `<div class="flex_line">
+                    statblock += `<p><div class="flex_line">
                         <div><i><b>${action}.</b></i></div>
                         <div><i>${actions[action]["kind"]}</i></div>
                         <div>${addOperator(actions[action]["to hit"])}</div>
@@ -239,13 +239,18 @@ function searchMonsters() {
                     if (actions[action]["text"]) {
                         statblock += `<span>${actions[action]["text"]}</span>`;
                     }
+                    statblock += `</div></p>`
                 }
-                // reactions
-                // legendary actions
-                statblock += `</div>`
             }
-        return statblock;
         }
+        if (stats["Legendary Actions"]) {
+            var legendaryText = `The ${stats["Name"].toLowerCase()} can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The ${stats["Name"].toLowerCase()} regains spent legendary actions at the start of its turn.`
+
+            statblock += `<h4>LEGENDARY ACTIONS</h4>`
+            statblock += `<p>${legendaryText}</p>`
+        }
+        statblock += `</div>`
+        return statblock;
     } else {
         return `<h3>404</h3>
             <p>'${string}' not found, Check your spelling and try again. <p>`;
