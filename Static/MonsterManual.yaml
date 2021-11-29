@@ -21,7 +21,7 @@ aboleth:
   Special Traits:
     Amphibious: The aboleth can breathe air and water.
     Mucous Cloud: While underwater, the aboleth is surrounded by transformative mucous. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater. 
-    Probing Telepathy: If a creature communicates telepathically with the aboleth, the aboleth learns the creature’s greatest desires if the aboleth can see the creature.
+    Probing Telepathy: If a creature communicates telepathically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature.
   Actions:
     Multiattack: The aboleth makes three tentacle attacks.
     Tentacle: {kind: Melee Weapon Attack, to hit: 9, reach: 10 ft., target: one target, hit: 12, damage roll: 2d6 + 5, damage type: bludgeoning, text: "If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."} 
