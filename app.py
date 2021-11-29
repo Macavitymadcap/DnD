@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    """Return index page of website."""
     return render_template("index.html")
 
 
@@ -25,6 +26,7 @@ def monsterpedia():
     json_monsters = json.dumps(yaml_monsters)
     
     return render_template("monstersearch.html", monsters=json_monsters)
+
 
 @app.route("/initiative")
 def initiative_tracker():
