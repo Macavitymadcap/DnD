@@ -181,6 +181,7 @@ function searchMonsters() {
                 if (action === "Multiattack") {
                     continue; 
                 }
+                // spellcasting
                 if (typeof actions[action]["to hit"] === 'undefined') {
                     statblock += `<div class="flex_line">
                         <div><i><b>${action}</b></i>`;
@@ -239,6 +240,8 @@ function searchMonsters() {
                         statblock += `<span>${actions[action]["text"]}</span>`;
                     }
                 }
+                // reactions
+                // legendary actions
                 statblock += `</div>`
             }
         return statblock;
