@@ -167,7 +167,7 @@ function searchMonsters() {
             <p><b>Challenge</b> ${stats["Challenge"]}</p>`
         if (stats["Special Traits"]) {
             var traits = stats["Special Traits"];
-            for (trait in traits) {
+            for (const trait in traits) {
                 statblock += `<p><i><b>${trait}.</b></i> ${traits[trait]}</p>`;
             }
         }
