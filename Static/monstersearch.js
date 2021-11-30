@@ -18,27 +18,46 @@ function searchMonsters() {
     let monsters = JSON.parse(document.getElementById("json_data").innerHTML);
     let stats = monsters[string.toLowerCase()];
     if (stats) {
-        let statblock = `<h3>${stats["Name"].toUpperCase()}</h3>
-        <p><i>${stats["Size"]} ${stats["Kind"]}, ${stats["Alignment"]}</i></p>`;
+        let statblock = `
+        <table>
+            <tr>
+                <td><h3>${stats["Name"].toUpperCase()}</h3></td>
+            </tr>
+            <tr>
+                <td><i>${stats["Size"]} ${stats["Kind"]}, ${stats["Alignment"]}</i></td>
+            </tr>`;
         if (stats["Armour Class"] instanceof Array) {
-            statblock += `<p><b>Armour Class</b> ${stats["Armour Class"][0]} (<i>${stats["Armour Class"][1]}</i>)</p>`;
+            statblock += `
+            <tr>
+                <td><b>Armour Class</b> ${stats["Armour Class"][0]} (<i>${stats["Armour Class"][1]}</i>)</td>
+            </tr>`;
         } else {
-            statblock += `<p><b>Armour Class</b> ${stats["Armour Class"]}</p>`;
+            statblock += `
+            <tr>
+                <td><b>Armour Class</b> ${stats["Armour Class"]}</td>#
+            </tr>`;
         }
-        statblock += `<p>
-            <span><div class="dropdown" id="damage_heal">
-                <button onclick="showDropDown('damDropdown')" class="dropbtn">Hit Points</button>
-                <div id="damDropdown" class="dropdown-content">
-                    <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) + parseInt(document.getElementById('mod_hp').value)">Heal</button>
-                    <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) - parseInt(document.getElementById('mod_hp').value)">Damage</button>
+        statblock += `
+        <tr>
+            <td><div class="flex_line">
+                <span><div class="dropdown" id="damage_heal">
+                    <button onclick="showDropDown('damDropdown')" class="dropbtn">Hit Points</button>
+                    <div id="damDropdown" class="dropdown-content">
+                        <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) + parseInt(document.getElementById('mod_hp').value)">Heal</button>
+                        <button onclick="document.getElementById('hit_points').innerHTML = parseInt(document.getElementById('hit_points').innerHTML) - parseInt(document.getElementById('mod_hp').value)">Damage</button>
+                    </div>
                 </div>
-            </span>
-            <span id="hit_points">${stats["Hit Points"][0]}</span> 
-            <span><input type="number" id="mod_hp"></span>
-            <span><b id="name">Temp HP</b> <input type="number"></span>
-            <span><button onclick="document.getElementById('hit_points').innerHTML = rollString(document.getElementById('hit_dice').innerHTML)">Hit Dice</button> <span id="hit_dice">${stats["Hit Points"][1]}</span></span>            
-        </p>
-        <p><b id="name">Speed</b> ${stats["Speed"]}</p>
+                </span>
+                <span id="hit_points">${stats["Hit Points"][0]}</span> 
+                <span><input type="number" id="mod_hp"></span>
+                <span><b id="name">Temp HP</b> <input type="number"></span>
+                <span><button onclick="document.getElementById('hit_points').innerHTML = rollString(document.getElementById('hit_dice').innerHTML)">Hit Dice</button> <span id="hit_dice">${stats["Hit Points"][1]}</span></span>            
+            </div></td>
+        </tr>
+        <tr>
+            <td><b id="name">Speed</b> ${stats["Speed"]}</td>
+        </tr>
+        <tr><td>
         <table class="abilities_table">
             <tr>
                 <td><div class="dropdown">
@@ -113,9 +132,12 @@ function searchMonsters() {
                 <td id="wis_mod">${getModifier(stats["Abilities"][4])}</td>
                 <td id="cha_mod">${getModifier(stats["Abilities"][5])}</td>
             </tr>
-        </table>`;
+        </table>
+        </td></tr>`;
         if (stats["Saving Throws"]) {
-            statblock += `<p><div class="flex_line">
+            statblock += `
+            <tr>
+                <td><div class="flex_line">
                     <div><b>Saving Throws</b></div>`;
             var saves = stats["Saving Throws"];
             for (const save in saves) {
@@ -129,11 +151,15 @@ function searchMonsters() {
             </div>
             <div>${addOperator(saves[save])}</div> `;
             }
-            statblock += `<div id="saving_throw"></div>
-        </div></p>`;
+            statblock += `
+            <div id="saving_throw"></div>
+            </div></td>
+        </tr>`;
         }
         if (stats["Skills"]) {
-            statblock += `<p><div class="flex_line">
+            statblock += `
+            <tr>
+                <td><div class="flex_line">
                     <div><b>Skills</b></div>`;
             var skills = stats["Skills"];
             for (const skill in skills) {
@@ -148,49 +174,81 @@ function searchMonsters() {
             <div>${addOperator(skills[skill])}</div> `;
             }
             statblock += `<div id="skill_check"></div>
-        </div></p>`;
+        </div></td>
+        </tr>`;
         }
         if (stats["Damage Vulnerabilities"]) {
-            statblock += `<p><b>Damage Vulnerabilities</b> ${stats["Damage Vulnerabilities"]}</p>`;
+            statblock += `
+            <tr>
+                <td><b>Damage Vulnerabilities</b> ${stats["Damage Vulnerabilities"]}</td>
+            </tr>`;
         }
         if (stats["Damage Resistances"]) {
-            statblock += `<p><b>Damage Resistances</b> ${stats["Damage Resistances"]}</p>`;
+            statblock += `
+            <tr>
+                <td><b>Damage Resistances</b> ${stats["Damage Resistances"]}</td>
+            </tr>`;
         }
         if (stats["Damage Immunities"]) {
-            statblock += `<p><b>Damage Immunities</b> ${stats["Damage Immunities"]}</p>`;
+            statblock += `
+            <tr>
+                <td><b>Damage Immunities</b> ${stats["Damage Immunities"]}</td>
+            </tr>`;
         }
         if (stats["Condition Immunities"]) {
-            statblock += `<p><b>Condition Immunities</b> ${stats["Condition Immunities"]}</p>`;
+            statblock += `
+            <tr>
+                <td><b>Condition Immunities</b> ${stats["Condition Immunities"]}</td>
+            </tr>`;
         }
-        statblock += `<p><b>Senses</b> ${stats["Senses"]}</p>
-            <p><b>Languages</b> ${stats["Languages"]}</p>
-            <p><b>Challenge</b> ${stats["Challenge"]}</p>`
+        statblock += `
+        <tr>
+            <td><b>Senses</b> ${stats["Senses"]}</td>
+        </tr>
+        <tr>
+            <td><b>Languages</b> ${stats["Languages"]}</td>
+        </tr>
+            <td><b>Challenge</b> ${stats["Challenge"]}</td>
+        </tr>`
         if (stats["Special Traits"]) {
             var traits = stats["Special Traits"];
             for (const trait in traits) {
-                statblock += `<p><i><b>${trait}.</b></i> ${traits[trait]}</p>`;
+                statblock += `
+                <tr>
+                    <td><i><b>${trait}.</b></i> ${traits[trait]}</td>
+                </tr>`;
             }
         }
         if (stats["Actions"]) {
-            statblock += `<h4>ACTIONS</h4>`
+            statblock += `
+            <tr>
+                <td><h4>ACTIONS</h4></td>
+            </tr>`
             var actions = stats["Actions"];
             if (actions["Multiattack"]) {
-                statblock += `<p><i><b>Multiattack.</b></i> ${actions["Multiattack"]}</p>`
+                statblock += `
+                <tr>
+                    <td><i><b>Multiattack.</b></i> ${actions["Multiattack"]}</td>
+                </tr>`
             }
             for (const action in actions) {
                 if (action === "Multiattack") {
-                    continue; 
+                        continue; 
                 }
-                // spellcasting
+                // put spellcasting
+
                 if (typeof actions[action]["to hit"] === 'undefined') {
-                    statblock += `<p><div class="flex_line">
-                        <div><i><b>${action}</b></i>`;
+                    statblock += `
+                    <tr>
+                        <td><div><i><b>${action}</b></i>`;
                         if (actions[action]["recharge"]) {
                             statblock += `<b><i> (${actions[action]["recharge"]}). </i></b>`;
                         }
-                        statblock += `${actions[action]["text"]}</div>`
+                        statblock += `${actions[action]["text"]}</td></tr>`
                 } else {
-                    statblock += `<p><div class="flex_line">
+                    statblock += `
+                    <tr>
+                        <td><div class="flex_line">
                         <div><i><b>${action}.</b></i></div>
                         <div><i>${actions[action]["kind"]}</i></div>
                         <div>${addOperator(actions[action]["to hit"])}</div>
@@ -239,17 +297,23 @@ function searchMonsters() {
                     if (actions[action]["text"]) {
                         statblock += `<span>${actions[action]["text"]}</span>`;
                     }
-                    statblock += `</div></p>`
+                    statblock += `</div></td></tr>`
                 }
             }
         }
         if (stats["Legendary Actions"]) {
             var legendaryText = `The ${stats["Name"].toLowerCase()} can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The ${stats["Name"].toLowerCase()} regains spent legendary actions at the start of its turn.`
 
-            statblock += `<h4>LEGENDARY ACTIONS</h4>`
-            statblock += `<p>${legendaryText}</p>`
+            statblock += `
+            <tr>
+                <td><h4>LEGENDARY ACTIONS</h4></td>
+            </tr>`
+            statblock += `
+            <tr>
+                <td>${legendaryText}</td>
+            </tr>`
         }
-        statblock += `</div>`
+        statblock += `</table>`
         return statblock;
     } else {
         return `<h3>404</h3>
