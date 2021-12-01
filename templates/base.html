@@ -34,16 +34,18 @@
         }
     </script>
 </head>
-<div class="topnav" id="myTopnav">
-    <a href="{{ url_for('index') }}">Home</a>
-    <a href="{{ url_for('dice_roller') }}">Dice</a>
-    <a href="{{ url_for('monsterpedia') }}">Monsters</a>
-    <a href="{{ url_for('initiative_tracker') }}">Initiative</a>
-    <a href="javascript:void(0);" class="icon" onclick="toggleTopNav()"><i class="fa fa-bars"></i></a>
-</div>
-<br>
-<br>
 <body>
+    <nav>
+        <div class="topnav" id="myTopnav">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('dice_roller') }}">Dice</a>
+            <a href="{{ url_for('monsterpedia') }}">Monsters</a>
+            <a href="{{ url_for('initiative_tracker') }}">Initiative</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleTopNav()"><i class="fa fa-bars"></i></a>
+        </div>
+        <br>
+        <br>
+    </nav>
     <div id="content">{% block content %}{% endblock %}</div>
 </body>
 </html>
