@@ -19,7 +19,7 @@ function searchMonsters() {
     let stats = monsters[string.toLowerCase()];
     if (stats) {
         let statblock = `
-        <table>
+        <table id="statblock-table">
             <tr>
                 <td><h3>${stats["Name"].toUpperCase()}</h3></td>
             </tr>
