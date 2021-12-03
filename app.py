@@ -34,5 +34,11 @@ def initiative_tracker():
     return render_template("initiative.html")
 
 
+@app.route("/cr_calc")
+def cr_calc():
+    """Return html of cr calculator page."""
+    return render_template("crcalc.html")
+
+
 if __name__ =="__main__":
     app.run()
