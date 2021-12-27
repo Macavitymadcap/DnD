@@ -186,7 +186,13 @@ function modifyExperiencePoints(levels, monsters) {
     }
 };
 
-
+/**
+ * 
+ * @param {array} levels List of the party's character levels.
+ * @param {array} monsters List of monster challenge ratings.
+ * @returns String detailing the party's xp thresholds; base encounter XP;
+ * modified encounter XP; XP per player and the level of difficulty.
+ */
 function getDifficulty(levels, monsters) {
     let experiencePoints = getTotalExperiencePoints(monsters);
     let modifiedExperiencePoints = modifyExperiencePoints(levels, monsters);
@@ -206,8 +212,4 @@ function getDifficulty(levels, monsters) {
         difficulty = 'Deadly';
     };
     return `Easy: ${partyThresholds[0]}, Medium: ${partyThresholds[1]}, Hard: ${partyThresholds[2]}, Deadly: ${partyThresholds[3]}\nBase XP: ${experiencePoints}, Modified XP: ${modifiedExperiencePoints}, XP per Player: ${experiencePerPlayer}\nDifficulty: ${difficulty}`
-}
-
-let monsters = [1, 1, 1];
-let party = [5];
-console.log(getDifficulty(party, monsters));
+};
