@@ -1,37 +1,76 @@
-// Functions for rolling a die of x faces.
+/**
+ * 
+ * @param {number} num Number of faces on the die.
+ * 
+ * @returns random number between 1 and num.
+ */
 function rollD(num) {
     return Math.floor(Math.random() * num) +1;
 }
 
+/**
+ * 
+ * @returns Random number bewteen 1 and 4.
+ */
 function d4() {
     return rollD(4);
 }
 
+/**
+ * 
+ * @returns Random number bewteen 1 and 6.
+ */
 function d6() {
     return rollD(6);
 }
 
+/**
+ * 
+ * @returns Random number bewteen 1 and 8.
+ */
 function d8() {
     return rollD(8);
 }
 
+/**
+ * 
+ * @returns Random number bewteen 1 and 10.
+ */
 function d10() {
     return rollD(10);
 }
 
+/**
+ * 
+ * @returns Random number bewteen 1 and 12.
+ */
 function d12() {
     return rollD(12);
 }
 
+/**
+ * 
+ * @returns Random number bewteen 1 and 20.
+ */
 function d20() {
     return rollD(20);
 }
 
+/**
+ * 
+ * @returns Random number bewteen 1 and 100.
+ */
 function d100() {
     return rollD(100);
 }
 
-// Functions for ways of roll dice.
+/**
+ * 
+ * @param {number} num Number of dice to be rolled.
+ * @param {string} dice Kind of die to be rolled.
+ * 
+ * @returns Total of rolling num amount of dice.
+ */
 function rollMult(num, dice) {
     let rolls = 0;
     for (let i = 0; i < num; i++) {
@@ -40,6 +79,15 @@ function rollMult(num, dice) {
     return rolls;
 }
 
+/**
+ * 
+ * @param {string} string Of format 'x dy ? z', where 'x' is is the optional
+ * number of dice to be rolled; 'dy' is the type of die to be rolled, 'y'
+ * being the number of face; '?' is an optional operator and 'z' is an 
+ * optional modifier to be applied to the roll with a given operator.
+ * 
+ * @returns The result of rolling the given die string.
+ */
 function rollString(string) {
     /* Patterns to be searched for in string operator & modifier set to NaN if
     none found.
