@@ -24,7 +24,8 @@ function getTotalExperiencePoints(monsters) {
     }
 
     return total;
-}
+};
+
 /**
  * 
  * @param {number} level The player character's level.
@@ -183,13 +184,30 @@ function modifyExperiencePoints(levels, monsters) {
                 return xp * 5;
         }
     }
+};
+
+
+function getDifficulty(levels, monsters) {
+    let experiencePoints = getTotalExperiencePoints(monsters);
+    let modifiedExperiencePoints = modifyExperiencePoints(levels, monsters);
+    let experiencePerPlayer = Math.floor(experiencePoints / levels.length);
+    let partyThresholds = getPartyThresholds(levels);
+    let difficulty;
+
+    if (modifiedExperiencePoints < partyThresholds[0]) {
+        difficulty = 'Well Easy';
+    } else if (modifiedExperiencePoints >= partyThresholds[0] && modifiedExperiencePoints < partyThresholds[1]) {
+        difficulty = 'Easy';
+    } else if (modifiedExperiencePoints >= partyThresholds[1] && modifiedExperiencePoints < partyThresholds[2]) {
+        difficulty = 'Medium';
+    } else if (modifiedExperiencePoints >= partyThresholds[2] && modifiedExperiencePoints < partyThresholds[3]) {
+        difficulty = 'Hard';
+    } else {
+        difficulty = 'Deadly';
+    };
+    return `Easy: ${partyThresholds[0]}, Medium: ${partyThresholds[1]}, Hard: ${partyThresholds[2]}, Deadly: ${partyThresholds[3]}\nBase XP: ${experiencePoints}, Modified XP: ${modifiedExperiencePoints}, XP per Player: ${experiencePerPlayer}\nDifficulty: ${difficulty}`
 }
 
-let monsters = ['1/8', '1/8', '1/8', '1/8'];
-let party = [1, 1, 1];
-let experiencePoints = getTotalExperiencePoints(monsters);
-let modifiedExperiencePoints = modifyExperiencePoints(party, monsters);
-let thresholds = getPartyThresholds(party);
-
-console.log(`Easy: ${thresholds[0]}, Medium: ${thresholds[1]}, Hard: ${thresholds[2]}, Deadly: ${thresholds[3]}`);
-console.log(`Base XP: ${experiencePoints}, Modified XP: ${modifiedExperiencePoints}`);
+let monsters = [1, 1, 1];
+let party = [5];
+console.log(getDifficulty(party, monsters));
