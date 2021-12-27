@@ -213,3 +213,48 @@ function getDifficulty(levels, monsters) {
     };
     return `Easy: ${partyThresholds[0]}, Medium: ${partyThresholds[1]}, Hard: ${partyThresholds[2]}, Deadly: ${partyThresholds[3]}\nBase XP: ${experiencePoints}, Modified XP: ${modifiedExperiencePoints}, XP per Player: ${experiencePerPlayer}\nDifficulty: ${difficulty}`
 };
+
+function getPartyList() {
+    if (document.getElementById('party-list').innerHTML.includes(',') === true) {
+        const partyList = document.getElementById('party-list').innerHTML.split(',');
+        for (let num = 0; num < document.getElementById('num-players').value; num++) {
+            partyList.push(document.getElementById('player-level').value);
+        };
+        document.getElementById('party-list').innerHTML = partyList;
+    } else {
+        const partyList = [];
+        for (let num = 0; num < document.getElementById('num-players').value; num++) {
+            partyList.push(document.getElementById('player-level').value);
+        };
+        document.getElementById('party-list').innerHTML = partyList;
+    };
+    const thresholds = getPartyThresholds(document.getElementById('party-list').innerHTML.split(','));
+    document.getElementById('easy-threshold').innerHTML = thresholds[0];
+    document.getElementById('medium-threshold').innerHTML = thresholds[1];
+    document.getElementById('hard-threshold').innerHTML = thresholds[2];
+    document.getElementById('deadly-threshold').innerHTML = thresholds[3];
+};
+
+function getMonsterCRs() {
+    if (document.getElementById('cr-list').innerHTML.includes(',') === true) {
+        const crList = document.getElementById('cr-list').innerHTML.split(',');
+        for (let num = 0; num < document.getElementById('num-monsters').value; num++) {
+            if (document.getElementById('monster-cr').value.includes('/') === true) {
+                crList.push(document.getElementById('monster-cr').value);
+            } else {
+                crList.push(parseInt(document.getElementById('monster-cr').value));
+            };
+        };
+        document.getElementById('cr-list').innerHTML = 'boobs';
+    } else {
+        const crList = [];
+        for (let num = 0; num < document.getElementById('num-monsters').value; num++) {
+            if (document.getElementById('monster-cr').value.includes('/') === true) {
+                crList.push(document.getElementById('monster-cr').value);
+            } else {
+                crList.push(parseInt(document.getElementById('monster-cr').value));
+            };
+        };
+        document.getElementById('cr-list').innerHTML = 'tits';
+    };
+};
