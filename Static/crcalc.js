@@ -5,4 +5,3 @@ function getExperiencePoints(challengeRating) {
     ];
     return xpbycr[1][xpbycr[0].indexOf(challengeRating)];
 };
-console.log(getExperiencePoints('1/8'));
