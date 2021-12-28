@@ -258,8 +258,8 @@ function getMonsterCRs() {
 };
 
 function calculateDifficulty() {
-    const thresholds = getPartyThresholds(document.getElementById('party-list').innerHTML.split(','));
-    let numMonsters = document.getElementById('cr-list').innerHTML.split(',').length;
+    const thresholds = getPartyThresholds(document.getElementById('party-list').innerHTML.split(', '));
+    let numMonsters = document.getElementById('cr-list').innerHTML.split(', ').length;
     let totalXP = getTotalExperiencePoints(document.getElementById('cr-list').innerHTML.split(', '));
     let modifiedXP = modifyExperiencePoints(document.getElementById('party-list').innerHTML.split(', '), document.getElementById('cr-list').innerHTML.split(', '));
     let xpPerPlayer = Math.floor(totalXP / numMonsters);
@@ -271,7 +271,7 @@ function calculateDifficulty() {
     document.getElementById('total-xp').innerHTML = totalXP;
     document.getElementById('modified-xp').innerHTML = modifiedXP;
     document.getElementById('xp-per-player').innerHTML = xpPerPlayer;
-    document.getElementById('difficulty').innerHTML = getDifficulty(document.getElementById('party-list').innerHTML.split(','), document.getElementById('cr-list').innerHTML.split(','));
+    document.getElementById('difficulty').innerHTML = getDifficulty(document.getElementById('party-list').innerHTML.split(', '), document.getElementById('cr-list').innerHTML.split(', '));
 };
 
 function clearParty() {
