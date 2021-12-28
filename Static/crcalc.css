@@ -1,0 +1,33 @@
+h2, h3, th, button {
+    font-family: "Aclonica", serif;
+    color: #8B0000;
+    text-align: center;
+}
+input {
+    background-color: #8B0000; 
+    color: #94958B;
+    font-family: "Philosopher", serif;
+    font-size: medium;
+    width: 2rem;
+    vertical-align: middle;
+}
+input[type='number']{
+    width: 2rem;
+    vertical-align: middle;
+}
+th, td {
+    text-align: center;
+    width: 8rem;
+    min-width: 6rem;
+}
+button {
+    background-color: #8B0000; 
+    color: #94958B;
+    font-family: "Aclonica", serif;
+    text-align: center;
+    display: inline-flex;
+    vertical-align: middle;
+}
+button:hover {
+    background-color: #351431;
+}
