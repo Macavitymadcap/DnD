@@ -194,9 +194,7 @@ function modifyExperiencePoints(levels, monsters) {
  * modified encounter XP; XP per player and the level of difficulty.
  */
 function getDifficulty(levels, monsters) {
-    let experiencePoints = getTotalExperiencePoints(monsters);
     let modifiedExperiencePoints = modifyExperiencePoints(levels, monsters);
-    let experiencePerPlayer = Math.floor(experiencePoints / levels.length);
     let partyThresholds = getPartyThresholds(levels);
     let difficulty;
 
@@ -211,8 +209,9 @@ function getDifficulty(levels, monsters) {
     } else {
         difficulty = 'Deadly';
     };
-    return `Easy: ${partyThresholds[0]}, Medium: ${partyThresholds[1]}, Hard: ${partyThresholds[2]}, Deadly: ${partyThresholds[3]}\nBase XP: ${experiencePoints}, Modified XP: ${modifiedExperiencePoints}, XP per Player: ${experiencePerPlayer}\nDifficulty: ${difficulty}`
-};
+
+    return difficulty;
+}
 
 function getPartyList() {
     if (document.getElementById('party-list').innerHTML.includes(',') === true) {
@@ -220,24 +219,21 @@ function getPartyList() {
         for (let num = 0; num < document.getElementById('num-players').value; num++) {
             partyList.push(document.getElementById('player-level').value);
         };
-        document.getElementById('party-list').innerHTML = partyList;
+        document.getElementById('party-list').innerHTML = partyList.join(', ');
+        document.getElementById('total-players').innerHTML = partyList.length;
     } else {
         const partyList = [];
         for (let num = 0; num < document.getElementById('num-players').value; num++) {
             partyList.push(document.getElementById('player-level').value);
         };
-        document.getElementById('party-list').innerHTML = partyList;
+        document.getElementById('party-list').innerHTML = partyList.join(', ');
+        document.getElementById('total-players').innerHTML = partyList.length;
     };
-    const thresholds = getPartyThresholds(document.getElementById('party-list').innerHTML.split(','));
-    document.getElementById('easy-threshold').innerHTML = thresholds[0];
-    document.getElementById('medium-threshold').innerHTML = thresholds[1];
-    document.getElementById('hard-threshold').innerHTML = thresholds[2];
-    document.getElementById('deadly-threshold').innerHTML = thresholds[3];
 };
 
 function getMonsterCRs() {
     if (document.getElementById('cr-list').innerHTML.includes(',') === true) {
-        const crList = document.getElementById('cr-list').innerHTML.split(',');
+        const crList = document.getElementById('cr-list').innerHTML.split(', ');
         for (let num = 0; num < document.getElementById('num-monsters').value; num++) {
             if (document.getElementById('monster-cr').value.includes('/') === true) {
                 crList.push(document.getElementById('monster-cr').value);
@@ -245,7 +241,8 @@ function getMonsterCRs() {
                 crList.push(parseInt(document.getElementById('monster-cr').value));
             };
         };
-        document.getElementById('cr-list').innerHTML = 'boobs';
+        document.getElementById('cr-list').innerHTML = crList.join(', ');
+        document.getElementById('total-monsters').innerHTML = crList.length;
     } else {
         const crList = [];
         for (let num = 0; num < document.getElementById('num-monsters').value; num++) {
@@ -255,6 +252,45 @@ function getMonsterCRs() {
                 crList.push(parseInt(document.getElementById('monster-cr').value));
             };
         };
-        document.getElementById('cr-list').innerHTML = 'tits';
+        document.getElementById('cr-list').innerHTML = crList.join(', ');
+        document.getElementById('total-monsters').innerHTML = crList.length;
     };
 };
+
+function calculateDifficulty() {
+    const thresholds = getPartyThresholds(document.getElementById('party-list').innerHTML.split(','));
+    let numMonsters = document.getElementById('cr-list').innerHTML.split(',').length;
+    let totalXP = getTotalExperiencePoints(document.getElementById('cr-list').innerHTML.split(', '));
+    let modifiedXP = modifyExperiencePoints(document.getElementById('party-list').innerHTML.split(', '), document.getElementById('cr-list').innerHTML.split(', '));
+    let xpPerPlayer = Math.floor(totalXP / numMonsters);
+
+    document.getElementById('easy-threshold').innerHTML = thresholds[0];
+    document.getElementById('medium-threshold').innerHTML = thresholds[1];
+    document.getElementById('hard-threshold').innerHTML = thresholds[2];
+    document.getElementById('deadly-threshold').innerHTML = thresholds[3];
+    document.getElementById('total-xp').innerHTML = totalXP;
+    document.getElementById('modified-xp').innerHTML = modifiedXP;
+    document.getElementById('xp-per-player').innerHTML = xpPerPlayer;
+    document.getElementById('difficulty').innerHTML = getDifficulty(document.getElementById('party-list').innerHTML.split(','), document.getElementById('cr-list').innerHTML.split(','));
+};
+
+function clearParty() {
+    document.getElementById('party-list').innerHTML = '';
+    document.getElementById('total-players').innerHTML = '';
+};
+
+function clearMonsters() {
+    document.getElementById('cr-list').innerHTML = '';
+    document.getElementById('total-monsters').innerHTML = '';
+};
+
+function clearResults() {
+    document.getElementById('easy-threshold').innerHTML = '';
+    document.getElementById('medium-threshold').innerHTML = '';
+    document.getElementById('hard-threshold').innerHTML = '';
+    document.getElementById('deadly-threshold').innerHTML = '';
+    document.getElementById('total-xp').innerHTML = '';
+    document.getElementById('modified-xp').innerHTML = '';
+    document.getElementById('xp-per-player').innerHTML = '';
+    document.getElementById('difficulty').innerHTML = '';
+}

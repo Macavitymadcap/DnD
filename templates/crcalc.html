@@ -8,8 +8,14 @@
 {% block content %}
         <h2>CR Calculator</h2>
         <p>Input the number of characters and their levels to be weighed against the number of monsters and their challenge ratings to determine the difficulty and total experience point value of an encounter.</p>
-        <p>Number of <input type="number" id="num-players"> level <input type="number" id="player-level"> characters <button onclick="getPartyList()">Add Players</button></p>
-        <p>Party Level List: <span id="party-list"></span></p>
+        <h3>Player Characters</h3>
+        <p>Number of <input type="number" id="num-players"> level <input type="number" id="player-level"> player characters <button onclick="getPartyList()">Add Players</button><button onclick="clearParty()">Clear Players</button></p>
+        <p>Number of Players: <span id="total-players"></span>, Levels: [<span id="party-list"></span>]</p>
+        <h3>Monsters</h3>
+        <p>Number of <input type="number" id="num-monsters"> CR <input id="monster-cr"> monsters <button onclick="getMonsterCRs()">Add Monsters</button><button onclick="clearMonsters()">Clear Monsters</button></p>
+        <p>Number of Monsters: <span id="total-monsters"></span>, CRs: [<span id="cr-list"></span>]</p>
+        <h3>Results</h3>
+        <p><button onclick="calculateDifficulty()">Calculate</button></p>
         <p>
             <table>
                 <tr>
@@ -26,6 +32,20 @@
                 </tr>
             </table>
         </p>
-        <p>Number of <input type="number" id="num-monsters"> CR <input id="monster-cr"> monsters <button>Add Monsters</button onclick="getMonsterCRs()"></p>
-        <p>Monster CR List: <span id="cr-list"></span></p>
+        <p>
+            <table>
+                <tr>
+                    <th>Total XP</th>
+                    <th>Modified XP</th>
+                    <th>XP per Player</th>
+                </tr>
+                <tr>
+                    <td id="total-xp"></td>
+                    <td id="modified-xp"></td>
+                    <td id="xp-per-player"></td>
+                </tr>
+            </table>
+        </p>
+        <p>Encounter Difficulty: <span id="difficulty"></span></p>
+        <p><button onclick="clearResults()">Clear Results</button></p>
 {% endblock %}
