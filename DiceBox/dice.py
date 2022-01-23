@@ -4,7 +4,7 @@ The module contains functions that replicate rolling polyhedral dice
 (d4, d6, d8, d10, d12, d20, d100), that are used by the roll function to return
 rolls of one or more of a type of die.
 
-roll_string is a function that use the dice and roll functions to convert a
+roll_string is a function that uses the dice and roll functions to convert a
 string of standard dice notation into rolls. This function is then used to
 create functions for; rolling an array of dice; rolling with advantage or
 disadvantage; rolling with disadvantage; rolling critical damage and rolling
