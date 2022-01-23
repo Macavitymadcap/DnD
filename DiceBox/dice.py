@@ -1,7 +1,7 @@
 """A package of functions for rolling various kinds of dice.
 
 The module contains functions that replicate rolling polyhedral dice
-(d4, d6, d8, d10, d12, d20, d100). that are used by the roll function to return
+(d4, d6, d8, d10, d12, d20, d100), that are used by the roll function to return
 rolls of one or more of a type of die.
 
 roll_string is a function that use the dice and roll functions to convert a
